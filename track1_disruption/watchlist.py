@@ -13,7 +13,11 @@ def interval(date, kind):
         remaining = 0
     if kind in {"link", "price"}:
         return 86400
-    return 21600 if remaining > 7 * 86400 else 3600 if remaining > 86400 else 300
+    if remaining > 7 * 86400:
+        return 21600
+    if remaining > 86400 or kind == "flight":
+        return 3600
+    return 300
 
 
 def build_watchlist(db, board):

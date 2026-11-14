@@ -35,5 +35,6 @@ def test_signal_dedupe_ignores_fetch_timestamp_but_keeps_meaningful_changes():
 
 def test_polling_cadence():
     assert interval("2099-01-01", "flight") == 21600
-    assert interval("2026-01-01", "flight") == 300
+    assert interval("2026-01-01", "flight") == 3600
+    assert interval("2026-01-01", "weather") == 300
     assert interval("2026-01-01", "link") == 86400
