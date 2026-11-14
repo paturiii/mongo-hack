@@ -12,7 +12,7 @@ def write(folder, name, data):
 
 
 def main():
-    folder = ROOT / "fixtures" / "lisbon"
+    folder = ROOT / "fixtures" / "track1" / "lisbon"
     polygon = {
         "type": "Polygon",
         "coordinates": [

@@ -15,15 +15,17 @@ uv --cache-dir .uv-cache sync
 .\.venv\Scripts\python.exe scripts/check_env.py --strict --providers
 ```
 
-Fill the required block in `.env.example`. `.env` files remain ignored. Setup creates Track 1-owned validators, indexes, time-series `signals` (14-day TTL) and `price_snapshots`; it does not replace other tracks' schemas. Fixtures upsert known synthetic IDs and refuse to overwrite non-fixture data. Avoid reseeding while someone is confirming choices.
+Fill the required block in `.env.example`. `.env` files remain ignored. Setup creates Track 1-owned validators, indexes, time-series `signals` (14-day TTL) and `price_snapshots`; it does not replace other tracks' schemas. Track 1 fixtures live in `fixtures/track1/lisbon/` (Track 2's pack is `fixtures/lisbon/`; ids never overlap). Fixtures upsert known synthetic IDs and refuse to overwrite non-fixture data. Avoid reseeding while someone is confirming choices.
 
 ## Run the demo
 
 Terminal 1:
 
 ```powershell
-.\.venv\Scripts\python.exe -m uvicorn track1_disruption.api:app --host 127.0.0.1 --port 8000
+.\.venv\Scripts\python.exe -m uvicorn track2_app.gateway.app:app --host 127.0.0.1 --port 8000
 ```
+
+The shared gateway mounts the Track 1 router unchanged (`track1_disruption.api:app` still runs Track 1 alone).
 
 Terminal 2:
 
@@ -33,7 +35,7 @@ npm.cmd ci --cache .npm-cache
 npm.cmd run dev
 ```
 
-Open **http://127.0.0.1:3000/b/lisbon-fixture-demo** and choose **Continue as demo traveler**. Trigger a delay in terminal 3:
+Open **http://127.0.0.1:3000/b/lisbon-fixture-demo/updates** and choose **Continue as demo traveler**. The shared trip board at **/b/lisbon-fixture-demo** shows the same disruption banners. Trigger a delay in terminal 3:
 
 ```powershell
 .\.venv\Scripts\python.exe scripts/simulate_disruption.py --trip trip_lisbon --type flight_delay --minutes 180

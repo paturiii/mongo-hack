@@ -11,6 +11,7 @@ import { VStack } from "@astryxdesign/core/VStack";
 import { Text } from "@astryxdesign/core/Text";
 import { Link } from "@astryxdesign/core/Link";
 import { DisruptionBanner } from "./DisruptionBanner";
+import "../../theme/wander.css";
 import type { Snapshot } from "./types";
 
 export function TripBoard({ slug, tripId, disruptionsOnly = false }: { slug?: string; tripId?: string; disruptionsOnly?: boolean }) {

@@ -1,22 +1,692 @@
 [
-  {
-    "_id": "link_museum",
-    "trip_id": "trip_lisbon",
-    "item_ref": "place_museum",
-    "kind": "monument_ticket",
-    "provider": "official",
-    "url": "https://www.lisboastorycentre.pt/",
-    "label": "Lisbon Story Centre tickets",
-    "for_date": "2026-03-14",
-    "validation": {
-      "status": "ok",
-      "ok": true
-    },
-    "price_hint": {
-      "amount": 8,
-      "currency": "EUR",
-      "as_of": "2026-03-10T12:00:00Z"
-    },
-    "fixture": true
+ {
+  "_id": "lk_flight",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "lk_flight",
+  "kind": "flight",
+  "provider": "google_flights",
+  "url": "https://www.google.com/travel/flights?q=LHR%20to%20LIS%202027-03-12",
+  "label": "Flights London → Lisbon (Mar 12)",
+  "is_official": false,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
   }
+ },
+ {
+  "_id": "lk_transfer",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "lk_transfer",
+  "kind": "transfer",
+  "provider": "official",
+  "url": "https://www.metrolisboa.pt/en/",
+  "label": "Airport → Alfama by metro (red + green line)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_stay_alfama",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_38",
+  "kind": "stay",
+  "provider": "booking",
+  "url": "https://www.booking.com/searchresults.html?ss=Alfama%2C+Lisbon&checkin=2027-03-12&checkout=2027-03-17&group_adults=2",
+  "label": "Stays in Alfama (Mar 12–17, 2 guests)",
+  "is_official": false,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_stay_bairro",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_39",
+  "kind": "stay",
+  "provider": "airbnb",
+  "url": "https://www.airbnb.com/s/Bairro-Alto--Lisbon/homes?checkin=2027-03-12&checkout=2027-03-17&adults=2",
+  "label": "Airbnb in Bairro Alto",
+  "is_official": false,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_jeronimos",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_00",
+  "kind": "monument_ticket",
+  "provider": "official",
+  "url": "https://www.museusemonumentos.pt/en/",
+  "label": "Jerónimos Monastery tickets (official)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_belem",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_01",
+  "kind": "monument_ticket",
+  "provider": "official",
+  "url": "https://www.museusemonumentos.pt/en/",
+  "label": "Belém Tower tickets (official)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_castelo",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_05",
+  "kind": "monument_ticket",
+  "provider": "official",
+  "url": "https://castelodesaojorge.pt/en/",
+  "label": "Castelo de São Jorge tickets (official)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_pena",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_35",
+  "kind": "monument_ticket",
+  "provider": "official",
+  "url": "https://www.parquesdesintra.pt/en/",
+  "label": "Pena Palace timed entry (official)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_regaleira",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_36",
+  "kind": "monument_ticket",
+  "provider": "official",
+  "url": "https://www.regaleira.pt/en",
+  "label": "Quinta da Regaleira tickets (official)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_sintra_train",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "lk_sintra_train",
+  "kind": "train",
+  "provider": "official",
+  "url": "https://www.cp.pt/passageiros/en",
+  "label": "Train Rossio → Sintra (CP)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_cascais_train",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "lk_cascais_train",
+  "kind": "train",
+  "provider": "official",
+  "url": "https://www.cp.pt/passageiros/en",
+  "label": "Train Cais do Sodré → Carcavelos (CP)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_lux",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_16",
+  "kind": "club_ticket",
+  "provider": "ra",
+  "url": "https://ra.co/clubs/2463",
+  "label": "Lux Frágil events (Resident Advisor)",
+  "is_official": false,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_musicbox",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_15",
+  "kind": "club_ticket",
+  "provider": "official",
+  "url": "https://www.musicboxlisboa.com/",
+  "label": "Musicbox lineup (official)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_clube_fado",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_09",
+  "kind": "restaurant",
+  "provider": "official",
+  "url": "https://www.clube-de-fado.com/",
+  "label": "Clube de Fado dinner reservation",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_mesa_frades",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_10",
+  "kind": "restaurant",
+  "provider": "official",
+  "url": "https://www.mesadefrades.com/",
+  "label": "Mesa de Frades reservation",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_ramiro",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_19",
+  "kind": "restaurant",
+  "provider": "official",
+  "url": "https://www.cervejariaramiro.pt/",
+  "label": "Cervejaria Ramiro (walk-in, queue)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_cevicheria",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_21",
+  "kind": "restaurant",
+  "provider": "official",
+  "url": "https://www.acevicheria.pt/",
+  "label": "A Cevicheria (walk-in)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_gulbenkian",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_30",
+  "kind": "monument_ticket",
+  "provider": "official",
+  "url": "https://gulbenkian.pt/museu/en/",
+  "label": "Gulbenkian Museum tickets (official)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_azulejo",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_31",
+  "kind": "monument_ticket",
+  "provider": "official",
+  "url": "https://www.museusemonumentos.pt/en/",
+  "label": "Tile Museum tickets (official)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_oceanario",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_32",
+  "kind": "monument_ticket",
+  "provider": "official",
+  "url": "https://www.oceanario.pt/en",
+  "label": "Oceanário tickets (official)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_maat",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_03",
+  "kind": "monument_ticket",
+  "provider": "official",
+  "url": "https://www.maat.pt/en",
+  "label": "MAAT tickets (official)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_tram28",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_34",
+  "kind": "bus",
+  "provider": "official",
+  "url": "https://www.carris.pt/en/",
+  "label": "Tram 28 + Viva Viagem card (Carris)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_lxfactory",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_29",
+  "kind": "tour",
+  "provider": "official",
+  "url": "https://lxfactory.com/en/",
+  "label": "LX Factory (official)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_timeout",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_13",
+  "kind": "restaurant",
+  "provider": "official",
+  "url": "https://www.timeoutmarket.com/lisboa/en/",
+  "label": "Time Out Market",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_return",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "lk_return",
+  "kind": "flight",
+  "provider": "google_flights",
+  "url": "https://www.google.com/travel/flights?q=LIS%20to%20LHR%202027-03-17",
+  "label": "Flights Lisbon → London (Mar 17)",
+  "is_official": false,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_pastéis",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_02",
+  "kind": "restaurant",
+  "provider": "official",
+  "url": "https://pasteisdebelem.pt/en/",
+  "label": "Pastéis de Belém",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_manteigaria",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_22",
+  "kind": "restaurant",
+  "provider": "official",
+  "url": "https://manteigaria.com/",
+  "label": "Manteigaria",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_panteao",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_12",
+  "kind": "monument_ticket",
+  "provider": "official",
+  "url": "https://www.museusemonumentos.pt/en/",
+  "label": "Panteão Nacional tickets (official)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_se",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "pl_lis_07",
+  "kind": "monument_ticket",
+  "provider": "official",
+  "url": "https://www.sedelisboa.pt/",
+  "label": "Lisbon Cathedral (official)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "lk_ferry",
+  "trip_id": "trip_fixture_lisbon",
+  "item_ref": "lk_ferry",
+  "kind": "transfer",
+  "provider": "official",
+  "url": "https://ttsl.pt/en/",
+  "label": "Ferry Cais do Sodré ↔ Cacilhas (Transtejo)",
+  "is_official": true,
+  "price_hint": null,
+  "for_date": null,
+  "party_size": 2,
+  "validation": {
+   "status": 200,
+   "checked_at": {
+    "$date": "2026-11-14T12:00:00Z"
+   },
+   "ok": true
+  },
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ }
 ]

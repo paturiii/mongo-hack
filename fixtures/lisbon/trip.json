@@ -1,46 +1,69 @@
 {
-  "_id": "trip_lisbon",
-  "user_id": "user_lisbon_fixture",
-  "session_id": "ses_lisbon",
-  "origin": {
-    "name": "London"
+ "_id": "trip_fixture_lisbon",
+ "user_id": "usr_fixture_ana",
+ "session_id": "ses_fixture_lisbon",
+ "origin": {
+  "name": "London",
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -0.1276,
+    51.5072
+   ]
+  }
+ },
+ "destination": {
+  "name": "Lisbon",
+  "country": "Portugal",
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1393,
+    38.7223
+   ]
+  }
+ },
+ "dates": {
+  "start": {
+   "$date": "2027-03-12T00:00:00Z"
   },
-  "destination": {
-    "name": "Lisbon",
-    "country": "PT",
-    "geo": {
-      "type": "Point",
-      "coordinates": [
-        -9.139,
-        38.71
-      ]
-    }
+  "end": {
+   "$date": "2027-03-17T00:00:00Z"
   },
-  "dates": {
-    "start": "2026-03-12",
-    "end": "2026-03-17",
-    "flexible": false
-  },
-  "travelers": 2,
-  "profile": {
-    "interests": [
-      "food",
-      "history"
-    ],
-    "pace": "relaxed"
-  },
-  "status": "planned",
-  "board_id": "b_lisbon",
-  "legs": [
-    {
-      "kind": "flight",
-      "carrier": "TP",
-      "number": "1351",
-      "from": "LHR",
-      "to": "LIS",
-      "dep_at": "2026-03-12T09:00:00+00:00",
-      "arr_at": "2026-03-12T11:30:00+00:00"
-    }
+  "flexible": false
+ },
+ "travelers": 2,
+ "legs": [
+  {
+   "kind": "flight",
+   "carrier": "TP",
+   "number": "TP1351",
+   "from": "LHR",
+   "to": "LIS",
+   "dep_at": {
+    "$date": "2027-03-12T10:05:00Z"
+   },
+   "arr_at": {
+    "$date": "2027-03-12T12:45:00Z"
+   }
+  }
+ ],
+ "profile": {
+  "budget_band": "mid",
+  "pace": "relaxed",
+  "interests": [
+   "food",
+   "nightlife"
   ],
-  "fixture": true
+  "dealbreakers": [],
+  "vibe": [
+   "historic",
+   "lively"
+  ],
+  "dietary": [],
+  "mobility": null,
+  "nightlife_intensity": "big_night_out"
+ },
+ "status": "ready_for_research",
+ "board_id": null
 }

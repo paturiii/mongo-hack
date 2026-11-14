@@ -1,0 +1,54 @@
+[
+ {
+  "_id": "mem_fx_1",
+  "user_id": "usr_fixture_ana",
+  "kind": "pref",
+  "key": "pace",
+  "value": "relaxed",
+  "text": "Prefers a relaxed pace",
+  "confidence": 0.9,
+  "source": "answer",
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "mem_fx_2",
+  "user_id": "usr_fixture_ana",
+  "kind": "pref",
+  "key": "budget_band",
+  "value": "mid",
+  "text": "Usually travels mid-range",
+  "confidence": 0.9,
+  "source": "answer",
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "mem_fx_3",
+  "user_id": "usr_fixture_ana",
+  "kind": "episode",
+  "key": null,
+  "value": null,
+  "text": "Porto 2026: loved tascas and fado, found the Douro day trip rushed",
+  "confidence": 0.8,
+  "source": "rating",
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "mem_fx_4",
+  "user_id": "usr_fixture_ana",
+  "kind": "feedback",
+  "key": "rebook_mode",
+  "value": "train",
+  "text": "Prefers trains over buses when rebooking",
+  "confidence": 0.7,
+  "source": "disruption_choice",
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ }
+]

@@ -9,7 +9,7 @@ test("live banner, playable voice, scoped confirmed fix, mobile/dark/keyboard", 
   const errors: string[] = [];
   page.on("pageerror", error => errors.push(error.message));
   await page.setViewportSize({ width: 375, height: 812 });
-  await page.goto("/b/lisbon-fixture-demo");
+  await page.goto("/b/lisbon-fixture-demo/updates");
   await expect(page.getByRole("heading", { name: "A few days in Lisbon" })).toBeVisible();
   await expect(page.getByText("Live updates connected", { exact: true })).toBeVisible({ timeout: 15_000 });
   await page.getByRole("button", { name: "Continue as demo traveler" }).click();
@@ -18,7 +18,7 @@ test("live banner, playable voice, scoped confirmed fix, mobile/dark/keyboard", 
   const minutes = 300 + Math.floor(Date.now() / 1000) % 200;
   const summary = `SIMULATED: TP1351 delayed ${minutes} minutes`;
   const root = path.resolve("..");
-  const simulation = run(path.join(root, ".venv", "Scripts", "python.exe"), [
+  const simulation = run(path.join(root, ".venv", process.platform === "win32" ? "Scripts" : "bin", process.platform === "win32" ? "python.exe" : "python"), [
     "scripts/simulate_disruption.py", "--type", "flight_delay", "--minutes", String(minutes),
   ], { cwd: root, timeout: 35_000 });
   await expect(page.getByText(summary, { exact: true })).toBeVisible({ timeout: 30_000 });

@@ -1,0 +1,46 @@
+{
+  "_id": "trip_lisbon",
+  "user_id": "user_lisbon_fixture",
+  "session_id": "ses_lisbon",
+  "origin": {
+    "name": "London"
+  },
+  "destination": {
+    "name": "Lisbon",
+    "country": "PT",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        -9.139,
+        38.71
+      ]
+    }
+  },
+  "dates": {
+    "start": "2026-03-12",
+    "end": "2026-03-17",
+    "flexible": false
+  },
+  "travelers": 2,
+  "profile": {
+    "interests": [
+      "food",
+      "history"
+    ],
+    "pace": "relaxed"
+  },
+  "status": "planned",
+  "board_id": "b_lisbon",
+  "legs": [
+    {
+      "kind": "flight",
+      "carrier": "TP",
+      "number": "1351",
+      "from": "LHR",
+      "to": "LIS",
+      "dep_at": "2026-03-12T09:00:00+00:00",
+      "arr_at": "2026-03-12T11:30:00+00:00"
+    }
+  ],
+  "fixture": true
+}
