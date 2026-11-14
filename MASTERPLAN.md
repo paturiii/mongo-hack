@@ -1,7 +1,7 @@
 # 🧭 Wander — End-to-end travel agent: asks the right questions, reads what travelers really think, hands you one board of booking links, and keeps the trip on track when things go wrong
 
 ### Architecture + build spec · 3 independent tracks · zero-blocking split
-**Stack:** LangGraph · **MongoDB Atlas (required, the backbone)** · Voyage AI · Claude API · MCP · ElevenLabs (voice) · LangSmith · **Astryx** (Meta's design system, all UI)
+**Stack:** LangGraph · **MongoDB Atlas (required, the backbone)** · Voyage AI · OpenRouter (GPT-6.1 Terra) · ElevenLabs (voice) · LangSmith · **Astryx** (Meta's design system, all UI)
 
 ---
 
@@ -17,11 +17,10 @@ Wander:
 5. **Pushes everything to one Shared Trip Board**, a live page updated by MongoDB change streams. You click and book. Wander never touches your card.
 6. **Watches the trip while you travel (disruption management).** It covers flight delays and cancellations, strikes, weather, closures, cancelled events and dead links. When something breaks it alerts you (board banner, email, ElevenLabs voice briefing) with **ready-to-click fixes**, and replans only the affected days.
 
-It ships on **two surfaces from one backend and one account**:
-- **Plugin:** a hosted remote MCP server (`https://mcp.wander.app/mcp`) for Claude, ChatGPT or Cursor.
-- **Native app:** Wander's own Next.js app built on **Astryx**, with its own server-side Claude key and ElevenLabs voice.
+**Phase 1 (this build): native app only.** Wander's own Next.js app built on **Astryx**, with its server-side LLM key and ElevenLabs voice. Everything runs on `localhost`, so no public URL is needed.
+**Phase 2 (later): plugin.** A remote MCP server for Claude, ChatGPT or Cursor on the same backend and account (§15). Phase 1 keeps the data model ready for it, but nobody builds it now.
 
-Both surfaces end the same way: **"Your board is ready → wander.app/b/xyz"**.
+Every flow ends the same way: **"Your board is ready → /b/xyz"**.
 
 ---
 
@@ -40,19 +39,18 @@ Both surfaces end the same way: **"Your board is ready → wander.app/b/xyz"**.
 | Env var | Required? | Used by | Where to get it / sponsor perk |
 |---|---|---|---|
 | `MONGODB_URI`, `MONGODB_DB=wander` | **🔴 Required, app won't boot** | All tracks | Atlas → Database → Connect → Drivers. One DB user per member. |
-| `LLM_PROVIDER`, `LLM_API_KEY`, `LLM_MODEL_FAST`, `LLM_MODEL_SMART` (`LLM_BASE_URL` optional) | 🔴 Required | Intake graph, research extraction, planner, disruption triage, native chat | Provider-agnostic, two tiers. **FAST** (cheap, high-volume: extraction, classification, triage) defaults to `claude-haiku-5-5`. **SMART** (best reasoning: intake, planning, refine, chat) defaults to `claude-sonnet-5-5`. Any provider with structured output works. |
+| `LLM_PROVIDER=openrouter`, `LLM_BASE_URL`, `LLM_API_KEY`, `LLM_MODEL_FAST`, `LLM_MODEL_SMART` | 🔴 Required | Intake graph, research extraction, planner, disruption triage, native chat | openrouter.ai/keys (OpenAI-compatible API). Both tiers use **GPT-6.1 Terra** (`openai/gpt-6.1-terra`). **FAST** = high-volume extraction, classification, triage. **SMART** = intake, planning, refine, chat. Swap either tier by env only. |
 | `VOYAGE_API_KEY` | 🔴 Required | Embeddings + reranker (opinions, places, memory) | **200M free tokens per participant.** Sign up with email → Organization → API Keys (shown once, save it). **Add a payment method** to unlock Tier 1 rate limits; nothing is charged within the allowance. `pip install voyageai`. Voyage team is on-site for top-ups. |
 | `SEARCH_PROVIDER` + `SEARCH_API_KEY` | 🔴 Required for live research (not for fixtures/seeded demo) | Opinion Scouts, ticket/event discovery, strike/closure news | Tavily (recommended: `include_domains`, news topic) / Exa / Brave. Pick one at H0. |
 | `LANGSMITH_API_KEY`, `LANGSMITH_TRACING=true`, `LANGSMITH_PROJECT=wander` | 🟡 Strongly recommended | Tracing for all graphs, evals | **$50 LangSmith credits + Deployments access.** Redeem via the LangChain form **within 10 days of the hackathon** (event name = this hackathon). A card is needed to display credits and is not charged. |
-| `ELEVENLABS_API_KEY`, `ELEVENLABS_AGENT_ID`, `ELEVENLABS_VOICE_ID` | 🟡 Needed for voice features | Voice intake agent (Track 2) + voice disruption briefings (Track 1) | **1 month Creator plan free (131k credits).** Join the ElevenLabs Discord → `#coupon-codes` → "Start Redemption" → pick this event → use your Cerebral Valley registration email. **Only works if you checked in by 11 AM.** Fill the hacker feedback form after the event. |
+| `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID`, `ELEVENLABS_AGENT_ID` | 🟡 Needed for voice features | Voice disruption briefings (Track 1, key + voice ID) + voice intake agent (Track 2, + agent ID) | **The key must have permissions.** Unrestricted, or at least Text to Speech, Voices read, Models read, Conversational AI write, User read; a restricted key returns `401 missing_permissions`. **Voice ID:** pick one in Voices → copy ID. **Agent ID:** Conversational AI → create agent "Wander" with the same voice. Uses **client tools** (run in the browser), so no public URL is needed. **1 month Creator plan free (131k credits).** Join the ElevenLabs Discord → `#coupon-codes` → "Start Redemption" → pick this event → use your Cerebral Valley registration email. **Only works if you checked in by 11 AM.** Fill the hacker feedback form after the event. |
 | `PLACES_PROVIDER` + `PLACES_API_KEY` | 🟡 (OSM needs no key) | PlaceFinder, closure checks | Google Places API (New) / Foursquare / `osm` (Overpass, keyless fallback) |
 | `TICKETMASTER_API_KEY` | 🟡 | NightlifeFinder, event-cancellation monitor | developer.ticketmaster.com (free) |
 | `FLIGHT_STATUS_PROVIDER` + `FLIGHT_STATUS_API_KEY` | 🟡 Needed for live flight disruption | Track 1 flight monitor | AviationStack (free tier) or FlightAware AeroAPI. The simulator works without it. |
 | Weather | none | Track 1 weather monitor | **Open-Meteo**, free, no key |
-| `RESEND_API_KEY` | 🟢 Optional | Disruption + "board ready" emails, magic-link auth | resend.com (free tier) |
-| `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` | 🟡 | Native sign-in | Google Cloud console (OAuth client) |
-| `JWT_SECRET`, `OAUTH_ISSUER`, `TOKEN_ENCRYPTION_KEY` | 🔴 Required (generate locally) | Gateway auth, MCP OAuth, BYO-key encryption | `openssl rand -hex 32` |
-| `PUBLIC_BASE_URL` + `NGROK_AUTHTOKEN` | 🔴 for MCP plugin demo | MCP connector + board links | ngrok reserved domain |
+| `RESEND_API_KEY` | 🟢 Optional | Disruption + "board ready" emails | resend.com (free tier) |
+| Auth | none | Native app | **Plain MongoDB auth, no keys:** email + password (stdlib `hashlib.scrypt`) in `users`, opaque session tokens in `auth_sessions` (TTL 30d). |
+| `PUBLIC_BASE_URL` + `NGROK_AUTHTOKEN` | ⏸ Phase 2 only | MCP plugin (§15) | Not needed now. Everything runs on `localhost`. |
 
 **Modes:** `WANDER_MODE=fixtures` (Mongo + Anthropic + Voyage only, so each track can build alone), `seeded` (adds pre-seeded corpus, used for the stage demo) or `live` (all keys).
 
@@ -81,9 +79,10 @@ Both surfaces end the same way: **"Your board is ready → wander.app/b/xyz"**.
 
 ```
  ┌──── TRACK 2 · BASELINE APP + MEMORY ──────────────────────────────────────────┐
- │  Claude/ChatGPT/Cursor ── remote MCP ─┐      Native app (Next.js + Astryx)     │
- │                                       ▼      chat · question cards · voice(11L)│
- │                 Gateway (FastAPI): /mcp /api /auth /b/{slug} (SSE)             │
+ │  Native app (Next.js + Astryx): chat · question cards · voice (11L client tools)│
+ │                                       ▼                                        │
+ │                 Gateway (FastAPI): /api /auth /b/{slug} (SSE)                  │
+ │                 [Phase 2: /mcp plugin mounts here, same backend]               │
  │  Intake graph: understand → gap_analysis → ASK ⏸ → trip.status=ready_for_research│
  │  Memory: MongoDBStore prefs + episodic trip memory (Voyage) → pre-fills slots  │
  └────────┬───────────────────────────────▲──────────────────────────▲────────────┘
@@ -132,7 +131,7 @@ Each track has **fixtures** (§6.3), so it is demo-able alone from hour 0. Integ
 | **Time-series collections** | `price_snapshots`, `signals` (flight status, weather readings) | 1 |
 | **Schema validation (`$jsonSchema`)** | Enforces §6 contracts so no track breaks another | 2 (owns setup) |
 | **Transactions** | Board version + trip status + audit; disruption resolve + refine request | 3, 1 |
-| **LangGraph `MongoDBSaver` + `MongoDBStore`** | Every graph is resumable (plugin → app handoff); long-term traveler memory | 1, 2, 3 |
+| **LangGraph `MongoDBSaver` + `MongoDBStore`** | Every graph is resumable (survives restarts; enables Phase 2 plugin handoff); long-term traveler memory | 1, 2, 3 |
 | **Atlas Search autocomplete** | Destination autocomplete | 2 |
 | **MongoDB MCP Server (official)** | Dev/admin data inspection in Claude during the build | 2 |
 
@@ -212,9 +211,13 @@ Rules:
 
 ```js
 // users  (T2)
-{ _id, email, name, plan: "free"|"pro", auth: { provider, sub },
+{ _id, email /* unique */, name, plan: "free"|"pro",
+  password_hash /* scrypt: salt$hash */, api_key_hashes: [/* Phase 2: sha256 of wk_… keys for MCP; leave empty */],
   connected_clients: ["claude","chatgpt","cursor","native"],
   notify: { email: true, voice: false, phone_e164 }, created_at }
+
+// auth_sessions  (T2) — login tokens, httpOnly cookie
+{ _id: /* sha256(token) */, user_id, created_at, expires_at /* TTL 30d */ }
 
 // sessions  (T2)
 { _id: "ses_…", user_id, surface: "mcp"|"native"|"voice", thread_id, trip_id,
@@ -318,7 +321,8 @@ board:      v1 ─► v2 … (each refine = new version, atomic transaction)
 `/fixtures/lisbon/`: `user.json`, `session.json`, `questions.json`, `trip.json` (with a TP1351 leg), `research_jobs.json`, `places.json` (40), `opinions.json` (80, mixed source types), `links.json` (30), `board.json`, `memories.json`, `refine_requests.json`, `watches.json`, `signals.json`, `disruptions.json`.
 `scripts/load_fixtures.py --city lisbon [--only a,b]` loads them **into Atlas** (Mongo is still required). Track 2 writes the fixtures in the first 90 min. Until then, use the schemas directly.
 
-### 6.4 MCP tool surface (Track 2 exposes; tools only read/write Mongo)
+### 6.4 Gateway API surface (Track 2; also the future MCP tool list)
+The native app calls these as REST endpoints (`/api/...`) in Phase 1. Phase 2 exposes the same functions as MCP tools, so keep them as thin functions over Mongo.
 | Tool | Purpose | Returns |
 |---|---|---|
 | `start_trip(prompt)` | Create session + trip, run intake | `session_id`, first `questions` batch (memory-prefilled) |
@@ -443,7 +447,7 @@ Legend: 🔴 must-have for demo · 🟡 should-have · 🟢 stretch · **Est** i
 
 ### 🏠 8.2 Track 2: Baseline App + Memory
 
-**Goal:** The product people touch: DB foundation, accounts, intake conversation, question cards, live board, MCP plugin, voice, and long-term memory that makes Wander feel like it knows you. **Demo-able solo** on `boards`/`research_jobs`/`alerts` fixtures.
+**Goal:** The product people touch: DB foundation, accounts, intake conversation, question cards, live board, voice, and long-term memory that makes Wander feel like it knows you. **Demo-able solo** on `boards`/`research_jobs`/`alerts` fixtures.
 
 #### APP-01 🔴 Atlas setup + env gate + schemas + indexes · 2h
 - `shared/config.py` fail-fast on missing/unreachable `MONGODB_URI` (§1.1); `scripts/check_env.py`
@@ -455,11 +459,11 @@ Legend: 🔴 must-have for demo · 🟡 should-have · 🟢 stretch · **Est** i
 - All files in §6.3, schema-valid, real Lisbon places, mixed-source opinions clearly marked as fixtures
 - **AC:** Tracks 1 and 3 can run their full flows on fixtures alone
 
-#### APP-03 🔴 Gateway + auth · 2h
-- FastAPI: `/api/*`, `/mcp` mount, `/b/{slug}` SSE, `/auth/*`
-- Google OAuth + email magic link (Resend); **OAuth 2.1 endpoints for MCP** ("Add custom connector" sign-in)
-- Fallback: API-key header auth for the demo connector
-- **AC:** same `users` record whether signed in via app or via Claude connector
+#### APP-03 🔴 Gateway + simple Mongo auth · 1.5h
+- FastAPI: `/api/*` (functions from §6.4), `/b/{slug}` SSE, `/auth/{signup,login,logout}`
+- **No OAuth, no third-party auth.** Email + password → `hashlib.scrypt` hash in `users`; login creates a random token (`secrets.token_urlsafe`), stores `sha256(token)` in `auth_sessions` (TTL 30d), sets httpOnly cookie
+- Boards stay public-by-link (unguessable slug), no auth needed to view
+- **AC:** signup → login → `/api` calls resolve to the same `users` record; expired session rejected
 
 #### APP-04 🔴 Intake graph: understand + question engine · 3.5h
 - Graph §7.1 with `MongoDBSaver`; `understand` → structured partial trip (origin, destination geocode, dates, legs, inferred interests; ambiguous = unknown, never guessed)
@@ -469,7 +473,7 @@ Legend: 🔴 must-have for demo · 🟡 should-have · 🟢 stretch · **Est** i
 
 #### APP-05 🔴 Native app shell on Astryx · 3h
 - Next.js (React 19) + Astryx `theme-neutral` + Wander token overrides; app shell, nav, auth screens
-- Chat stream (server-side Claude key for conversational layer); `QuestionCard` (single/multi/date range/number/Other) from Astryx form components
+- Chat stream (server-side LLM key for conversational layer); `QuestionCard` (single/multi/date range/number/Other) from Astryx form components
 - Progress view from `research_jobs` counts: "Reading r/lisbon, TripAdvisor forums… 41 opinions · Finding tickets… 3/5"
 - Follows §5.4 (CLI-checked components, tokens only, dark mode, 375px)
 - **AC:** full intake flow on fixtures; design review checklist (§5.4) passes
@@ -481,36 +485,28 @@ Legend: 🔴 must-have for demo · 🟡 should-have · 🟢 stretch · **Est** i
 - Live via change stream → SSE on `boards` + `alerts` (renders Track 1's `DisruptionBanner` slot)
 - **AC:** editing a fixture board or inserting a fixture alert in Compass updates the open page within 2 s
 
-#### APP-07 🔴 Remote MCP server (the plugin) · 3h
-- Streamable HTTP MCP at `/mcp`, tools §6.4 (official MCP Python SDK); elicitation for questions where supported
-- Tools only read/write Mongo; every terminal response includes `board_url`
-- **AC:** add `https://<ngrok>/mcp` as a custom connector in Claude → `start_trip` → answer → board URL (fixtures)
-
 #### APP-08 🔴 Long-term memory · 2.5h
 - `MongoDBStore` namespaces `(user_id,"prefs")`, `(user_id,"episodes")` mirrored in `memories` with Voyage embeddings + vector index
 - Write: answers → prefs; refines + disruption choices → feedback; trip end → episode summary
 - Read: `load_memory` pre-fills slots (lowers uncertainty) and vector-recalls relevant episodes ("last time you found Sintra rushed")
-- User control: "What Wander remembers" page (Astryx list) with edit/forget; MCP `remember`/`forget`
+- User control: "What Wander remembers" page (Astryx list) with edit/forget via `/api/memory`
 - **AC:** second trip for same user skips pace/budget and says "using your usual: relaxed, mid-range"; forgetting a pref makes it asked again
 
-#### APP-09 🟡 Voice intake (ElevenLabs Agent) · 2h
-- ElevenLabs Agent widget in native app; server tools `get_open_questions` / `submit_answers` read and write the same `questions` doc
-- Voice ID shared with Track 1 briefings (`ELEVENLABS_VOICE_ID`) so Wander sounds consistent
-- **AC:** complete question phase by voice; answers land in `questions.answers`
+#### APP-07 🟡 Voice intake (ElevenLabs Agent) · 2h
+- ElevenLabs Agent in the native app via `@elevenlabs/react` (`useConversation`). The browser gets a signed URL from `/api/voice/session` (the gateway calls ElevenLabs with the key), so the API key never reaches the browser
+- **Client tools** `get_open_questions` / `submit_answers` run in the browser and call our `/api` with the user's cookie. ElevenLabs never calls our server, so **no public URL is needed**
+- Agent prompt: "ask exactly the open questions, in order, confirm answers"; voice = `ELEVENLABS_VOICE_ID` (shared with Track 1 briefings)
+- **AC:** complete question phase by voice on localhost; answers land in `questions.answers`
 
-#### APP-10 🟡 Plugin ↔ app handoff · 1h
-- "Continue in Wander" link from MCP results; same session, same board slug
-- **AC:** start in Claude, refine in native app, same board
-
-#### APP-11 🟡 Destination autocomplete · 1h
+#### APP-09 🟡 Destination autocomplete · 1h
 - Atlas Search autocomplete over cities + places
 - **AC:** "lis" → Lisbon, Lisburn ranked sensibly
 
-#### APP-12 🟢 BYO key + usage metering · 1.5h
-- Optional own Anthropic key (encrypted with `TOKEN_ENCRYPTION_KEY`); otherwise per-user quota in `usage`
-- **AC:** quota exceeded → friendly upsell; BYO key bypasses quota
+#### APP-10 🟢 Usage metering · 1h
+- Per-user LLM call quota tracked in `usage`
+- **AC:** quota exceeded → friendly upsell message
 
-#### APP-13 🟢 Board export + MongoDB MCP dev setup · 1h
+#### APP-11 🟢 Board export + MongoDB MCP dev setup · 1h
 - `.ics` per timed item, copy as text, print view; official MongoDB MCP server (read-only) configured for the team
 - **AC:** .ics imports into Google Calendar; "how many opinions per source type?" answered from Claude
 
@@ -599,7 +595,7 @@ Legend: 🔴 must-have for demo · 🟡 should-have · 🟢 stretch · **Est** i
 | I-01 🔴 | H0 (30 min) | Freeze §6 contracts; pick search/places/flight providers; create Atlas cluster + per-member DB users; everyone redeems perks (ElevenLabs before 11 AM, Voyage key + payment method, LangSmith) | `check_env.py` green on all 3 laptops |
 | I-02 🔴 | H8 | **App → Research:** T2 intake sets `ready_for_research`, T3 produces a live Lisbon board | One live board from a real conversation |
 | I-03 🔴 | H11 | **Board → Disruption:** T1 builds watches from T3's board; simulated strike → T3 refine → board v2 renders live in T2 | Banner + updated day within 30 s |
-| I-04 🔴 | H14 | **Plugin + memory end-to-end** in Claude against live backend; second trip uses memory, including a disruption-learned pref | Board URL from Claude; fewer questions on trip 2 |
+| I-04 🔴 | H14 | **Native app + memory + voice end-to-end** against live backend; second trip uses memory, including a disruption-learned pref | Board from a voice/text intake; fewer questions on trip 2 |
 | I-05 🔴 | H18 | Feature freeze; demo script ×2 from clean seed | Passes twice |
 
 ---
@@ -613,6 +609,7 @@ Legend: 🔴 must-have for demo · 🟡 should-have · 🟢 stretch · **Est** i
 | 6–10 | D-04, D-05 | APP-05, APP-06 | R-06, R-07, R-09, R-10 |
 | 10–14 | D-06, D-08 | APP-07, APP-08 | R-08, R-11, R-12 |
 | 14–18 | D-09, D-10, D-11 | APP-09, APP-10, APP-11, design polish | R-13, R-14, reseed 3 cities |
+| later | | Phase 2 plugin (§15) | |
 | 18–24 | Bug bash · demo rehearsal · backup video · README · sponsor feedback forms | | |
 
 ---
@@ -625,7 +622,7 @@ wander/
 │   ├── run.py  watchlist.py  monitors/{flight,weather,area,venue,event,link,price}.py
 │   ├── impact.py  playbooks/  resolve.py  alerts/{board,email,voice}.py
 ├── track2_app/            # Track 2
-│   ├── gateway/ (FastAPI: api, mcp, auth, board SSE)
+│   ├── gateway/ (FastAPI: api, auth, board SSE, voice session; Phase 2 adds mcp/)
 │   ├── intake/ (graph.py, understand.py, question_engine/)
 │   └── memory/ (store.py, recall.py)
 ├── track3_research/       # Track 3
@@ -651,19 +648,19 @@ wander/
 ## 11. Environment
 
 The full template is in **`.env.example`** at the repo root. Copy it to `.env` (gitignored) and run `scripts/check_env.py`.
-Required: `MONGODB_URI`, `MONGODB_DB`, `LLM_PROVIDER`, `LLM_API_KEY`, `LLM_MODEL_FAST`, `LLM_MODEL_SMART`, `VOYAGE_API_KEY`, `JWT_SECRET`, `TOKEN_ENCRYPTION_KEY`, `OAUTH_ISSUER`, `WANDER_MODE`. Everything else unlocks live research, disruption, voice, auth or tracing (see §1.2).
+Required: `MONGODB_URI`, `MONGODB_DB`, `LLM_PROVIDER`, `LLM_API_KEY`, `LLM_MODEL_FAST`, `LLM_MODEL_SMART`, `VOYAGE_API_KEY`, `WANDER_MODE`. Everything else unlocks live research, disruption, voice, auth or tracing (see §1.2).
 
 ---
 
 ## 12. Demo script (3 min)
 
 1. **(0:00) Hook:** "Planning a trip is 40 tabs of research, and the trip still goes sideways. Wander reads what travelers actually say, hands you one board of links, and fixes the plan when things break."
-2. **(0:15) Plugin in Claude:** *"Lisbon, March 12–17, two of us, food and nightlife, flying TP1351."* Wander asks 4 sharp questions. It skipped budget and pace: *"using your usual: mid-range, relaxed"* (memory).
+2. **(0:15) Native app, by voice:** *"Lisbon, March 12–17, two of us, food and nightlife, flying TP1351."* Wander asks 4 sharp questions out loud and as tappable cards. It skipped budget and pace: *"using your usual: mid-range, relaxed"* (memory).
 3. **(0:45) Research:** "Reading r/lisbon, TripAdvisor forums, 6 blogs… 112 opinions · finding tickets…". Show `research_jobs` flipping live in Atlas.
 4. **(1:10) Board:** 5 days clustered on a map; chips like *"Reddit + forums agree: go before 10am"*; checklist from flight → transfer → stay → Sintra train → Pena official tickets → club night → reservations. Clean Astryx UI, dark mode.
 5. **(1:40) Disruption:** run `simulate_disruption.py --type flight_delay --minutes 180`. The board banner slides in, the phone plays the ElevenLabs briefing, and you tap "Move dinner to tomorrow". Only day 1 changes, live.
 6. **(2:15) Under the hood:** `$rankFusion` + Voyage rerank, `$geoNear` clustering, `$geoWithin` impact, change-stream queues, time-series signals, LangSmith traces of 3 graphs.
-7. **(2:45) Close:** "Plan, book, travel: one board, two surfaces, and it watches your back. You just click."
+7. **(2:45) Close:** "Plan, book, travel: one board, and it watches your back. Next up: the same brain as a plugin inside Claude and ChatGPT."
 
 ---
 
@@ -678,7 +675,7 @@ Required: `MONGODB_URI`, `MONGODB_DB`, `LLM_PROVIDER`, `LLM_API_KEY`, `LLM_MODEL
 | Flight API quota / no live delays | Simulator (D-07) drives the demo | 1 |
 | False-positive disruptions | Require evidence URL + severity threshold; user can dismiss; never auto-replan without a tap | 1 |
 | Deep-link formats change | Validator (R-09, D-09) + fallback to provider search page | 3, 1 |
-| MCP OAuth fiddly | Start APP-03/07 early; API-key header fallback | 2 |
+| ElevenLabs key restricted (`401 missing_permissions`) | Use an unrestricted key or enable TTS, Voices, Models, ConvAI, User permissions | 1, 2 |
 | UI looks vibe-coded | Astryx-only rule (§5.4) + design checklist in PR template | 2, 1 |
 | ElevenLabs coupon missed | Redeem before 11 AM check-in deadline at I-01 | All |
 | LLM latency | Parallel jobs; 90 s research timeout; stream progress; seeded corpus | 3 |
@@ -690,10 +687,25 @@ Required: `MONGODB_URI`, `MONGODB_DB`, `LLM_PROVIDER`, `LLM_API_KEY`, `LLM_MODEL
 
 - [ ] `check_env.py` green; app refuses to boot without MongoDB creds
 - [ ] All 🔴 tickets merged; I-01 → I-05 passed
-- [ ] Works as a **Claude custom connector** and in the **native app**, same account, same board
+- [ ] Full flow in the **native app** on localhost: text or voice intake → board → disruption → fix
 - [ ] Clarifying questions are few, sharp, tappable, with *why*, and **memory visibly reduces them on trip 2**
 - [ ] Every board item has a source (≥1 opinion source type or provider); every bookable item has a validated link, door to door
 - [ ] Simulated disruption → alert (banner + email + voice) → one-tap fix → partial replan, live
 - [ ] UI is 100% Astryx components/tokens, light + dark, mobile
 - [ ] MongoDB features in §4 visible in the demo or README
 - [ ] Backup video + README + sponsor feedback forms (ElevenLabs, LangChain, Voyage) done
+
+---
+
+## 15. Phase 2 (later): the plugin
+
+Not built now. Phase 1 already makes it cheap:
+- §6.4 functions are thin wrappers over Mongo, so they become MCP tools 1:1.
+- Graphs resume from Mongo state, so a trip can start in Claude and continue in the app.
+
+| ID | What | AC |
+|---|---|---|
+| P-01 | Remote MCP server at `/mcp` (official MCP Python SDK, streamable HTTP), tools = §6.4; elicitation for questions where supported | `start_trip` → answer → board URL from Claude |
+| P-02 | Per-user API keys: "Create API key" in app → `wk_…` shown once, `sha256` in `users.api_key_hashes`; connector URL `https://<host>/mcp?key=wk_…` or `Authorization: Bearer` | Same `users` record from app and connector; key revocable |
+| P-03 | Public URL: `PUBLIC_BASE_URL` via ngrok static domain (dev) or Railway (deploy) | Connector reachable from claude.ai |
+| P-04 | Handoff: "Continue in Wander" link in MCP results; same session, same board slug | Start in Claude, refine in app |

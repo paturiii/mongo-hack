@@ -5,7 +5,7 @@ Source of truth: MASTERPLAN.md. If this file and the plan disagree, the plan win
 Three tracks, fully independent. Tracks talk ONLY through MongoDB collections (MASTERPLAN §6).
 
   Track 1 - Disruption Management    tickets D-01..D-11    folder track1_disruption/
-  Track 2 - Baseline App + Memory    tickets APP-01..APP-13 folder track2_app/ + web/ shell
+  Track 2 - Baseline App + Memory    tickets APP-01..APP-11 folder track2_app/ + web/ shell
   Track 3 - Research + Planning      tickets R-01..R-15    folder track3_research/
 
 ----------------------------------------------------------------
@@ -19,7 +19,7 @@ STEP 0 - BEFORE THE EVENT CLOCK (everyone, ~20 min)
     -> add payment method (unlocks Tier 1 limits, not charged within 200M tokens).
 [ ] LangSmith: redeem $50 credits via the LangChain form (hackathon name as event).
     Add a card to see credits (not charged). Must be done within 10 days.
-[ ] LLM provider key for the backend (default: Anthropic).
+[ ] OpenRouter API key (openrouter.ai/keys) for the backend (model: openai/gpt-6.1-terra, both tiers).
 [ ] MongoDB Atlas: get invited to the shared project. Create YOUR OWN database
     user (readWrite on db "wander"). Never share passwords. Add your IP.
 
@@ -32,7 +32,6 @@ STEP 1 - LOCAL SETUP (everyone)
      MONGODB_URI, MONGODB_DB=wander
      LLM_PROVIDER, LLM_API_KEY, LLM_MODEL_FAST, LLM_MODEL_SMART
      VOYAGE_API_KEY
-     JWT_SECRET and TOKEN_ENCRYPTION_KEY  (openssl rand -hex 32, each)
      WANDER_MODE=fixtures
    The app REFUSES TO START without a reachable MONGODB_URI. No local fallback.
 4. python -m venv .venv && source .venv/bin/activate   (Python 3.12+)
@@ -110,11 +109,13 @@ in <=30 s -> tap option -> refine_request written.
 
 === TRACK 2 - BASELINE APP + MEMORY =================================
 Mission: the product people touch - DB foundation, accounts, intake questions,
-native app (Astryx), live board, MCP plugin, voice intake, long-term memory.
+native app (Astryx), live board, voice intake, long-term memory.
+Phase 1 = native app on localhost only. The MCP plugin is Phase 2 (MASTERPLAN §15), don't build it.
 You unblock everyone in the first 2 hours: schemas, setup_db, check_env, fixtures.
 
-Keys you need beyond required: GOOGLE_CLIENT_ID/SECRET, RESEND_API_KEY,
-ELEVENLABS_API_KEY + ELEVENLABS_AGENT_ID, PUBLIC_BASE_URL + NGROK_AUTHTOKEN.
+Auth = plain MongoDB (users + auth_sessions), no auth keys.
+Keys you need beyond required: ELEVENLABS_API_KEY (unrestricted) + ELEVENLABS_VOICE_ID + ELEVENLABS_AGENT_ID.
+Voice uses ElevenLabs CLIENT tools (run in browser), so no public URL / ngrok needed.
 
 You write:  users, sessions, questions, trips (intake fields, status
             ready_for_research), refine_requests(source=user), memories, usage
@@ -126,11 +127,11 @@ Goals:
          APP-02 fixtures pack (DELIVER BY H1.5 - other tracks wait on it)
   H2-6   APP-03 gateway + auth, APP-04 intake graph + question engine
   H6-10  APP-05 native app shell on Astryx, APP-06 live trip board
-  H10-14 APP-07 MCP plugin, APP-08 long-term memory
-  H14-18 APP-09 voice intake, APP-10 handoff, APP-11 autocomplete, design polish
+  H10-14 APP-07 voice intake, APP-08 long-term memory
+  H14-18 APP-09 autocomplete, APP-10 metering, APP-11 export, design polish
 First-hour goal: setup_db.py idempotent + app exits with clear error when
 MONGODB_URI is unset.
-Definition of done for you: Claude connector + native app, same account, same
+Definition of done for you: native app on localhost, text or voice intake ->
 board; trip #2 asks fewer questions because of memory.
 
 === TRACK 3 - RESEARCH + PLANNING ===================================
@@ -164,7 +165,7 @@ INTEGRATION CHECKPOINTS (all 3, timeboxed - MASTERPLAN §8.4)
   I-01  H0   contracts frozen, check_env green on all 3 laptops
   I-02  H8   T2 intake -> T3 live Lisbon board
   I-03  H11  T3 board -> T1 watches -> simulated strike -> T3 refine -> T2 renders live
-  I-04  H14  plugin end-to-end in Claude + memory reduces questions on trip 2
+  I-04  H14  native app + voice end-to-end + memory reduces questions on trip 2
   I-05  H18  feature freeze, demo script passes twice from clean seed
 H18-24: bug bash, demo rehearsal, backup video, README, sponsor feedback forms
         (ElevenLabs, LangChain, Voyage).
