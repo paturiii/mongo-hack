@@ -48,8 +48,9 @@ def geocode(query: str, near: dict | None = None, radius_km: float = 40, accept=
     if not rows:
         return None
     for r in rows:
-        names = [r.get("name") or ""] + [v for k, v in (r.get("namedetails") or {}).items() if k.split(":")[0] in
-                                         ("name", "alt_name", "old_name", "official_name", "short_name", "int_name", "brand")]
+        names = [r.get("name") or ""] + [n for k, v in (r.get("namedetails") or {}).items() if k.split(":")[0] in
+                                         ("name", "alt_name", "old_name", "official_name", "short_name", "int_name", "brand")
+                                         for n in v.split(";")]
         if not accept or accept([n for n in names if n]):
             break
     else:

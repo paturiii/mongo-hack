@@ -121,8 +121,11 @@ def ensure_geo(place_id: str, city: dict) -> bool:
         return False
     if p.get("geo"):
         return True
-    hit = geo.geocode(f"{p['name']}, {city['name']}", near=city["geo"], radius_km=45,
-                      accept=lambda names: any(geocode_matches(p["name"], n) for n in names))
+    def accept(names: list[str]) -> bool:
+        return any(geocode_matches(p["name"], n) for n in names)
+
+    hit = (geo.geocode(f"{p['name']}, {city['name']}", near=city["geo"], radius_km=45, accept=accept)
+           or geo.geocode(p["name"], near=city["geo"], radius_km=45, accept=accept))
     if not hit or geo.haversine_m(hit["geo"], city["geo"]) > 60_000:
         return False
     upd = {"geo": hit["geo"], "updated_at": now()}

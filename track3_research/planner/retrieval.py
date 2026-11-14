@@ -9,7 +9,8 @@ import math
 
 from pymongo.errors import OperationFailure
 
-from shared.agent_protocol import city_ctx, ensure_geo, link_place, name_similarity
+from shared import geo
+from shared.agent_protocol import city_ctx, ensure_geo, geocode_matches, link_place, name_similarity
 from shared.config import get_db
 from shared.embed import embed, rerank
 from track3_research.agents.places import place_text
@@ -134,7 +135,14 @@ def retrieve(city_name: str, profile: dict, needs: dict[str, int], overrides: di
             for m in profile.get("must_sees") or []:
                 pid = link_place(city, m, "sight", create=False, geocode=False)
                 doc = get_db().places.find_one({"_id": pid, "source": {"$ne": "fixture"}}, PROJECT) if pid else None
-                if doc and pid not in have and pid not in (exclude_ids or set()):
+                if doc and not doc.get("geo") and not ensure_geo(pid, city):
+                    hit = geo.geocode(m, near=city["geo"], radius_km=45,
+                                      accept=lambda ns, m=m, d=doc: any(geocode_matches(m, n) or geocode_matches(d["name"], n) for n in ns))
+                    if hit:
+                        get_db().places.update_one({"_id": pid}, {"$set": {"geo": hit["geo"]}})
+                if doc and not doc.get("geo"):
+                    doc["geo"] = (get_db().places.find_one({"_id": pid}, {"geo": 1}) or {}).get("geo")
+                if doc and doc.get("geo") and pid not in have and pid not in (exclude_ids or set()):
                     cands.append({**doc, "fusion": 0})
         ranked = score_candidates(cands, q, profile, top_k=max(needs[key] * 2, 10))
         keep = []
