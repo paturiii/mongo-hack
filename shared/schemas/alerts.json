@@ -1,0 +1,56 @@
+{
+  "$jsonSchema": {
+    "additionalProperties": true,
+    "properties": {
+      "_id": {
+        "bsonType": "string"
+      },
+      "user_id": {
+        "bsonType": "string"
+      },
+      "trip_id": {
+        "bsonType": "string"
+      },
+      "disruption_id": {
+        "bsonType": "string"
+      },
+      "channel": {
+        "enum": [
+          "board",
+          "email",
+          "voice"
+        ],
+        "bsonType": "string"
+      },
+      "title": {
+        "bsonType": "string"
+      },
+      "body": {
+        "bsonType": "string"
+      },
+      "status": {
+        "enum": [
+          "pending",
+          "sent",
+          "seen"
+        ],
+        "bsonType": "string"
+      },
+      "created_at": {
+        "bsonType": "date"
+      }
+    },
+    "required": [
+      "_id",
+      "user_id",
+      "trip_id",
+      "disruption_id",
+      "channel",
+      "title",
+      "body",
+      "status",
+      "created_at"
+    ],
+    "bsonType": "object"
+  }
+}

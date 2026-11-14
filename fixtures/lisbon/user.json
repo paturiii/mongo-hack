@@ -1,0 +1,10 @@
+{
+  "_id": "user_lisbon_fixture",
+  "name": "Demo traveler",
+  "email": "traveler@example.invalid",
+  "notify": {
+    "email": true,
+    "voice": true
+  },
+  "fixture": true
+}
