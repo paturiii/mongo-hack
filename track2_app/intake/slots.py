@@ -1,7 +1,12 @@
 """Trip slot schema + question templates (MASTERPLAN §7.1). Scoring = impact × uncertainty."""
 
 # id: (impact, required, type, prompt, why, options)
+# destination/origin options are built per trip at ask time (dynamic_options in graph.py).
 SLOTS: dict[str, tuple] = {
+    "destination": (11, True, "single", "Where do you want to go?",
+                    "Researched cities plan in minutes; any other city works but takes longer", []),
+    "origin": (10, True, "single", "Where are you traveling from?",
+               "Required: flights and transfers are linked from your starting city", []),
     "dates": (10, True, "date_range", "Which dates are you going?",
               "Club nights, timed tickets and prices all depend on exact dates", []),
     "interests": (9, True, "multi", "What are you into on this trip?",
@@ -21,7 +26,6 @@ SLOTS: dict[str, tuple] = {
     "nightlife_intensity": (7, False, "single", "How late do you go out?", "Decides which nights get club or bar plans", [
         ("early", "Early nights"), ("drinks", "A few drinks"), ("big_night_out", "One or two big nights"),
         ("every_night", "Every night")]),
-    "origin": (5, False, "free", "Where are you traveling from?", "So we can link flights or trains to get there", []),
     "dietary": (5, False, "multi", "Any dietary needs?", "Filters restaurant picks", [
         ("none", "None"), ("vegetarian", "Vegetarian"), ("vegan", "Vegan"), ("gluten_free", "Gluten-free"),
         ("halal", "Halal")]),
@@ -62,17 +66,17 @@ def pick(known: dict, asked: set[str], batch: int) -> list[str]:
             continue
         if batch == 1 and impact < MIN_IMPACT_BATCH1:
             continue
-        if batch >= 2 and (not required or sid not in asked):
+        if batch >= 2 and not required:  # batch 2: only required gaps (skipped, or cut by MAX_PER_BATCH)
             continue
         cands.append((impact * 1.0, sid))  # uncertainty is 1.0 for unknown slots, 0 for known ones
     cands.sort(reverse=True)
     return [sid for _, sid in cands[:MAX_PER_BATCH]]
 
 
-def question(sid: str, hint: str | None = None) -> dict:
-    _impact, required, qtype, prompt, why, options = SLOTS[sid]
+def question(sid: str, hint: str | None = None, options: list[tuple[str, str]] | None = None) -> dict:
+    _impact, required, qtype, prompt, why, static = SLOTS[sid]
     q = {"id": sid, "prompt": prompt, "type": qtype, "why": why, "required": required,
-         "options": [{"id": o, "label": label} for o, label in options], "prefilled_from_memory": False}
+         "options": [{"id": o, "label": label} for o, label in (options or static)], "prefilled_from_memory": False}
     if hint:
         q["hint"] = hint
     return q

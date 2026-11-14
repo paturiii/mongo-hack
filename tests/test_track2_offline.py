@@ -10,7 +10,7 @@ from track2_app.memory.store import usual_note
 
 def test_question_engine_matches_ac():
     # "Lisbon in March, food + nightlife, flying TP1351 from London"
-    known = {"interests": ["food", "nightlife"], "origin": "London"}
+    known = {"destination": "Lisbon", "interests": ["food", "nightlife"], "origin": "London"}
     asked = slots.pick(known, set(), batch=1)
     assert {"budget_band", "pace", "stay_vibe", "nightlife_intensity"} <= set(asked)
     assert "interests" not in asked and "origin" not in asked
@@ -18,20 +18,30 @@ def test_question_engine_matches_ac():
 
 
 def test_memory_prefill_skips_questions():
-    known = {"interests": ["food"], "pace": "relaxed", "budget_band": "mid"}
+    known = {"destination": "Porto", "interests": ["food"], "pace": "relaxed", "budget_band": "mid"}
     asked = slots.pick(known, set(), batch=1)
     assert "pace" not in asked and "budget_band" not in asked
     assert "nightlife_intensity" not in asked  # not relevant without nightlife
 
 
 def test_batch_two_only_reasks_required_gaps():
-    known = {"interests": ["food"], "budget_band": "mid", "pace": "relaxed", "travelers": 2}
+    known = {"destination": "Tokyo", "origin": "Toronto", "interests": ["food"], "budget_band": "mid",
+             "pace": "relaxed", "travelers": 2}
     assert slots.pick(known, {"dates", "stay_vibe"}, batch=2) == ["dates"]
+
+
+def test_origin_and_destination_are_mandatory_and_asked_first():
+    asked = slots.pick({"interests": ["food"]}, set(), batch=1)
+    assert asked[:2] == ["destination", "origin"]
+    assert slots.SLOTS["origin"][1] and slots.SLOTS["destination"][1]
+    assert slots.pick({"interests": ["food"], "budget_band": "mid", "pace": "relaxed", "travelers": 2,
+                       "dates": {"start": "2027-05-10", "end": "2027-05-14"}, "destination": "Lisbon"},
+                      {"origin"}, batch=2) == ["origin"]
 
 
 def test_every_question_has_why_and_options_or_input_type():
     for sid in slots.SLOTS:
-        q = slots.question(sid)
+        q = slots.question(sid, options=[("x", "X")] if sid in ("destination", "origin") else None)  # dynamic
         assert q["why"] and (q["options"] or q["type"] in ("date_range", "number", "free"))
 
 

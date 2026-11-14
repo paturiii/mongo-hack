@@ -47,7 +47,8 @@ class GettingThereFinder(ResearchAgent):
     kind = "getting_there"
 
     def plan(self) -> list[Query]:
-        origin = (self.params.get("origin") or {}).get("name") or "London"
+        o = self.params.get("origin")  # trip.origin dict {name, geo} or a bare city string
+        origin = (o.get("name") if isinstance(o, dict) else o) or "London"
         self._airports = structured(Airports, "Resolve airports for a trip. Use real IATA codes.",
                                     f"Origin: {origin}\nDestination: {self.city['name']}, {self.city.get('country') or ''}", tier="fast")
         a = self._airports
@@ -68,7 +69,8 @@ class GettingThereFinder(ResearchAgent):
     def persist(self, items: list[dict]) -> list[str]:
         a = self._airports
         p = self.params
-        origin = (p.get("origin") or {}).get("name") or "London"
+        o = p.get("origin")
+        origin = (o.get("name") if isinstance(o, dict) else o) or "London"
         dates = p.get("dates") or {}
         start, end = _d(dates.get("start")), _d(dates.get("end"))
         adults = int(p.get("travelers") or 2)

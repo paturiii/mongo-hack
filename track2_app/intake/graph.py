@@ -8,6 +8,7 @@
 thread_id = session_id; checkpoints in Mongo (MongoDBSaver), so a session survives restarts.
 """
 import logging
+import time
 from datetime import UTC, datetime
 from functools import lru_cache
 from typing import TypedDict
@@ -44,6 +45,41 @@ def _now() -> datetime:
     return datetime.now(UTC)
 
 
+COMMON_ORIGINS = ["Toronto", "New York", "London", "Vancouver", "Montreal"]
+_ready_cache: dict = {}
+
+
+def ready_cities(min_places: int = 500, min_opinions: int = 100) -> list[str]:
+    """Cities Track 3 has already researched (planning takes minutes, not hours). Cached 5 min."""
+    if _ready_cache.get("at", 0) > time.time() - 300:
+        return _ready_cache["cities"]
+    try:
+        ops = {r["_id"]: r["n"] for r in db().opinions.aggregate(
+            [{"$group": {"_id": "$city", "n": {"$sum": 1}}}, {"$match": {"n": {"$gte": min_opinions}}}])}
+        cities = [r["_id"] for r in db().places.aggregate(
+            [{"$match": {"city": {"$in": list(ops)}}}, {"$group": {"_id": "$city", "n": {"$sum": 1}}},
+             {"$match": {"n": {"$gte": min_places}}}, {"$sort": {"n": -1}}])]
+    except Exception:  # noqa: BLE001 - suggestions only
+        cities = []
+    _ready_cache.update(at=time.time(), cities=cities or ["Lisbon", "Tokyo"])
+    return _ready_cache["cities"]
+
+
+def dynamic_options(sid: str, s: "IntakeState") -> list[tuple[str, str]] | None:
+    """Options built per trip: researched destinations; origin = remembered home city first."""
+    if sid == "destination":
+        return [(c, f"{c} — researched, plans in minutes") for c in ready_cities()]
+    if sid == "origin":
+        home = (s.get("prefilled") or {}).get("origin") or memory.prefs(s["user_id"]).get("origin")
+        cities = ([home] if isinstance(home, str) and home else []) + COMMON_ORIGINS
+        seen: list[str] = []
+        for c in cities:
+            if c.lower() not in {x.lower() for x in seen}:
+                seen.append(c)
+        return [(c, f"{c} — your usual" if i == 0 and c == home else c) for i, c in enumerate(seen[:5])]
+    return None
+
+
 def _say(session_id: str, text: str) -> None:
     db().sessions.update_one({"_id": session_id},
                              {"$push": {"messages": {"role": "assistant", "content": text, "at": _now()}}})
@@ -61,9 +97,13 @@ def understand_node(s: IntakeState) -> dict:
     u = understand(s["prompt"])
     usage.charge(s["user_id"])
     known = to_known(u)
-    # memory fills only slots the prompt didn't settle, and only ones relevant to this trip
+    if u.destination_city:
+        known["destination"] = u.destination_city
+    # memory fills only slots the prompt didn't settle, and only ones relevant to this trip.
+    # Origin is mandatory per trip: memory only suggests it (first option), never fills it silently.
     prefilled = {k: v for k, v in (s.get("prefilled") or {}).items()
-                 if k in slots.SLOTS and not slots.is_known(known.get(k)) and slots.relevant(k, known)}
+                 if k in slots.SLOTS and k not in ("origin", "destination")
+                 and not slots.is_known(known.get(k)) and slots.relevant(k, known)}
     known.update(prefilled)
 
     dest = geocode(u.destination_city, u.destination_country)
@@ -94,6 +134,10 @@ def understand_node(s: IntakeState) -> dict:
         greeting = f"{where} — great pick. A few quick questions."
     if note and note.removeprefix("using your usual: ").split(", ")[0].lower() not in greeting.lower():
         greeting += f" (I'm {note}.)"  # memory must always be visible, even if the LLM skipped it
+    ready = ready_cities()
+    if dest and dest["name"] not in ready:
+        greeting += (f" Heads up: {dest['name']} isn't pre-researched yet, so planning takes longer. "
+                     f"{' and '.join(ready)} plan in minutes.")
     _say(s["session_id"], greeting)
     return {"known": known, "prefilled": prefilled, "asked": [], "batch": 0, "month_hint": u.month_hint}
 
@@ -108,7 +152,8 @@ def gap_analysis(s: IntakeState) -> dict:
 def ask(s: IntakeState) -> dict:
     batch = (s.get("batch") or 0) + 1
     qid = f"q_{s['session_id'].removeprefix('ses_')}_{batch}"
-    items = [slots.question(sid, hint=s.get("month_hint") if sid == "dates" else None) for sid in s["pending"]]
+    items = [slots.question(sid, hint=s.get("month_hint") if sid == "dates" else None,
+                            options=dynamic_options(sid, s)) for sid in s["pending"]]
     db().questions.update_one(
         {"_id": qid},
         {"$setOnInsert": {"_id": qid, "session_id": s["session_id"], "batch": batch, "items": items,
@@ -136,6 +181,9 @@ def finalize(s: IntakeState) -> dict:
         trip_set["travelers"] = int(k["travelers"])
     if k.get("origin") and isinstance(k["origin"], str):
         trip_set["origin"] = geocode(k["origin"])
+    trip = db().trips.find_one({"_id": s["trip_id"]}, {"destination": 1}) or {}
+    if k.get("destination") and not (trip.get("destination") or {}).get("geo"):
+        trip_set["destination"] = geocode(k["destination"])  # chosen from the question card
     db().trips.update_one({"_id": s["trip_id"]}, {"$set": trip_set})
     db().sessions.update_one({"_id": s["session_id"]}, {"$set": {"status": "researching"}})
     _say(s["session_id"], "Got it. I'm sending scouts to read what travelers say and to find tickets, stays and "
