@@ -1,0 +1,17 @@
+{
+  "bsonType": "object",
+  "required": ["name", "category", "source"],
+  "properties": {
+    "source": {"bsonType": "string"},
+    "name": {"bsonType": "string"},
+    "city": {"bsonType": "string"},
+    "category": {"enum": ["sight", "food", "bar", "club", "museum", "stay", "activity", "transit_hub", "beach", "indoor"]},
+    "indoor": {"bsonType": "bool"},
+    "geo": {
+      "bsonType": ["object", "null"],
+      "required": ["type", "coordinates"],
+      "properties": {"type": {"enum": ["Point"]}, "coordinates": {"bsonType": "array", "minItems": 2, "maxItems": 2}}
+    },
+    "consensus": {"bsonType": "object"}
+  }
+}

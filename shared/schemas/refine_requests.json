@@ -1,0 +1,13 @@
+{
+  "bsonType": "object",
+  "required": ["trip_id", "source", "instruction", "status", "created_at"],
+  "properties": {
+    "trip_id": {"bsonType": "string"},
+    "source": {"enum": ["user", "disruption"]},
+    "instruction": {"bsonType": "string"},
+    "scope": {"bsonType": "object"},
+    "constraints": {"bsonType": "object"},
+    "status": {"enum": ["queued", "claimed", "done", "failed"]},
+    "created_at": {"bsonType": "date"}
+  }
+}

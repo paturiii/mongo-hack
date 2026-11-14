@@ -1,0 +1,69 @@
+{
+ "_id": "trip_fixture_lisbon",
+ "user_id": "usr_fixture_ana",
+ "session_id": "ses_fixture_lisbon",
+ "origin": {
+  "name": "London",
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -0.1276,
+    51.5072
+   ]
+  }
+ },
+ "destination": {
+  "name": "Lisbon",
+  "country": "Portugal",
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1393,
+    38.7223
+   ]
+  }
+ },
+ "dates": {
+  "start": {
+   "$date": "2027-03-12T00:00:00Z"
+  },
+  "end": {
+   "$date": "2027-03-17T00:00:00Z"
+  },
+  "flexible": false
+ },
+ "travelers": 2,
+ "legs": [
+  {
+   "kind": "flight",
+   "carrier": "TP",
+   "number": "TP1351",
+   "from": "LHR",
+   "to": "LIS",
+   "dep_at": {
+    "$date": "2027-03-12T10:05:00Z"
+   },
+   "arr_at": {
+    "$date": "2027-03-12T12:45:00Z"
+   }
+  }
+ ],
+ "profile": {
+  "budget_band": "mid",
+  "pace": "relaxed",
+  "interests": [
+   "food",
+   "nightlife"
+  ],
+  "dealbreakers": [],
+  "vibe": [
+   "historic",
+   "lively"
+  ],
+  "dietary": [],
+  "mobility": null,
+  "nightlife_intensity": "big_night_out"
+ },
+ "status": "ready_for_research",
+ "board_id": null
+}

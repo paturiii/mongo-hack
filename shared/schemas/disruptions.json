@@ -1,0 +1,15 @@
+{
+  "bsonType": "object",
+  "required": ["_id", "trip_id", "kind", "severity", "status", "detected_at"],
+  "properties": {
+    "_id": {"bsonType": "string", "pattern": "^dis_"},
+    "trip_id": {"bsonType": "string"},
+    "kind": {"enum": ["flight_delay", "flight_cancel", "weather", "strike", "closure", "event_cancel", "dead_link", "price_spike"]},
+    "severity": {"bsonType": "int", "minimum": 1, "maximum": 5},
+    "evidence": {"bsonType": "array"},
+    "affected": {"bsonType": "object"},
+    "options": {"bsonType": "array"},
+    "status": {"enum": ["open", "notified", "resolved", "dismissed"]},
+    "detected_at": {"bsonType": "date"}
+  }
+}

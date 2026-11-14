@@ -1,0 +1,403 @@
+[
+ {
+  "_id": "job_fx_00",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "opinions",
+  "params": {
+   "city": "Lisbon",
+   "source_types": [
+    "reddit",
+    "forum",
+    "blog",
+    "review",
+    "news"
+   ],
+   "dates": {
+    "start": "2027-03-12",
+    "end": "2027-03-17"
+   },
+   "theme": "food"
+  },
+  "status": "queued",
+  "attempts": 0,
+  "claimed_by": null,
+  "claimed_at": null,
+  "result_refs": [],
+  "error": null,
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "job_fx_01",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "opinions",
+  "params": {
+   "city": "Lisbon",
+   "source_types": [
+    "reddit",
+    "forum",
+    "blog",
+    "review",
+    "news"
+   ],
+   "dates": {
+    "start": "2027-03-12",
+    "end": "2027-03-17"
+   },
+   "theme": "nightlife"
+  },
+  "status": "done",
+  "attempts": 0,
+  "claimed_by": null,
+  "claimed_at": null,
+  "result_refs": [],
+  "error": null,
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "job_fx_02",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "opinions",
+  "params": {
+   "city": "Lisbon",
+   "source_types": [
+    "reddit",
+    "forum",
+    "blog",
+    "review",
+    "news"
+   ],
+   "dates": {
+    "start": "2027-03-12",
+    "end": "2027-03-17"
+   },
+   "theme": "hidden gems"
+  },
+  "status": "done",
+  "attempts": 0,
+  "claimed_by": null,
+  "claimed_at": null,
+  "result_refs": [],
+  "error": null,
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "job_fx_03",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "opinions",
+  "params": {
+   "city": "Lisbon",
+   "source_types": [
+    "reddit",
+    "forum",
+    "blog",
+    "review",
+    "news"
+   ],
+   "dates": {
+    "start": "2027-03-12",
+    "end": "2027-03-17"
+   },
+   "theme": "things to skip"
+  },
+  "status": "queued",
+  "attempts": 0,
+  "claimed_by": null,
+  "claimed_at": null,
+  "result_refs": [],
+  "error": null,
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "job_fx_04",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "opinions",
+  "params": {
+   "city": "Lisbon",
+   "source_types": [
+    "reddit",
+    "forum",
+    "blog",
+    "review",
+    "news"
+   ],
+   "dates": {
+    "start": "2027-03-12",
+    "end": "2027-03-17"
+   },
+   "theme": "neighborhoods"
+  },
+  "status": "done",
+  "attempts": 0,
+  "claimed_by": null,
+  "claimed_at": null,
+  "result_refs": [],
+  "error": null,
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "job_fx_05",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "places",
+  "params": {
+   "city": "Lisbon",
+   "source_types": [
+    "reddit",
+    "forum",
+    "blog",
+    "review",
+    "news"
+   ],
+   "dates": {
+    "start": "2027-03-12",
+    "end": "2027-03-17"
+   },
+   "category": "sight"
+  },
+  "status": "done",
+  "attempts": 0,
+  "claimed_by": null,
+  "claimed_at": null,
+  "result_refs": [],
+  "error": null,
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "job_fx_06",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "places",
+  "params": {
+   "city": "Lisbon",
+   "source_types": [
+    "reddit",
+    "forum",
+    "blog",
+    "review",
+    "news"
+   ],
+   "dates": {
+    "start": "2027-03-12",
+    "end": "2027-03-17"
+   },
+   "category": "food"
+  },
+  "status": "queued",
+  "attempts": 0,
+  "claimed_by": null,
+  "claimed_at": null,
+  "result_refs": [],
+  "error": null,
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "job_fx_07",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "places",
+  "params": {
+   "city": "Lisbon",
+   "source_types": [
+    "reddit",
+    "forum",
+    "blog",
+    "review",
+    "news"
+   ],
+   "dates": {
+    "start": "2027-03-12",
+    "end": "2027-03-17"
+   },
+   "category": "bar"
+  },
+  "status": "done",
+  "attempts": 0,
+  "claimed_by": null,
+  "claimed_at": null,
+  "result_refs": [],
+  "error": null,
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "job_fx_08",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "stay",
+  "params": {
+   "city": "Lisbon",
+   "source_types": [
+    "reddit",
+    "forum",
+    "blog",
+    "review",
+    "news"
+   ],
+   "dates": {
+    "start": "2027-03-12",
+    "end": "2027-03-17"
+   }
+  },
+  "status": "done",
+  "attempts": 0,
+  "claimed_by": null,
+  "claimed_at": null,
+  "result_refs": [],
+  "error": null,
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "job_fx_09",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "getting_there",
+  "params": {
+   "city": "Lisbon",
+   "source_types": [
+    "reddit",
+    "forum",
+    "blog",
+    "review",
+    "news"
+   ],
+   "dates": {
+    "start": "2027-03-12",
+    "end": "2027-03-17"
+   },
+   "origin": "London"
+  },
+  "status": "queued",
+  "attempts": 0,
+  "claimed_by": null,
+  "claimed_at": null,
+  "result_refs": [],
+  "error": null,
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "job_fx_10",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "transit",
+  "params": {
+   "city": "Lisbon",
+   "source_types": [
+    "reddit",
+    "forum",
+    "blog",
+    "review",
+    "news"
+   ],
+   "dates": {
+    "start": "2027-03-12",
+    "end": "2027-03-17"
+   }
+  },
+  "status": "done",
+  "attempts": 0,
+  "claimed_by": null,
+  "claimed_at": null,
+  "result_refs": [],
+  "error": null,
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "job_fx_11",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "tickets",
+  "params": {
+   "city": "Lisbon",
+   "source_types": [
+    "reddit",
+    "forum",
+    "blog",
+    "review",
+    "news"
+   ],
+   "dates": {
+    "start": "2027-03-12",
+    "end": "2027-03-17"
+   }
+  },
+  "status": "done",
+  "attempts": 0,
+  "claimed_by": null,
+  "claimed_at": null,
+  "result_refs": [],
+  "error": null,
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "job_fx_12",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "nightlife",
+  "params": {
+   "city": "Lisbon",
+   "source_types": [
+    "reddit",
+    "forum",
+    "blog",
+    "review",
+    "news"
+   ],
+   "dates": {
+    "start": "2027-03-12",
+    "end": "2027-03-17"
+   }
+  },
+  "status": "queued",
+  "attempts": 0,
+  "claimed_by": null,
+  "claimed_at": null,
+  "result_refs": [],
+  "error": null,
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "job_fx_13",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "restaurants",
+  "params": {
+   "city": "Lisbon",
+   "source_types": [
+    "reddit",
+    "forum",
+    "blog",
+    "review",
+    "news"
+   ],
+   "dates": {
+    "start": "2027-03-12",
+    "end": "2027-03-17"
+   }
+  },
+  "status": "done",
+  "attempts": 0,
+  "claimed_by": null,
+  "claimed_at": null,
+  "result_refs": [],
+  "error": null,
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ }
+]

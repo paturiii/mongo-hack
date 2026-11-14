@@ -1,0 +1,18 @@
+{
+ "_id": "usr_fixture_ana",
+ "email": "ana.fixture@example.com",
+ "name": "Ana (fixture)",
+ "plan": "free",
+ "password_hash": "scrypt$fixture$not-a-real-hash",
+ "api_key_hashes": [],
+ "connected_clients": [
+  "native"
+ ],
+ "notify": {
+  "email": true,
+  "voice": true
+ },
+ "created_at": {
+  "$date": "2026-11-14T12:00:00Z"
+ }
+}

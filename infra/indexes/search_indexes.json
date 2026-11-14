@@ -1,0 +1,18 @@
+[
+  {
+    "collection": "memories", "name": "memories_vector", "type": "vectorSearch",
+    "definition": {"fields": [
+      {"type": "vector", "path": "embedding", "numDimensions": 1024, "similarity": "cosine"},
+      {"type": "filter", "path": "user_id"},
+      {"type": "filter", "path": "kind"}
+    ]}
+  },
+  {
+    "collection": "cities", "name": "cities_autocomplete", "type": "search",
+    "definition": {"mappings": {"dynamic": false, "fields": {
+      "name": [{"type": "autocomplete", "tokenization": "edgeGram", "minGrams": 2, "maxGrams": 15}, {"type": "string"}],
+      "country": {"type": "string"},
+      "population": {"type": "number"}
+    }}}
+  }
+]

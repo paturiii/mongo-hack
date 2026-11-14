@@ -1,0 +1,30 @@
+{
+ "_id": "ses_fixture_lisbon",
+ "user_id": "usr_fixture_ana",
+ "surface": "native",
+ "thread_id": "ses_fixture_lisbon",
+ "trip_id": "trip_fixture_lisbon",
+ "status": "ready",
+ "messages": [
+  {
+   "role": "user",
+   "content": "5 days in Lisbon in March, food and nightlife, flying TP1351 from London",
+   "at": {
+    "$date": "2026-11-14T12:00:00Z"
+   }
+  },
+  {
+   "role": "assistant",
+   "content": "Lisbon in March, great pick. A few quick questions.",
+   "at": {
+    "$date": "2026-11-14T12:00:00Z"
+   }
+  }
+ ],
+ "created_at": {
+  "$date": "2026-11-14T12:00:00Z"
+ },
+ "expires_at": {
+  "$date": "2027-12-31T00:00:00Z"
+ }
+}

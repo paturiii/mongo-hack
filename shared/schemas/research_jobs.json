@@ -1,0 +1,12 @@
+{
+  "bsonType": "object",
+  "required": ["_id", "trip_id", "kind", "params", "status", "attempts"],
+  "properties": {
+    "_id": {"bsonType": "string", "pattern": "^job_"},
+    "trip_id": {"bsonType": "string"},
+    "kind": {"enum": ["opinions", "places", "stay", "transit", "getting_there", "tickets", "nightlife", "restaurants", "link_resolve"]},
+    "params": {"bsonType": "object"},
+    "status": {"enum": ["queued", "claimed", "done", "failed"]},
+    "attempts": {"bsonType": "int", "minimum": 0}
+  }
+}

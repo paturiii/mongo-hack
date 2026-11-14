@@ -1,0 +1,16 @@
+[
+ {
+  "_id": "al_fx_strike",
+  "user_id": "usr_fixture_ana",
+  "trip_id": "trip_fixture_lisbon",
+  "disruption_id": "dis_fx_strike",
+  "channel": "board",
+  "title": "Metro strike on Mar 14",
+  "body": "Your Alfama morning uses the metro. Walk or take a taxi, or swap days.",
+  "audio_url": null,
+  "status": "pending",
+  "created_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ }
+]

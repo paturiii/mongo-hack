@@ -1,0 +1,15 @@
+{
+  "bsonType": "object",
+  "required": ["user_id", "kind", "updated_at"],
+  "properties": {
+    "user_id": {"bsonType": "string"},
+    "kind": {"enum": ["pref", "episode", "feedback"]},
+    "key": {"bsonType": ["string", "null"]},
+    "value": {},
+    "text": {"bsonType": ["string", "null"]},
+    "confidence": {"bsonType": ["double", "int"]},
+    "source": {"enum": ["answer", "refine", "rating", "disruption_choice", "manual"]},
+    "embedding": {"bsonType": "array"},
+    "updated_at": {"bsonType": "date"}
+  }
+}

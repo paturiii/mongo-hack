@@ -1,0 +1,12 @@
+{
+  "bsonType": "object",
+  "required": ["trip_id", "kind", "target", "active"],
+  "properties": {
+    "trip_id": {"bsonType": "string"},
+    "kind": {"enum": ["flight", "train", "weather", "area", "venue", "event", "link", "price"]},
+    "target": {"bsonType": "object"},
+    "next_check_at": {"bsonType": "date"},
+    "interval_s": {"bsonType": "int"},
+    "active": {"bsonType": "bool"}
+  }
+}
