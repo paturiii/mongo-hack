@@ -1,0 +1,14 @@
+{
+  "bsonType": "object",
+  "required": ["city", "source_type", "source_url", "summary", "stance", "sentiment"],
+  "properties": {
+    "city": {"bsonType": "string"},
+    "source_type": {"enum": ["reddit", "forum", "blog", "review", "video", "news"]},
+    "source_url": {"bsonType": "string"},
+    "summary": {"bsonType": "string"},
+    "quote": {"bsonType": "string", "maxLength": 200},
+    "stance": {"enum": ["pro", "con", "tip"]},
+    "sentiment": {"bsonType": ["double", "int"], "minimum": -1, "maximum": 1},
+    "tags": {"bsonType": "array"}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "bsonType": "object",
+  "required": ["_id", "session_id", "batch", "items", "status"],
+  "properties": {
+    "_id": {"bsonType": "string", "pattern": "^q_"},
+    "session_id": {"bsonType": "string"},
+    "batch": {"bsonType": "int", "minimum": 1, "maximum": 2},
+    "items": {
+      "bsonType": "array",
+      "maxItems": 6,
+      "items": {
+        "bsonType": "object",
+        "required": ["id", "prompt", "type", "why"],
+        "properties": {
+          "id": {"bsonType": "string"},
+          "prompt": {"bsonType": "string"},
+          "type": {"enum": ["single", "multi", "free", "date_range", "number"]},
+          "options": {"bsonType": "array"},
+          "why": {"bsonType": "string"},
+          "required": {"bsonType": "bool"},
+          "prefilled_from_memory": {"bsonType": "bool"}
+        }
+      }
+    },
+    "status": {"enum": ["open", "answered"]},
+    "answers": {"bsonType": "object"},
+    "answered_at": {"bsonType": ["date", "null"]}
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "bsonType": "object",
+  "required": ["kind", "provider", "url", "label"],
+  "properties": {
+    "kind": {"enum": ["flight", "train", "bus", "transfer", "stay", "monument_ticket", "club_ticket", "restaurant", "tour", "rebook"]},
+    "provider": {"bsonType": "string"},
+    "url": {"bsonType": "string", "pattern": "^https?://"},
+    "label": {"bsonType": "string"},
+    "is_official": {"bsonType": "bool"}
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "bsonType": "object",
+  "required": ["user_id", "trip_id", "channel", "title", "status", "created_at"],
+  "properties": {
+    "user_id": {"bsonType": "string"},
+    "trip_id": {"bsonType": "string"},
+    "disruption_id": {"bsonType": ["string", "null"]},
+    "channel": {"enum": ["board", "email", "voice"]},
+    "title": {"bsonType": "string"},
+    "body": {"bsonType": "string"},
+    "audio_url": {"bsonType": ["string", "null"]},
+    "status": {"enum": ["pending", "sent", "seen"]},
+    "created_at": {"bsonType": "date"}
+  }
+}

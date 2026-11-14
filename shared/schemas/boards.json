@@ -1,0 +1,28 @@
+{
+  "bsonType": "object",
+  "required": ["_id", "trip_id", "user_id", "version", "share_slug", "title", "days", "bookings"],
+  "properties": {
+    "_id": {"bsonType": "string", "pattern": "^b_"},
+    "trip_id": {"bsonType": "string"},
+    "user_id": {"bsonType": "string"},
+    "version": {"bsonType": "int", "minimum": 1},
+    "share_slug": {"bsonType": "string"},
+    "title": {"bsonType": "string"},
+    "days": {
+      "bsonType": "array",
+      "items": {
+        "bsonType": "object",
+        "required": ["date", "slots"],
+        "properties": {"slots": {"bsonType": "array"}}
+      }
+    },
+    "bookings": {
+      "bsonType": "array",
+      "items": {
+        "bsonType": "object",
+        "required": ["link_id", "kind", "label", "url", "status"],
+        "properties": {"status": {"enum": ["todo", "user_marked_booked"]}}
+      }
+    }
+  }
+}

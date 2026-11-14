@@ -33,6 +33,9 @@ pnpm-debug.log*
 .langgraph_api/
 *.log
 media/voice/
+.run/
+.playwright-cli/
+web/public/maplibre/
 
 # editor / os
 .vscode/
