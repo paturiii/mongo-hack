@@ -1,0 +1,18 @@
+{
+  "kind": "closure",
+  "summary": "SIMULATED closure",
+  "minutes": 180,
+  "rain_probability": 90,
+  "wind_kmh": 55,
+  "amount": 12,
+  "currency": "EUR",
+  "baseline": 8,
+  "evidence": [
+    {
+      "source_url": "https://www.visitlisboa.com/",
+      "source_type": "fixture",
+      "summary": "Synthetic recorded response; not a real disruption",
+      "fetched_at": "2026-03-10T12:00:00Z"
+    }
+  ]
+}

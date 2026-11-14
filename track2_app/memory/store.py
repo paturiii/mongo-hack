@@ -6,7 +6,7 @@ best-effort: if Voyage is throttled the memory is still saved and recall falls b
 import logging
 import math
 import secrets
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from bson import ObjectId
 
@@ -23,7 +23,7 @@ LABELS = {"budget_band": "budget", "pace": "pace", "stay_vibe": "stay vibe", "ni
 
 
 def _now() -> datetime:
-    return datetime.now(timezone.utc)
+    return datetime.now(UTC)
 
 
 def _embed(text: str, query: bool = False) -> list[float] | None:

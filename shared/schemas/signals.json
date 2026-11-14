@@ -1,0 +1,29 @@
+{
+  "$jsonSchema": {
+    "properties": {
+      "ts": {
+        "bsonType": "date"
+      },
+      "meta": {
+        "additionalProperties": {
+          "bsonType": "string"
+        },
+        "bsonType": "object"
+      },
+      "payload": {
+        "additionalProperties": true,
+        "bsonType": "object"
+      },
+      "hash": {
+        "bsonType": "string"
+      }
+    },
+    "required": [
+      "ts",
+      "meta",
+      "payload",
+      "hash"
+    ],
+    "bsonType": "object"
+  }
+}

@@ -95,7 +95,9 @@ export type Booking = {link_id: string; kind: string; label: string; url: string
 
 export type Link = {_id: string; kind: string; provider: string; url: string; label: string; is_official?: boolean};
 
-export type Alert = {_id: string; title: string; body: string; status: string; audio_url?: string | null; created_at: string};
+// Disruption + alert shapes are owned by Track 1 (components/wander/types.ts).
+import type {Alert, Disruption} from '@/components/wander/types';
+export type {Alert, Disruption};
 
 export type BoardView = {
   board: {
@@ -113,7 +115,7 @@ export type BoardView = {
   };
   links: Record<string, Link>;
   alerts: Alert[];
-  disruptions: {_id: string; kind: string; severity: number; status: string}[];
+  disruptions: Disruption[];
   trip: {destination?: {name: string}; dates?: {start: string; end: string}; travelers?: number; user_id?: string} | null;
 };
 

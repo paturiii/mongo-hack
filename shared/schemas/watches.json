@@ -1,12 +1,53 @@
 {
-  "bsonType": "object",
-  "required": ["trip_id", "kind", "target", "active"],
-  "properties": {
-    "trip_id": {"bsonType": "string"},
-    "kind": {"enum": ["flight", "train", "weather", "area", "venue", "event", "link", "price"]},
-    "target": {"bsonType": "object"},
-    "next_check_at": {"bsonType": "date"},
-    "interval_s": {"bsonType": "int"},
-    "active": {"bsonType": "bool"}
+  "$jsonSchema": {
+    "additionalProperties": true,
+    "properties": {
+      "_id": {
+        "bsonType": "string"
+      },
+      "trip_id": {
+        "bsonType": "string"
+      },
+      "kind": {
+        "enum": [
+          "flight",
+          "train",
+          "weather",
+          "area",
+          "venue",
+          "event",
+          "link",
+          "price"
+        ],
+        "bsonType": "string"
+      },
+      "target": {
+        "additionalProperties": true,
+        "bsonType": "object"
+      },
+      "next_check_at": {
+        "bsonType": "date"
+      },
+      "interval_s": {
+        "minimum": 1,
+        "bsonType": [
+          "int",
+          "long"
+        ]
+      },
+      "active": {
+        "bsonType": "bool"
+      }
+    },
+    "required": [
+      "_id",
+      "trip_id",
+      "kind",
+      "target",
+      "next_check_at",
+      "interval_s",
+      "active"
+    ],
+    "bsonType": "object"
   }
 }

@@ -9,7 +9,7 @@ updates. Never run this against the shared DB while Track 3's planner is running
 import secrets
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -24,7 +24,7 @@ KINDS = ["opinions", "opinions", "opinions", "places", "places", "stay", "gettin
 
 
 def now() -> datetime:
-    return datetime.now(timezone.utc)
+    return datetime.now(UTC)
 
 
 def plan(trip: dict, delay: float) -> str:

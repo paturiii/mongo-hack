@@ -85,7 +85,7 @@ def main() -> None:
         env = config.ROOT / ".env"
         text = env.read_text()
         line = f"ELEVENLABS_AGENT_ID={agent_id}"
-        text = re.sub(r"^ELEVENLABS_AGENT_ID=.*$", line, text, flags=re.M) if "ELEVENLABS_AGENT_ID=" in text else text + line + "\n"
+        text = re.sub(r"^ELEVENLABS_AGENT_ID=.*$", line, text, flags=re.MULTILINE) if "ELEVENLABS_AGENT_ID=" in text else text + line + "\n"
         env.write_text(text)
         print("wrote ELEVENLABS_AGENT_ID to .env")
 

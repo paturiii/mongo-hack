@@ -1,6 +1,6 @@
 'use client';
 
-import {use, useEffect, useMemo, useState} from 'react';
+import {use, useCallback, useEffect, useMemo, useState} from 'react';
 import {Layout, LayoutContent, VStack, HStack} from '@astryxdesign/core/Layout';
 import {Text, Heading} from '@astryxdesign/core/Text';
 import {TabList, Tab} from '@astryxdesign/core/TabList';
@@ -20,7 +20,7 @@ import {AppFrame} from '@/components/wander/AppFrame';
 import {OpinionChip} from '@/components/wander/OpinionChip';
 import {TripMap} from '@/components/wander/TripMap';
 import {DisruptionBanner} from '@/components/wander/DisruptionBanner';
-import {api, GATEWAY, type BoardView, type Booking} from '@/lib/api';
+import {api, type BoardView, type Booking} from '@/lib/api';
 import {useMe} from '@/lib/useMe';
 
 const GROUPS: {title: string; kinds: string[]}[] = [
@@ -40,15 +40,19 @@ export default function BoardPage({params}: {params: Promise<{slug: string}>}) {
   const [day, setDay] = useState('0');
   const [isLive, setIsLive] = useState(false);
 
-  // Live board: MongoDB change stream → SSE (straight to the gateway).
+  const refresh = useCallback(() => api<BoardView>(`/api/boards/${slug}`).then(setView).catch(e => setError(e.message)), [slug]);
+
+  // Live board: MongoDB change stream → SSE (same-origin stream route → gateway).
   useEffect(() => {
-    api<BoardView>(`/api/boards/${slug}`).then(setView).catch(e => setError(e.message));
-    const es = new EventSource(`${GATEWAY}/api/boards/${slug}/events`);
+    refresh();
+    const es = new EventSource(`/api/boards/${slug}/events`);
     es.addEventListener('board', e => setView(JSON.parse((e as MessageEvent).data)));
     es.onopen = () => setIsLive(true);
     es.onerror = () => setIsLive(false);
     return () => es.close();
-  }, [slug]);
+  }, [slug, refresh]);
+
+  const openDisruptions = (view?.disruptions ?? []).filter(d => d.status === 'open' || d.status === 'notified');
 
   const isOwner = !!me && me.id === view?.board.user_id;
   const b = view?.board;
@@ -110,7 +114,14 @@ export default function BoardPage({params}: {params: Promise<{slug: string}>}) {
                   </HStack>
                 </VStack>
 
-                <DisruptionBanner alerts={view!.alerts} />
+                {openDisruptions.length > 0 && (
+                  <VStack gap={2}>
+                    {openDisruptions.map(d => (
+                      <DisruptionBanner key={d._id} disruption={d} alerts={view!.alerts.filter(a => a.disruption_id === d._id)} onChanged={refresh} />
+                    ))}
+                    <Link href={`/b/${slug}/updates`}>All trip updates</Link>
+                  </VStack>
+                )}
 
                 <Grid columns={{minWidth: 340, max: 2}} gap={6}>
                   <VStack gap={4}>

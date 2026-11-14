@@ -70,7 +70,7 @@ def pick(known: dict, asked: set[str], batch: int) -> list[str]:
 
 
 def question(sid: str, hint: str | None = None) -> dict:
-    impact, required, qtype, prompt, why, options = SLOTS[sid]
+    _impact, required, qtype, prompt, why, options = SLOTS[sid]
     q = {"id": sid, "prompt": prompt, "type": qtype, "why": why, "required": required,
          "options": [{"id": o, "label": label} for o, label in options], "prefilled_from_memory": False}
     if hint:

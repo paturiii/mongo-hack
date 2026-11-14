@@ -1,4 +1,5 @@
 """`understand` node: free-text trip request → structured partial trip (LLM_MODEL_SMART, structured output)."""
+import logging
 from datetime import date, timedelta
 from typing import Literal
 
@@ -7,6 +8,8 @@ from pydantic import BaseModel, Field
 
 from shared import llm
 from shared.db import db
+
+log = logging.getLogger("wander.intake")
 
 
 class Leg(BaseModel):
@@ -67,8 +70,8 @@ def geocode(city: str | None, country: str | None = None) -> dict | None:
         if res:
             return {"name": city.strip(), "country": country,
                     "geo": {"type": "Point", "coordinates": [float(res[0]["lon"]), float(res[0]["lat"])]}}
-    except Exception:  # noqa: BLE001 - geocode is best-effort
-        pass
+    except Exception as e:  # noqa: BLE001 - geocode is best-effort
+        log.info("geocode fallback for %s: %s", city, type(e).__name__)
     return {"name": city.strip(), "country": country, "geo": None}
 
 

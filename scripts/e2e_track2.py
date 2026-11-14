@@ -47,7 +47,7 @@ def main() -> int:
 
     # APP-01: fail fast without Mongo
     env = {**os.environ, "MONGODB_URI": ""}
-    p = subprocess.run([sys.executable, "-c", "import track2_app.gateway.app"], cwd=ROOT, env=env,
+    p = subprocess.run([sys.executable, "-c", "import track2_app.gateway.app"], check=False, cwd=ROOT, env=env,
                        capture_output=True, text=True, timeout=60)
     check("APP-01 gateway refuses to boot without MONGODB_URI", p.returncode != 0 and "MONGODB_URI" in p.stderr,
           p.stderr.strip().splitlines()[-1] if p.stderr else "")

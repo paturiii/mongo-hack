@@ -5,7 +5,7 @@
 import json
 import random
 import sys
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -18,7 +18,7 @@ def d(s: str) -> dict:
     return {"$date": s}
 
 
-START = datetime(2027, 3, 12, tzinfo=timezone.utc)
+START = datetime(2027, 3, 12, tzinfo=UTC)
 NOW = "2026-11-14T12:00:00Z"
 USER = "usr_fixture_ana"
 SES = "ses_fixture_lisbon"
@@ -282,7 +282,7 @@ def main() -> None:
     ])
     write("disruptions.json", [
         {"_id": "dis_fx_strike", "trip_id": TRIP, "kind": "strike", "severity": 3, "detected_at": d(NOW),
-         "evidence": [{"source_url": "https://example-news.pt/fixture-metro-strike", "source_type": "news", "summary": "[FIXTURE] Metro strike announced for Mar 14"}],
+         "evidence": [{"source_url": "https://example-news.pt/fixture-metro-strike", "source_type": "news", "summary": "[FIXTURE] Metro strike announced for Mar 14", "fetched_at": d(NOW)}],
          "affected": {"days": ["2027-03-14"], "slot_ids": ["d3s1", "d3s2"], "link_ids": []},
          "options": [{"id": "walk", "label": "Walk/taxi instead, keep the plan", "actions": [{"type": "notice"}]},
                      {"id": "reorder", "label": "Swap day 3 and day 5", "actions": [{"type": "replan", "instruction": "swap day 3 and 5"}]}],

@@ -1,13 +1,10 @@
 """LLM access (OpenAI-compatible, OpenRouter by default). Models come only from env (MASTERPLAN §5.1)."""
 from functools import lru_cache
-from typing import TypeVar
 
 from openai import OpenAI
 from pydantic import BaseModel
 
 from shared import config
-
-T = TypeVar("T", bound=BaseModel)
 
 
 @lru_cache
@@ -15,13 +12,14 @@ def _client() -> OpenAI:
     return OpenAI(api_key=config.LLM_API_KEY, base_url=config.LLM_BASE_URL)
 
 
-def structured(schema: type[T], system: str, user: str, smart: bool = False) -> T:
+def structured[T: BaseModel](schema: type[T], system: str, user: str, smart: bool = False, max_tokens: int = 4000) -> T:
     """One structured-output call. Returns a validated Pydantic object."""
     model = config.LLM_MODEL_SMART if smart else config.LLM_MODEL_FAST
     resp = _client().chat.completions.parse(
         model=model,
         messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
         response_format=schema,
+        max_tokens=max_tokens,  # without a cap OpenRouter reserves the full 65k context per call
         extra_body={"provider": {"require_parameters": True}},
     )
     parsed = resp.choices[0].message.parsed

@@ -1,13 +1,69 @@
 {
-  "bsonType": "object",
-  "required": ["trip_id", "source", "instruction", "status", "created_at"],
-  "properties": {
-    "trip_id": {"bsonType": "string"},
-    "source": {"enum": ["user", "disruption"]},
-    "instruction": {"bsonType": "string"},
-    "scope": {"bsonType": "object"},
-    "constraints": {"bsonType": "object"},
-    "status": {"enum": ["queued", "claimed", "done", "failed"]},
-    "created_at": {"bsonType": "date"}
+  "$jsonSchema": {
+    "additionalProperties": true,
+    "properties": {
+      "_id": {
+        "bsonType": "string"
+      },
+      "trip_id": {
+        "bsonType": "string"
+      },
+      "source": {
+        "enum": [
+          "user",
+          "disruption"
+        ],
+        "bsonType": "string"
+      },
+      "disruption_id": {
+        "anyOf": [
+          {
+            "bsonType": "string"
+          },
+          {
+            "bsonType": "null"
+          }
+        ]
+      },
+      "instruction": {
+        "bsonType": "string"
+      },
+      "scope": {
+        "additionalProperties": {
+          "items": {
+            "bsonType": "string"
+          },
+          "bsonType": "array"
+        },
+        "bsonType": "object"
+      },
+      "constraints": {
+        "additionalProperties": true,
+        "bsonType": "object"
+      },
+      "status": {
+        "enum": [
+          "queued",
+          "claimed",
+          "done",
+          "failed"
+        ],
+        "bsonType": "string"
+      },
+      "created_at": {
+        "bsonType": "date"
+      }
+    },
+    "required": [
+      "_id",
+      "trip_id",
+      "source",
+      "instruction",
+      "scope",
+      "constraints",
+      "status",
+      "created_at"
+    ],
+    "bsonType": "object"
   }
 }

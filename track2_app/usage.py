@@ -1,5 +1,5 @@
 """Per-user daily LLM call metering (APP-10)."""
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from fastapi import HTTPException
 from pymongo import ReturnDocument
@@ -12,7 +12,7 @@ UPSELL = ("You've used today's free planning allowance. Wander Pro removes the l
 
 
 def _today() -> str:
-    return datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    return datetime.now(UTC).strftime("%Y-%m-%d")
 
 
 def used(user_id: str) -> int:

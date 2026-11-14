@@ -8,7 +8,7 @@
 thread_id = session_id; checkpoints in Mongo (MongoDBSaver), so a session survives restarts.
 """
 import logging
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from functools import lru_cache
 from typing import TypedDict
 
@@ -41,7 +41,7 @@ class IntakeState(TypedDict, total=False):
 
 
 def _now() -> datetime:
-    return datetime.now(timezone.utc)
+    return datetime.now(UTC)
 
 
 def _say(session_id: str, text: str) -> None:

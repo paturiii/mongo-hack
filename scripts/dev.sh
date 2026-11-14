@@ -18,7 +18,7 @@ down() {
 case "${1:-}" in
   up)
     down
-    nohup .venv/bin/uvicorn track2_app.gateway.app:app --port 8000 > .run/gateway.log 2>&1 &
+    nohup .venv/bin/uvicorn track2_app.gateway.app:app --port 8000 --timeout-graceful-shutdown 3 > .run/gateway.log 2>&1 &
     echo $! > .run/gateway.pid
     if [[ "${2:-}" == "--stub" ]]; then
       nohup .venv/bin/python scripts/dev_stub_planner.py > .run/stub.log 2>&1 &

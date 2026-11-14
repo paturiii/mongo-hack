@@ -73,6 +73,8 @@ def session_view(session_id: str, user_id: str) -> dict | None:
 
 
 _pool = ThreadPoolExecutor(max_workers=16)
+ALERT_FIELDS = {k: 1 for k in ("_id", "disruption_id", "channel", "title", "body", "audio_url", "status",
+                               "delivery_mode", "last_error", "created_at", "source_url", "source_type", "fetched_at")}
 
 
 def board_view(slug: str) -> dict | None:
@@ -86,8 +88,9 @@ def board_view(slug: str) -> dict | None:
     # Independent lookups run concurrently: one round-trip of latency instead of five (this feeds the live board).
     f_geo = _pool.submit(lambda: list(db().places.find({"_id": {"$in": _ids(place_ids)}}, {"geo": 1})))
     f_links = _pool.submit(lambda: list(db().links.find({"_id": {"$in": _ids(link_ids)}})))
-    f_alerts = _pool.submit(lambda: list(db().alerts.find({"trip_id": tid, "channel": "board"}).sort("created_at", -1).limit(5)))
-    f_dis = _pool.submit(lambda: list(db().disruptions.find({"trip_id": tid, "status": {"$in": ["open", "notified"]}})))
+    # Superset of Track 1's snapshot: every channel's alert (voice audio, email status) + recent disruption history.
+    f_alerts = _pool.submit(lambda: list(db().alerts.find({"trip_id": tid}, ALERT_FIELDS).sort("created_at", -1).limit(50)))
+    f_dis = _pool.submit(lambda: list(db().disruptions.find({"trip_id": tid}).sort("detected_at", -1).limit(50)))
     f_trip = _pool.submit(lambda: db().trips.find_one({"_id": tid}, {"destination": 1, "dates": 1, "travelers": 1, "user_id": 1}))
     geo = {str(p["_id"]): p.get("geo") for p in f_geo.result()}
     for it in items:

@@ -7,7 +7,7 @@ import logging
 import re
 import secrets
 import time
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 import httpx
 from fastapi import Cookie, Depends, FastAPI, HTTPException, Request, Response
@@ -17,7 +17,9 @@ from fastapi.responses import JSONResponse, PlainTextResponse, StreamingResponse
 from pydantic import BaseModel, EmailStr
 
 from shared import config
+from shared.config import Settings
 from shared.db import adb, db
+from track1_disruption.api import router as track1_router
 from track2_app import auth, usage
 from track2_app.gateway.views import board_view, jsonable, session_view
 from track2_app.intake import graph as intake
@@ -32,11 +34,20 @@ app = FastAPI(title="Wander gateway", version="0.1.0")
 app.add_middleware(CORSMiddleware, allow_origins=[config.WEB_ORIGIN], allow_credentials=True,
                    allow_methods=["*"], allow_headers=["*"])
 
+# Track 1 (disruption management) router, mounted unchanged. Board reads + live events are served once,
+# by this gateway (board_view returns the superset both UIs read), so Track 1's copies are skipped.
+_T1_SKIP = {"/api/boards/{slug}", "/api/boards/{slug}/events"}
+app.state.settings = Settings.load()
+app.state.db = db()
+for _route in track1_router.routes:
+    if getattr(_route, "path", None) not in _T1_SKIP:
+        app.router.routes.append(_route)
+
 User = Depends(auth.current_user)
 
 
 def _now() -> datetime:
-    return datetime.now(timezone.utc)
+    return datetime.now(UTC)
 
 
 # ---------------------------------------------------------------- auth

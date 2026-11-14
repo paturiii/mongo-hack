@@ -2,7 +2,7 @@
 import hashlib
 import hmac
 import secrets
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 from fastapi import Cookie, HTTPException
 from pymongo.errors import DuplicateKeyError
@@ -15,7 +15,7 @@ _N, _R, _P = 2**14, 8, 1
 
 
 def now() -> datetime:
-    return datetime.now(timezone.utc)
+    return datetime.now(UTC)
 
 
 def hash_password(password: str) -> str:
