@@ -15,7 +15,7 @@ import socket
 import threading
 import time
 import traceback
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 from pymongo import ReturnDocument
 
@@ -29,7 +29,7 @@ BACKOFF_BASE_S = 5
 
 
 def now() -> datetime:
-    return datetime.now(timezone.utc)
+    return datetime.now(UTC)
 
 
 def claim(db, worker_id: str, trip_id: str | None = None) -> dict | None:
@@ -152,7 +152,7 @@ async def run(worker_id: str, concurrency: int = 8, exit_when_idle: float | None
             wake.clear()
             try:
                 await asyncio.wait_for(wake.wait(), timeout=2.0)
-            except asyncio.TimeoutError:
+            except TimeoutError:
                 pass
         if running:
             await asyncio.gather(*running)

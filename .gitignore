@@ -9,6 +9,7 @@
 env/
 venv/
 .venv/
+.uv-cache/
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -20,6 +21,9 @@ build/
 
 # node / next
 node_modules/
+.npm-cache/
+playwright-report/
+test-results/
 .next/
 out/
 .turbo/
@@ -33,6 +37,9 @@ pnpm-debug.log*
 .langgraph_api/
 *.log
 media/voice/
+.run/
+.playwright-cli/
+web/public/maplibre/
 
 # editor / os
 .vscode/

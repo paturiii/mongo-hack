@@ -8,9 +8,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from shared import geo  # noqa: E402
-from shared.agent_protocol import city_ctx, geocode_matches, link_place, name_similarity  # noqa: E402
-from shared.config import get_db  # noqa: E402
+from shared import geo
+from shared.agent_protocol import city_ctx, geocode_matches, link_place, name_similarity
+from shared.config import get_db
 
 
 def main() -> None:

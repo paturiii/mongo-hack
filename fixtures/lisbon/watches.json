@@ -1,0 +1,121 @@
+[
+ {
+  "_id": "w_fx_flight",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "flight",
+  "target": {
+   "carrier": "TP",
+   "number": "TP1351",
+   "date": "2027-03-12"
+  },
+  "target_key": "flight:TP1351:2027-03-12",
+  "next_check_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "interval_s": 3600,
+  "active": true
+ },
+ {
+  "_id": "w_fx_weather_0",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "weather",
+  "target": {
+   "area_geo": null,
+   "date": "2027-03-12"
+  },
+  "target_key": "weather:2027-03-12",
+  "next_check_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "interval_s": 21600,
+  "active": true
+ },
+ {
+  "_id": "w_fx_weather_1",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "weather",
+  "target": {
+   "area_geo": null,
+   "date": "2027-03-13"
+  },
+  "target_key": "weather:2027-03-13",
+  "next_check_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "interval_s": 21600,
+  "active": true
+ },
+ {
+  "_id": "w_fx_weather_2",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "weather",
+  "target": {
+   "area_geo": null,
+   "date": "2027-03-14"
+  },
+  "target_key": "weather:2027-03-14",
+  "next_check_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "interval_s": 21600,
+  "active": true
+ },
+ {
+  "_id": "w_fx_weather_3",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "weather",
+  "target": {
+   "area_geo": null,
+   "date": "2027-03-15"
+  },
+  "target_key": "weather:2027-03-15",
+  "next_check_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "interval_s": 21600,
+  "active": true
+ },
+ {
+  "_id": "w_fx_weather_4",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "weather",
+  "target": {
+   "area_geo": null,
+   "date": "2027-03-16"
+  },
+  "target_key": "weather:2027-03-16",
+  "next_check_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "interval_s": 21600,
+  "active": true
+ },
+ {
+  "_id": "w_fx_pena",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "venue",
+  "target": {
+   "place_id": "pl_lis_35"
+  },
+  "target_key": "venue:pl_lis_35",
+  "next_check_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "interval_s": 21600,
+  "active": true
+ },
+ {
+  "_id": "w_fx_lux",
+  "trip_id": "trip_fixture_lisbon",
+  "kind": "event",
+  "target": {
+   "place_id": "pl_lis_16"
+  },
+  "target_key": "event:pl_lis_16",
+  "next_check_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "interval_s": 21600,
+  "active": true
+ }
+]

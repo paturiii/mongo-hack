@@ -1,0 +1,22 @@
+{
+  "bsonType": "object",
+  "required": ["_id", "user_id", "surface", "status", "messages", "created_at"],
+  "properties": {
+    "_id": {"bsonType": "string", "pattern": "^ses_"},
+    "user_id": {"bsonType": "string"},
+    "surface": {"enum": ["mcp", "native", "voice"]},
+    "thread_id": {"bsonType": "string"},
+    "trip_id": {"bsonType": ["string", "null"]},
+    "status": {"enum": ["asking", "researching", "planning", "ready", "refining", "traveling"]},
+    "messages": {
+      "bsonType": "array",
+      "items": {
+        "bsonType": "object",
+        "required": ["role", "content"],
+        "properties": {"role": {"enum": ["user", "assistant", "system"]}, "content": {"bsonType": "string"}}
+      }
+    },
+    "created_at": {"bsonType": "date"},
+    "expires_at": {"bsonType": "date"}
+  }
+}

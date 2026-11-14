@@ -1,0 +1,23 @@
+[
+  {
+    "_id": "link_museum",
+    "trip_id": "trip_lisbon",
+    "item_ref": "place_museum",
+    "kind": "monument_ticket",
+    "provider": "official",
+    "url": "https://www.lisboastorycentre.pt/",
+    "label": "Lisbon Story Centre tickets",
+    "is_official": true,
+    "for_date": "2026-03-14",
+    "validation": {
+      "status": "ok",
+      "ok": true
+    },
+    "price_hint": {
+      "amount": 8,
+      "currency": "EUR",
+      "as_of": "2026-03-10T12:00:00Z"
+    },
+    "fixture": true
+  }
+]

@@ -8,14 +8,14 @@ import argparse
 import json
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from shared.config import get_db  # noqa: E402
+from shared.config import get_db
 
 RESULTS: list[tuple[str, bool, str]] = []
 
@@ -39,7 +39,7 @@ def r02(_: argparse.Namespace) -> None:
 
     http.request = counting
     try:
-        q = f"lisbon tasca recommendations {datetime.now(timezone.utc):%Y%m%d%H%M}"
+        q = f"lisbon tasca recommendations {datetime.now(UTC):%Y%m%d%H%M}"
         search_client.search(q, k=3)
         first = calls["n"]
         search_client.search(q, k=3)
@@ -92,7 +92,7 @@ def r04(_: argparse.Namespace) -> None:
     from track3_research.consensus import build_chips, score_pipeline
 
     db = get_db()
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
     a, b = "pl_t3test_r04_a", "pl_t3test_r04_b"
     geo = {"type": "Point", "coordinates": [-9.14, 38.71]}
     base = {"city": "Lisbon", "category": "food", "source": "search", "geo": geo, "created_at": now, "updated_at": now}
@@ -175,7 +175,7 @@ def r10(ns: argparse.Namespace) -> None:
     trip = G.load_trip(tid)
     jids = []
     specs = [("opinions", t.replace(" ", "_")) for t in G.OPINION_THEMES] + [("places", g) for g in G.PLACE_GROUPS] + [(k, "main") for k in G.FACT_KINDS]
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
     for i, (kind, suffix) in enumerate(specs):
         jid = f"job_{tid}_{kind}_{suffix}"
         jids.append(jid)

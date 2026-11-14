@@ -1,0 +1,2082 @@
+[
+ {
+  "_id": "op_lis_001",
+  "place_id": "pl_lis_00",
+  "city": "Lisbon",
+  "source_type": "news",
+  "source_name": "local news",
+  "source_url": "https://example-news.pt/fixture1",
+  "source_title": "[FIXTURE] Mosteiro dos Jerónimos thread",
+  "summary": "[FIXTURE] Travelers on local news say Mosteiro dos Jerónimos: go early.",
+  "quote": "go early — worth knowing before Mosteiro dos Jerónimos",
+  "stance": "tip",
+  "sentiment": 0.54,
+  "tags": [
+   "go early"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_002",
+  "place_id": "pl_lis_00",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "TripAdvisor Lisbon forum",
+  "source_url": "https://www.tripadvisor.com/ShowTopic-fixture2.html",
+  "source_title": "[FIXTURE] Mosteiro dos Jerónimos thread",
+  "summary": "[FIXTURE] Travelers on TripAdvisor Lisbon forum say Mosteiro dos Jerónimos: book ahead.",
+  "quote": "book ahead — worth knowing before Mosteiro dos Jerónimos",
+  "stance": "tip",
+  "sentiment": 0.78,
+  "tags": [
+   "book ahead"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_003",
+  "place_id": "pl_lis_01",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "Rick Steves forum",
+  "source_url": "https://community.ricksteves.com/travel-forum/fixture3",
+  "source_title": "[FIXTURE] Torre de Belém thread",
+  "summary": "[FIXTURE] Travelers on Rick Steves forum say Torre de Belém: long queue.",
+  "quote": "long queue — worth knowing before Torre de Belém",
+  "stance": "con",
+  "sentiment": -0.61,
+  "tags": [
+   "long queue"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_004",
+  "place_id": "pl_lis_01",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/lisbon",
+  "source_url": "https://www.reddit.com/r/lisbon/comments/fixture4/",
+  "source_title": "[FIXTURE] Torre de Belém thread",
+  "summary": "[FIXTURE] Travelers on r/lisbon say Torre de Belém: long queue.",
+  "quote": "long queue — worth knowing before Torre de Belém",
+  "stance": "con",
+  "sentiment": -0.69,
+  "tags": [
+   "long queue"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_005",
+  "place_id": "pl_lis_02",
+  "city": "Lisbon",
+  "source_type": "blog",
+  "source_name": "travel blog",
+  "source_url": "https://example-travel-blog.com/lisbon-fixture5",
+  "source_title": "[FIXTURE] Pastéis de Belém thread",
+  "summary": "[FIXTURE] Travelers on travel blog say Pastéis de Belém: pastel de nata.",
+  "quote": "pastel de nata — worth knowing before Pastéis de Belém",
+  "stance": "pro",
+  "sentiment": 0.46,
+  "tags": [
+   "pastel de nata"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.7,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_006",
+  "place_id": "pl_lis_02",
+  "city": "Lisbon",
+  "source_type": "news",
+  "source_name": "local news",
+  "source_url": "https://example-news.pt/fixture6",
+  "source_title": "[FIXTURE] Pastéis de Belém thread",
+  "summary": "[FIXTURE] Travelers on local news say Pastéis de Belém: takeaway faster.",
+  "quote": "takeaway faster — worth knowing before Pastéis de Belém",
+  "stance": "pro",
+  "sentiment": 0.49,
+  "tags": [
+   "takeaway faster"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_007",
+  "place_id": "pl_lis_03",
+  "city": "Lisbon",
+  "source_type": "review",
+  "source_name": "Google reviews",
+  "source_url": "https://maps.google.com/?cid=fixture7",
+  "source_title": "[FIXTURE] MAAT thread",
+  "summary": "[FIXTURE] Travelers on Google reviews say MAAT: sunset.",
+  "quote": "sunset — worth knowing before MAAT",
+  "stance": "pro",
+  "sentiment": 0.63,
+  "tags": [
+   "sunset"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.8,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_008",
+  "place_id": "pl_lis_03",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/travel",
+  "source_url": "https://www.reddit.com/r/travel/comments/fixture8/",
+  "source_title": "[FIXTURE] MAAT thread",
+  "summary": "[FIXTURE] Travelers on r/travel say MAAT: architecture.",
+  "quote": "architecture — worth knowing before MAAT",
+  "stance": "pro",
+  "sentiment": 0.82,
+  "tags": [
+   "architecture"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_009",
+  "place_id": "pl_lis_04",
+  "city": "Lisbon",
+  "source_type": "review",
+  "source_name": "Google reviews",
+  "source_url": "https://maps.google.com/?cid=fixture9",
+  "source_title": "[FIXTURE] Padrão dos Descobrimentos thread",
+  "summary": "[FIXTURE] Travelers on Google reviews say Padrão dos Descobrimentos: viewpoint.",
+  "quote": "viewpoint — worth knowing before Padrão dos Descobrimentos",
+  "stance": "pro",
+  "sentiment": 0.73,
+  "tags": [
+   "viewpoint"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.8,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_010",
+  "place_id": "pl_lis_04",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "TripAdvisor Lisbon forum",
+  "source_url": "https://www.tripadvisor.com/ShowTopic-fixture10.html",
+  "source_title": "[FIXTURE] Padrão dos Descobrimentos thread",
+  "summary": "[FIXTURE] Travelers on TripAdvisor Lisbon forum say Padrão dos Descobrimentos: viewpoint.",
+  "quote": "viewpoint — worth knowing before Padrão dos Descobrimentos",
+  "stance": "pro",
+  "sentiment": 0.44,
+  "tags": [
+   "viewpoint"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_011",
+  "place_id": "pl_lis_05",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/travel",
+  "source_url": "https://www.reddit.com/r/travel/comments/fixture11/",
+  "source_title": "[FIXTURE] Castelo de São Jorge thread",
+  "summary": "[FIXTURE] Travelers on r/travel say Castelo de São Jorge: go early.",
+  "quote": "go early — worth knowing before Castelo de São Jorge",
+  "stance": "tip",
+  "sentiment": 0.78,
+  "tags": [
+   "go early"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_012",
+  "place_id": "pl_lis_05",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "TripAdvisor Lisbon forum",
+  "source_url": "https://www.tripadvisor.com/ShowTopic-fixture12.html",
+  "source_title": "[FIXTURE] Castelo de São Jorge thread",
+  "summary": "[FIXTURE] Travelers on TripAdvisor Lisbon forum say Castelo de São Jorge: views.",
+  "quote": "views — worth knowing before Castelo de São Jorge",
+  "stance": "pro",
+  "sentiment": 0.43,
+  "tags": [
+   "views"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_013",
+  "place_id": "pl_lis_06",
+  "city": "Lisbon",
+  "source_type": "blog",
+  "source_name": "travel blog",
+  "source_url": "https://example-travel-blog.com/lisbon-fixture13",
+  "source_title": "[FIXTURE] Miradouro de Santa Luzia thread",
+  "summary": "[FIXTURE] Travelers on travel blog say Miradouro de Santa Luzia: free.",
+  "quote": "free — worth knowing before Miradouro de Santa Luzia",
+  "stance": "pro",
+  "sentiment": 0.56,
+  "tags": [
+   "free"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.7,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_014",
+  "place_id": "pl_lis_06",
+  "city": "Lisbon",
+  "source_type": "review",
+  "source_name": "Google reviews",
+  "source_url": "https://maps.google.com/?cid=fixture14",
+  "source_title": "[FIXTURE] Miradouro de Santa Luzia thread",
+  "summary": "[FIXTURE] Travelers on Google reviews say Miradouro de Santa Luzia: free.",
+  "quote": "free — worth knowing before Miradouro de Santa Luzia",
+  "stance": "pro",
+  "sentiment": 0.89,
+  "tags": [
+   "free"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.8,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_015",
+  "place_id": "pl_lis_07",
+  "city": "Lisbon",
+  "source_type": "review",
+  "source_name": "Google reviews",
+  "source_url": "https://maps.google.com/?cid=fixture15",
+  "source_title": "[FIXTURE] Sé de Lisboa thread",
+  "summary": "[FIXTURE] Travelers on Google reviews say Sé de Lisboa: cathedral.",
+  "quote": "cathedral — worth knowing before Sé de Lisboa",
+  "stance": "pro",
+  "sentiment": 0.6,
+  "tags": [
+   "cathedral"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.8,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_016",
+  "place_id": "pl_lis_07",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/lisbon",
+  "source_url": "https://www.reddit.com/r/lisbon/comments/fixture16/",
+  "source_title": "[FIXTURE] Sé de Lisboa thread",
+  "summary": "[FIXTURE] Travelers on r/lisbon say Sé de Lisboa: cathedral.",
+  "quote": "cathedral — worth knowing before Sé de Lisboa",
+  "stance": "pro",
+  "sentiment": 0.67,
+  "tags": [
+   "cathedral"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_017",
+  "place_id": "pl_lis_08",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "Rick Steves forum",
+  "source_url": "https://community.ricksteves.com/travel-forum/fixture17",
+  "source_title": "[FIXTURE] Tasca do Chico thread",
+  "summary": "[FIXTURE] Travelers on Rick Steves forum say Tasca do Chico: authentic.",
+  "quote": "authentic — worth knowing before Tasca do Chico",
+  "stance": "pro",
+  "sentiment": 0.47,
+  "tags": [
+   "authentic"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_018",
+  "place_id": "pl_lis_08",
+  "city": "Lisbon",
+  "source_type": "video",
+  "source_name": "YouTube",
+  "source_url": "https://www.youtube.com/watch?v=fixture18",
+  "source_title": "[FIXTURE] Tasca do Chico thread",
+  "summary": "[FIXTURE] Travelers on YouTube say Tasca do Chico: fado vadio.",
+  "quote": "fado vadio — worth knowing before Tasca do Chico",
+  "stance": "pro",
+  "sentiment": 0.62,
+  "tags": [
+   "fado vadio"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.5,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_019",
+  "place_id": "pl_lis_09",
+  "city": "Lisbon",
+  "source_type": "news",
+  "source_name": "local news",
+  "source_url": "https://example-news.pt/fixture19",
+  "source_title": "[FIXTURE] Clube de Fado thread",
+  "summary": "[FIXTURE] Travelers on local news say Clube de Fado: fado.",
+  "quote": "fado — worth knowing before Clube de Fado",
+  "stance": "pro",
+  "sentiment": 0.65,
+  "tags": [
+   "fado"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_020",
+  "place_id": "pl_lis_09",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/lisbon",
+  "source_url": "https://www.reddit.com/r/lisbon/comments/fixture20/",
+  "source_title": "[FIXTURE] Clube de Fado thread",
+  "summary": "[FIXTURE] Travelers on r/lisbon say Clube de Fado: dinner show.",
+  "quote": "dinner show — worth knowing before Clube de Fado",
+  "stance": "pro",
+  "sentiment": 0.89,
+  "tags": [
+   "dinner show"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_021",
+  "place_id": "pl_lis_10",
+  "city": "Lisbon",
+  "source_type": "video",
+  "source_name": "YouTube",
+  "source_url": "https://www.youtube.com/watch?v=fixture21",
+  "source_title": "[FIXTURE] Mesa de Frades thread",
+  "summary": "[FIXTURE] Travelers on YouTube say Mesa de Frades: book ahead.",
+  "quote": "book ahead — worth knowing before Mesa de Frades",
+  "stance": "tip",
+  "sentiment": 0.55,
+  "tags": [
+   "book ahead"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.5,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_022",
+  "place_id": "pl_lis_10",
+  "city": "Lisbon",
+  "source_type": "news",
+  "source_name": "local news",
+  "source_url": "https://example-news.pt/fixture22",
+  "source_title": "[FIXTURE] Mesa de Frades thread",
+  "summary": "[FIXTURE] Travelers on local news say Mesa de Frades: intimate.",
+  "quote": "intimate — worth knowing before Mesa de Frades",
+  "stance": "pro",
+  "sentiment": 0.94,
+  "tags": [
+   "intimate"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_023",
+  "place_id": "pl_lis_11",
+  "city": "Lisbon",
+  "source_type": "video",
+  "source_name": "YouTube",
+  "source_url": "https://www.youtube.com/watch?v=fixture23",
+  "source_title": "[FIXTURE] Feira da Ladra thread",
+  "summary": "[FIXTURE] Travelers on YouTube say Feira da Ladra: flea market.",
+  "quote": "flea market — worth knowing before Feira da Ladra",
+  "stance": "pro",
+  "sentiment": 0.45,
+  "tags": [
+   "flea market"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.5,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_024",
+  "place_id": "pl_lis_11",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/travel",
+  "source_url": "https://www.reddit.com/r/travel/comments/fixture24/",
+  "source_title": "[FIXTURE] Feira da Ladra thread",
+  "summary": "[FIXTURE] Travelers on r/travel say Feira da Ladra: flea market.",
+  "quote": "flea market — worth knowing before Feira da Ladra",
+  "stance": "pro",
+  "sentiment": 0.53,
+  "tags": [
+   "flea market"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_025",
+  "place_id": "pl_lis_12",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "Rick Steves forum",
+  "source_url": "https://community.ricksteves.com/travel-forum/fixture25",
+  "source_title": "[FIXTURE] Panteão Nacional thread",
+  "summary": "[FIXTURE] Travelers on Rick Steves forum say Panteão Nacional: rooftop views.",
+  "quote": "rooftop views — worth knowing before Panteão Nacional",
+  "stance": "pro",
+  "sentiment": 0.86,
+  "tags": [
+   "rooftop views"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_026",
+  "place_id": "pl_lis_12",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/lisbon",
+  "source_url": "https://www.reddit.com/r/lisbon/comments/fixture26/",
+  "source_title": "[FIXTURE] Panteão Nacional thread",
+  "summary": "[FIXTURE] Travelers on r/lisbon say Panteão Nacional: rooftop views.",
+  "quote": "rooftop views — worth knowing before Panteão Nacional",
+  "stance": "pro",
+  "sentiment": 0.54,
+  "tags": [
+   "rooftop views"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_027",
+  "place_id": "pl_lis_13",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/lisbon",
+  "source_url": "https://www.reddit.com/r/lisbon/comments/fixture27/",
+  "source_title": "[FIXTURE] Time Out Market thread",
+  "summary": "[FIXTURE] Travelers on r/lisbon say Time Out Market: variety.",
+  "quote": "variety — worth knowing before Time Out Market",
+  "stance": "pro",
+  "sentiment": 0.69,
+  "tags": [
+   "variety"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_028",
+  "place_id": "pl_lis_13",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/travel",
+  "source_url": "https://www.reddit.com/r/travel/comments/fixture28/",
+  "source_title": "[FIXTURE] Time Out Market thread",
+  "summary": "[FIXTURE] Travelers on r/travel say Time Out Market: variety.",
+  "quote": "variety — worth knowing before Time Out Market",
+  "stance": "pro",
+  "sentiment": 0.92,
+  "tags": [
+   "variety"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_029",
+  "place_id": "pl_lis_14",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/lisbon",
+  "source_url": "https://www.reddit.com/r/lisbon/comments/fixture29/",
+  "source_title": "[FIXTURE] Pink Street thread",
+  "summary": "[FIXTURE] Travelers on r/lisbon say Pink Street: crowded.",
+  "quote": "crowded — worth knowing before Pink Street",
+  "stance": "con",
+  "sentiment": -0.56,
+  "tags": [
+   "crowded"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_030",
+  "place_id": "pl_lis_14",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "Rick Steves forum",
+  "source_url": "https://community.ricksteves.com/travel-forum/fixture30",
+  "source_title": "[FIXTURE] Pink Street thread",
+  "summary": "[FIXTURE] Travelers on Rick Steves forum say Pink Street: crowded.",
+  "quote": "crowded — worth knowing before Pink Street",
+  "stance": "con",
+  "sentiment": -0.44,
+  "tags": [
+   "crowded"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_031",
+  "place_id": "pl_lis_15",
+  "city": "Lisbon",
+  "source_type": "video",
+  "source_name": "YouTube",
+  "source_url": "https://www.youtube.com/watch?v=fixture31",
+  "source_title": "[FIXTURE] Musicbox thread",
+  "summary": "[FIXTURE] Travelers on YouTube say Musicbox: live music.",
+  "quote": "live music — worth knowing before Musicbox",
+  "stance": "pro",
+  "sentiment": 0.44,
+  "tags": [
+   "live music"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.5,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_032",
+  "place_id": "pl_lis_15",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/lisbon",
+  "source_url": "https://www.reddit.com/r/lisbon/comments/fixture32/",
+  "source_title": "[FIXTURE] Musicbox thread",
+  "summary": "[FIXTURE] Travelers on r/lisbon say Musicbox: live music.",
+  "quote": "live music — worth knowing before Musicbox",
+  "stance": "pro",
+  "sentiment": 0.64,
+  "tags": [
+   "live music"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_033",
+  "place_id": "pl_lis_16",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/travel",
+  "source_url": "https://www.reddit.com/r/travel/comments/fixture33/",
+  "source_title": "[FIXTURE] Lux Frágil thread",
+  "summary": "[FIXTURE] Travelers on r/travel say Lux Frágil: arrive before 2am.",
+  "quote": "arrive before 2am — worth knowing before Lux Frágil",
+  "stance": "tip",
+  "sentiment": 0.43,
+  "tags": [
+   "arrive before 2am"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_034",
+  "place_id": "pl_lis_16",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "TripAdvisor Lisbon forum",
+  "source_url": "https://www.tripadvisor.com/ShowTopic-fixture34.html",
+  "source_title": "[FIXTURE] Lux Frágil thread",
+  "summary": "[FIXTURE] Travelers on TripAdvisor Lisbon forum say Lux Frágil: techno.",
+  "quote": "techno — worth knowing before Lux Frágil",
+  "stance": "pro",
+  "sentiment": 0.71,
+  "tags": [
+   "techno"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_035",
+  "place_id": "pl_lis_17",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/travel",
+  "source_url": "https://www.reddit.com/r/travel/comments/fixture35/",
+  "source_title": "[FIXTURE] Park Bar thread",
+  "summary": "[FIXTURE] Travelers on r/travel say Park Bar: rooftop.",
+  "quote": "rooftop — worth knowing before Park Bar",
+  "stance": "pro",
+  "sentiment": 0.44,
+  "tags": [
+   "rooftop"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_036",
+  "place_id": "pl_lis_17",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "TripAdvisor Lisbon forum",
+  "source_url": "https://www.tripadvisor.com/ShowTopic-fixture36.html",
+  "source_title": "[FIXTURE] Park Bar thread",
+  "summary": "[FIXTURE] Travelers on TripAdvisor Lisbon forum say Park Bar: rooftop.",
+  "quote": "rooftop — worth knowing before Park Bar",
+  "stance": "pro",
+  "sentiment": 0.74,
+  "tags": [
+   "rooftop"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_037",
+  "place_id": "pl_lis_18",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "TripAdvisor Lisbon forum",
+  "source_url": "https://www.tripadvisor.com/ShowTopic-fixture37.html",
+  "source_title": "[FIXTURE] Pavilhão Chinês thread",
+  "summary": "[FIXTURE] Travelers on TripAdvisor Lisbon forum say Pavilhão Chinês: cocktails.",
+  "quote": "cocktails — worth knowing before Pavilhão Chinês",
+  "stance": "pro",
+  "sentiment": 0.93,
+  "tags": [
+   "cocktails"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_038",
+  "place_id": "pl_lis_18",
+  "city": "Lisbon",
+  "source_type": "review",
+  "source_name": "Google reviews",
+  "source_url": "https://maps.google.com/?cid=fixture38",
+  "source_title": "[FIXTURE] Pavilhão Chinês thread",
+  "summary": "[FIXTURE] Travelers on Google reviews say Pavilhão Chinês: cocktails.",
+  "quote": "cocktails — worth knowing before Pavilhão Chinês",
+  "stance": "pro",
+  "sentiment": 0.66,
+  "tags": [
+   "cocktails"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.8,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_039",
+  "place_id": "pl_lis_19",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/travel",
+  "source_url": "https://www.reddit.com/r/travel/comments/fixture39/",
+  "source_title": "[FIXTURE] Cervejaria Ramiro thread",
+  "summary": "[FIXTURE] Travelers on r/travel say Cervejaria Ramiro: queue.",
+  "quote": "queue — worth knowing before Cervejaria Ramiro",
+  "stance": "pro",
+  "sentiment": 0.95,
+  "tags": [
+   "queue"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_040",
+  "place_id": "pl_lis_19",
+  "city": "Lisbon",
+  "source_type": "video",
+  "source_name": "YouTube",
+  "source_url": "https://www.youtube.com/watch?v=fixture40",
+  "source_title": "[FIXTURE] Cervejaria Ramiro thread",
+  "summary": "[FIXTURE] Travelers on YouTube say Cervejaria Ramiro: queue.",
+  "quote": "queue — worth knowing before Cervejaria Ramiro",
+  "stance": "pro",
+  "sentiment": 0.66,
+  "tags": [
+   "queue"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.5,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_041",
+  "place_id": "pl_lis_20",
+  "city": "Lisbon",
+  "source_type": "blog",
+  "source_name": "travel blog",
+  "source_url": "https://example-travel-blog.com/lisbon-fixture41",
+  "source_title": "[FIXTURE] Taberna da Rua das Flores thread",
+  "summary": "[FIXTURE] Travelers on travel blog say Taberna da Rua das Flores: no reservations.",
+  "quote": "no reservations — worth knowing before Taberna da Rua das Flores",
+  "stance": "pro",
+  "sentiment": 0.46,
+  "tags": [
+   "no reservations"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.7,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_042",
+  "place_id": "pl_lis_20",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/lisbon",
+  "source_url": "https://www.reddit.com/r/lisbon/comments/fixture42/",
+  "source_title": "[FIXTURE] Taberna da Rua das Flores thread",
+  "summary": "[FIXTURE] Travelers on r/lisbon say Taberna da Rua das Flores: local favorite.",
+  "quote": "local favorite — worth knowing before Taberna da Rua das Flores",
+  "stance": "pro",
+  "sentiment": 0.81,
+  "tags": [
+   "local favorite"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_043",
+  "place_id": "pl_lis_21",
+  "city": "Lisbon",
+  "source_type": "news",
+  "source_name": "local news",
+  "source_url": "https://example-news.pt/fixture43",
+  "source_title": "[FIXTURE] A Cevicheria thread",
+  "summary": "[FIXTURE] Travelers on local news say A Cevicheria: ceviche.",
+  "quote": "ceviche — worth knowing before A Cevicheria",
+  "stance": "pro",
+  "sentiment": 0.68,
+  "tags": [
+   "ceviche"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_044",
+  "place_id": "pl_lis_21",
+  "city": "Lisbon",
+  "source_type": "video",
+  "source_name": "YouTube",
+  "source_url": "https://www.youtube.com/watch?v=fixture44",
+  "source_title": "[FIXTURE] A Cevicheria thread",
+  "summary": "[FIXTURE] Travelers on YouTube say A Cevicheria: ceviche.",
+  "quote": "ceviche — worth knowing before A Cevicheria",
+  "stance": "pro",
+  "sentiment": 0.92,
+  "tags": [
+   "ceviche"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.5,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_045",
+  "place_id": "pl_lis_22",
+  "city": "Lisbon",
+  "source_type": "review",
+  "source_name": "Google reviews",
+  "source_url": "https://maps.google.com/?cid=fixture45",
+  "source_title": "[FIXTURE] Manteigaria thread",
+  "summary": "[FIXTURE] Travelers on Google reviews say Manteigaria: pastel de nata.",
+  "quote": "pastel de nata — worth knowing before Manteigaria",
+  "stance": "pro",
+  "sentiment": 0.82,
+  "tags": [
+   "pastel de nata"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.8,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_046",
+  "place_id": "pl_lis_22",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/travel",
+  "source_url": "https://www.reddit.com/r/travel/comments/fixture46/",
+  "source_title": "[FIXTURE] Manteigaria thread",
+  "summary": "[FIXTURE] Travelers on r/travel say Manteigaria: better than belém.",
+  "quote": "better than belém — worth knowing before Manteigaria",
+  "stance": "pro",
+  "sentiment": 0.94,
+  "tags": [
+   "better than belém"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_047",
+  "place_id": "pl_lis_23",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/travel",
+  "source_url": "https://www.reddit.com/r/travel/comments/fixture47/",
+  "source_title": "[FIXTURE] O Trevo thread",
+  "summary": "[FIXTURE] Travelers on r/travel say O Trevo: cheap eats.",
+  "quote": "cheap eats — worth knowing before O Trevo",
+  "stance": "pro",
+  "sentiment": 0.69,
+  "tags": [
+   "cheap eats"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_048",
+  "place_id": "pl_lis_23",
+  "city": "Lisbon",
+  "source_type": "review",
+  "source_name": "Google reviews",
+  "source_url": "https://maps.google.com/?cid=fixture48",
+  "source_title": "[FIXTURE] O Trevo thread",
+  "summary": "[FIXTURE] Travelers on Google reviews say O Trevo: bifana.",
+  "quote": "bifana — worth knowing before O Trevo",
+  "stance": "pro",
+  "sentiment": 0.6,
+  "tags": [
+   "bifana"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.8,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_049",
+  "place_id": "pl_lis_24",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "Rick Steves forum",
+  "source_url": "https://community.ricksteves.com/travel-forum/fixture49",
+  "source_title": "[FIXTURE] Zé da Mouraria thread",
+  "summary": "[FIXTURE] Travelers on Rick Steves forum say Zé da Mouraria: lunch only.",
+  "quote": "lunch only — worth knowing before Zé da Mouraria",
+  "stance": "pro",
+  "sentiment": 0.75,
+  "tags": [
+   "lunch only"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_050",
+  "place_id": "pl_lis_24",
+  "city": "Lisbon",
+  "source_type": "blog",
+  "source_name": "travel blog",
+  "source_url": "https://example-travel-blog.com/lisbon-fixture50",
+  "source_title": "[FIXTURE] Zé da Mouraria thread",
+  "summary": "[FIXTURE] Travelers on travel blog say Zé da Mouraria: huge portions.",
+  "quote": "huge portions — worth knowing before Zé da Mouraria",
+  "stance": "pro",
+  "sentiment": 0.84,
+  "tags": [
+   "huge portions"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.7,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_051",
+  "place_id": "pl_lis_25",
+  "city": "Lisbon",
+  "source_type": "video",
+  "source_name": "YouTube",
+  "source_url": "https://www.youtube.com/watch?v=fixture51",
+  "source_title": "[FIXTURE] Livraria Bertrand thread",
+  "summary": "[FIXTURE] Travelers on YouTube say Livraria Bertrand: oldest bookshop.",
+  "quote": "oldest bookshop — worth knowing before Livraria Bertrand",
+  "stance": "pro",
+  "sentiment": 0.51,
+  "tags": [
+   "oldest bookshop"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.5,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_052",
+  "place_id": "pl_lis_25",
+  "city": "Lisbon",
+  "source_type": "review",
+  "source_name": "Google reviews",
+  "source_url": "https://maps.google.com/?cid=fixture52",
+  "source_title": "[FIXTURE] Livraria Bertrand thread",
+  "summary": "[FIXTURE] Travelers on Google reviews say Livraria Bertrand: oldest bookshop.",
+  "quote": "oldest bookshop — worth knowing before Livraria Bertrand",
+  "stance": "pro",
+  "sentiment": 0.6,
+  "tags": [
+   "oldest bookshop"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.8,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_053",
+  "place_id": "pl_lis_26",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/lisbon",
+  "source_url": "https://www.reddit.com/r/lisbon/comments/fixture53/",
+  "source_title": "[FIXTURE] Elevador de Santa Justa thread",
+  "summary": "[FIXTURE] Travelers on r/lisbon say Elevador de Santa Justa: walk up instead.",
+  "quote": "walk up instead — worth knowing before Elevador de Santa Justa",
+  "stance": "pro",
+  "sentiment": 0.66,
+  "tags": [
+   "walk up instead"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_054",
+  "place_id": "pl_lis_26",
+  "city": "Lisbon",
+  "source_type": "news",
+  "source_name": "local news",
+  "source_url": "https://example-news.pt/fixture54",
+  "source_title": "[FIXTURE] Elevador de Santa Justa thread",
+  "summary": "[FIXTURE] Travelers on local news say Elevador de Santa Justa: tourist trap.",
+  "quote": "tourist trap — worth knowing before Elevador de Santa Justa",
+  "stance": "con",
+  "sentiment": -0.68,
+  "tags": [
+   "tourist trap"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_055",
+  "place_id": "pl_lis_27",
+  "city": "Lisbon",
+  "source_type": "review",
+  "source_name": "Google reviews",
+  "source_url": "https://maps.google.com/?cid=fixture55",
+  "source_title": "[FIXTURE] Praça do Comércio thread",
+  "summary": "[FIXTURE] Travelers on Google reviews say Praça do Comércio: riverfront.",
+  "quote": "riverfront — worth knowing before Praça do Comércio",
+  "stance": "pro",
+  "sentiment": 0.93,
+  "tags": [
+   "riverfront"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.8,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_056",
+  "place_id": "pl_lis_27",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "Rick Steves forum",
+  "source_url": "https://community.ricksteves.com/travel-forum/fixture56",
+  "source_title": "[FIXTURE] Praça do Comércio thread",
+  "summary": "[FIXTURE] Travelers on Rick Steves forum say Praça do Comércio: riverfront.",
+  "quote": "riverfront — worth knowing before Praça do Comércio",
+  "stance": "pro",
+  "sentiment": 0.44,
+  "tags": [
+   "riverfront"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_057",
+  "place_id": "pl_lis_28",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/travel",
+  "source_url": "https://www.reddit.com/r/travel/comments/fixture57/",
+  "source_title": "[FIXTURE] Rua Augusta Arch thread",
+  "summary": "[FIXTURE] Travelers on r/travel say Rua Augusta Arch: viewpoint.",
+  "quote": "viewpoint — worth knowing before Rua Augusta Arch",
+  "stance": "pro",
+  "sentiment": 0.51,
+  "tags": [
+   "viewpoint"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_058",
+  "place_id": "pl_lis_28",
+  "city": "Lisbon",
+  "source_type": "news",
+  "source_name": "local news",
+  "source_url": "https://example-news.pt/fixture58",
+  "source_title": "[FIXTURE] Rua Augusta Arch thread",
+  "summary": "[FIXTURE] Travelers on local news say Rua Augusta Arch: viewpoint.",
+  "quote": "viewpoint — worth knowing before Rua Augusta Arch",
+  "stance": "pro",
+  "sentiment": 0.67,
+  "tags": [
+   "viewpoint"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_059",
+  "place_id": "pl_lis_29",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/lisbon",
+  "source_url": "https://www.reddit.com/r/lisbon/comments/fixture59/",
+  "source_title": "[FIXTURE] LX Factory thread",
+  "summary": "[FIXTURE] Travelers on r/lisbon say LX Factory: street art.",
+  "quote": "street art — worth knowing before LX Factory",
+  "stance": "pro",
+  "sentiment": 0.84,
+  "tags": [
+   "street art"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_060",
+  "place_id": "pl_lis_29",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "Rick Steves forum",
+  "source_url": "https://community.ricksteves.com/travel-forum/fixture60",
+  "source_title": "[FIXTURE] LX Factory thread",
+  "summary": "[FIXTURE] Travelers on Rick Steves forum say LX Factory: sunday market.",
+  "quote": "sunday market — worth knowing before LX Factory",
+  "stance": "pro",
+  "sentiment": 0.86,
+  "tags": [
+   "sunday market"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_061",
+  "place_id": "pl_lis_30",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/travel",
+  "source_url": "https://www.reddit.com/r/travel/comments/fixture61/",
+  "source_title": "[FIXTURE] Museu Calouste Gulbenkian thread",
+  "summary": "[FIXTURE] Travelers on r/travel say Museu Calouste Gulbenkian: hidden gem.",
+  "quote": "hidden gem — worth knowing before Museu Calouste Gulbenkian",
+  "stance": "pro",
+  "sentiment": 0.66,
+  "tags": [
+   "hidden gem"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_062",
+  "place_id": "pl_lis_30",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "Rick Steves forum",
+  "source_url": "https://community.ricksteves.com/travel-forum/fixture62",
+  "source_title": "[FIXTURE] Museu Calouste Gulbenkian thread",
+  "summary": "[FIXTURE] Travelers on Rick Steves forum say Museu Calouste Gulbenkian: hidden gem.",
+  "quote": "hidden gem — worth knowing before Museu Calouste Gulbenkian",
+  "stance": "pro",
+  "sentiment": 0.64,
+  "tags": [
+   "hidden gem"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_063",
+  "place_id": "pl_lis_31",
+  "city": "Lisbon",
+  "source_type": "review",
+  "source_name": "Google reviews",
+  "source_url": "https://maps.google.com/?cid=fixture63",
+  "source_title": "[FIXTURE] Museu Nacional do Azulejo thread",
+  "summary": "[FIXTURE] Travelers on Google reviews say Museu Nacional do Azulejo: underrated.",
+  "quote": "underrated — worth knowing before Museu Nacional do Azulejo",
+  "stance": "pro",
+  "sentiment": 0.65,
+  "tags": [
+   "underrated"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.8,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_064",
+  "place_id": "pl_lis_31",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/lisbon",
+  "source_url": "https://www.reddit.com/r/lisbon/comments/fixture64/",
+  "source_title": "[FIXTURE] Museu Nacional do Azulejo thread",
+  "summary": "[FIXTURE] Travelers on r/lisbon say Museu Nacional do Azulejo: tiles.",
+  "quote": "tiles — worth knowing before Museu Nacional do Azulejo",
+  "stance": "pro",
+  "sentiment": 0.8,
+  "tags": [
+   "tiles"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_065",
+  "place_id": "pl_lis_32",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "TripAdvisor Lisbon forum",
+  "source_url": "https://www.tripadvisor.com/ShowTopic-fixture65.html",
+  "source_title": "[FIXTURE] Oceanário de Lisboa thread",
+  "summary": "[FIXTURE] Travelers on TripAdvisor Lisbon forum say Oceanário de Lisboa: kids.",
+  "quote": "kids — worth knowing before Oceanário de Lisboa",
+  "stance": "pro",
+  "sentiment": 0.48,
+  "tags": [
+   "kids"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_066",
+  "place_id": "pl_lis_32",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/travel",
+  "source_url": "https://www.reddit.com/r/travel/comments/fixture66/",
+  "source_title": "[FIXTURE] Oceanário de Lisboa thread",
+  "summary": "[FIXTURE] Travelers on r/travel say Oceanário de Lisboa: book ahead.",
+  "quote": "book ahead — worth knowing before Oceanário de Lisboa",
+  "stance": "tip",
+  "sentiment": 0.84,
+  "tags": [
+   "book ahead"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_067",
+  "place_id": "pl_lis_33",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "TripAdvisor Lisbon forum",
+  "source_url": "https://www.tripadvisor.com/ShowTopic-fixture67.html",
+  "source_title": "[FIXTURE] Miradouro da Senhora do Monte thread",
+  "summary": "[FIXTURE] Travelers on TripAdvisor Lisbon forum say Miradouro da Senhora do Monte: free.",
+  "quote": "free — worth knowing before Miradouro da Senhora do Monte",
+  "stance": "pro",
+  "sentiment": 0.76,
+  "tags": [
+   "free"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_068",
+  "place_id": "pl_lis_33",
+  "city": "Lisbon",
+  "source_type": "blog",
+  "source_name": "travel blog",
+  "source_url": "https://example-travel-blog.com/lisbon-fixture68",
+  "source_title": "[FIXTURE] Miradouro da Senhora do Monte thread",
+  "summary": "[FIXTURE] Travelers on travel blog say Miradouro da Senhora do Monte: free.",
+  "quote": "free — worth knowing before Miradouro da Senhora do Monte",
+  "stance": "pro",
+  "sentiment": 0.49,
+  "tags": [
+   "free"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.7,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_069",
+  "place_id": "pl_lis_34",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "TripAdvisor Lisbon forum",
+  "source_url": "https://www.tripadvisor.com/ShowTopic-fixture69.html",
+  "source_title": "[FIXTURE] Tram 28 (Martim Moniz stop) thread",
+  "summary": "[FIXTURE] Travelers on TripAdvisor Lisbon forum say Tram 28 (Martim Moniz stop): pickpockets.",
+  "quote": "pickpockets — worth knowing before Tram 28 (Martim Moniz stop)",
+  "stance": "con",
+  "sentiment": -0.72,
+  "tags": [
+   "pickpockets"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_070",
+  "place_id": "pl_lis_34",
+  "city": "Lisbon",
+  "source_type": "reddit",
+  "source_name": "r/lisbon",
+  "source_url": "https://www.reddit.com/r/lisbon/comments/fixture70/",
+  "source_title": "[FIXTURE] Tram 28 (Martim Moniz stop) thread",
+  "summary": "[FIXTURE] Travelers on r/lisbon say Tram 28 (Martim Moniz stop): pickpockets.",
+  "quote": "pickpockets — worth knowing before Tram 28 (Martim Moniz stop)",
+  "stance": "con",
+  "sentiment": -0.61,
+  "tags": [
+   "pickpockets"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 1.0,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_071",
+  "place_id": "pl_lis_35",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "TripAdvisor Lisbon forum",
+  "source_url": "https://www.tripadvisor.com/ShowTopic-fixture71.html",
+  "source_title": "[FIXTURE] Palácio Nacional da Pena thread",
+  "summary": "[FIXTURE] Travelers on TripAdvisor Lisbon forum say Palácio Nacional da Pena: timed entry.",
+  "quote": "timed entry — worth knowing before Palácio Nacional da Pena",
+  "stance": "pro",
+  "sentiment": 0.85,
+  "tags": [
+   "timed entry"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_072",
+  "place_id": "pl_lis_35",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "Rick Steves forum",
+  "source_url": "https://community.ricksteves.com/travel-forum/fixture72",
+  "source_title": "[FIXTURE] Palácio Nacional da Pena thread",
+  "summary": "[FIXTURE] Travelers on Rick Steves forum say Palácio Nacional da Pena: timed entry.",
+  "quote": "timed entry — worth knowing before Palácio Nacional da Pena",
+  "stance": "pro",
+  "sentiment": 0.42,
+  "tags": [
+   "timed entry"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_073",
+  "place_id": "pl_lis_36",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "Rick Steves forum",
+  "source_url": "https://community.ricksteves.com/travel-forum/fixture73",
+  "source_title": "[FIXTURE] Quinta da Regaleira thread",
+  "summary": "[FIXTURE] Travelers on Rick Steves forum say Quinta da Regaleira: initiation well.",
+  "quote": "initiation well — worth knowing before Quinta da Regaleira",
+  "stance": "pro",
+  "sentiment": 0.82,
+  "tags": [
+   "initiation well"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_074",
+  "place_id": "pl_lis_36",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "TripAdvisor Lisbon forum",
+  "source_url": "https://www.tripadvisor.com/ShowTopic-fixture74.html",
+  "source_title": "[FIXTURE] Quinta da Regaleira thread",
+  "summary": "[FIXTURE] Travelers on TripAdvisor Lisbon forum say Quinta da Regaleira: go early.",
+  "quote": "go early — worth knowing before Quinta da Regaleira",
+  "stance": "tip",
+  "sentiment": 0.54,
+  "tags": [
+   "go early"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_075",
+  "place_id": "pl_lis_37",
+  "city": "Lisbon",
+  "source_type": "video",
+  "source_name": "YouTube",
+  "source_url": "https://www.youtube.com/watch?v=fixture75",
+  "source_title": "[FIXTURE] Praia de Carcavelos thread",
+  "summary": "[FIXTURE] Travelers on YouTube say Praia de Carcavelos: surf.",
+  "quote": "surf — worth knowing before Praia de Carcavelos",
+  "stance": "pro",
+  "sentiment": 0.43,
+  "tags": [
+   "surf"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.5,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_076",
+  "place_id": "pl_lis_37",
+  "city": "Lisbon",
+  "source_type": "news",
+  "source_name": "local news",
+  "source_url": "https://example-news.pt/fixture76",
+  "source_title": "[FIXTURE] Praia de Carcavelos thread",
+  "summary": "[FIXTURE] Travelers on local news say Praia de Carcavelos: train from Cais do Sodré.",
+  "quote": "train from Cais do Sodré — worth knowing before Praia de Carcavelos",
+  "stance": "pro",
+  "sentiment": 0.89,
+  "tags": [
+   "train from Cais do Sodré"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_077",
+  "place_id": "pl_lis_38",
+  "city": "Lisbon",
+  "source_type": "video",
+  "source_name": "YouTube",
+  "source_url": "https://www.youtube.com/watch?v=fixture77",
+  "source_title": "[FIXTURE] Memmo Alfama thread",
+  "summary": "[FIXTURE] Travelers on YouTube say Memmo Alfama: rooftop pool.",
+  "quote": "rooftop pool — worth knowing before Memmo Alfama",
+  "stance": "pro",
+  "sentiment": 0.69,
+  "tags": [
+   "rooftop pool"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.5,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_078",
+  "place_id": "pl_lis_38",
+  "city": "Lisbon",
+  "source_type": "news",
+  "source_name": "local news",
+  "source_url": "https://example-news.pt/fixture78",
+  "source_title": "[FIXTURE] Memmo Alfama thread",
+  "summary": "[FIXTURE] Travelers on local news say Memmo Alfama: rooftop pool.",
+  "quote": "rooftop pool — worth knowing before Memmo Alfama",
+  "stance": "pro",
+  "sentiment": 0.88,
+  "tags": [
+   "rooftop pool"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_079",
+  "place_id": "pl_lis_39",
+  "city": "Lisbon",
+  "source_type": "forum",
+  "source_name": "TripAdvisor Lisbon forum",
+  "source_url": "https://www.tripadvisor.com/ShowTopic-fixture79.html",
+  "source_title": "[FIXTURE] The Lumiares thread",
+  "summary": "[FIXTURE] Travelers on TripAdvisor Lisbon forum say The Lumiares: nightlife on doorstep.",
+  "quote": "nightlife on doorstep — worth knowing before The Lumiares",
+  "stance": "pro",
+  "sentiment": 0.83,
+  "tags": [
+   "nightlife on doorstep"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.9,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "op_lis_080",
+  "place_id": "pl_lis_39",
+  "city": "Lisbon",
+  "source_type": "blog",
+  "source_name": "travel blog",
+  "source_url": "https://example-travel-blog.com/lisbon-fixture80",
+  "source_title": "[FIXTURE] The Lumiares thread",
+  "summary": "[FIXTURE] Travelers on travel blog say The Lumiares: nightlife on doorstep.",
+  "quote": "nightlife on doorstep — worth knowing before The Lumiares",
+  "stance": "pro",
+  "sentiment": 0.49,
+  "tags": [
+   "nightlife on doorstep"
+  ],
+  "posted_at": {
+   "$date": "2025-06-01T00:00:00Z"
+  },
+  "weight": 0.7,
+  "fetched_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "expires_at": {
+   "$date": "2027-12-31T00:00:00Z"
+  }
+ }
+]

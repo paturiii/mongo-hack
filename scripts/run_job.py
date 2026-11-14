@@ -14,7 +14,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from track3_research.agents import agent_for  # noqa: E402
+from track3_research.agents import agent_for
 
 
 def main() -> None:

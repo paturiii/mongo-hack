@@ -9,14 +9,13 @@ import asyncio
 import logging
 import threading
 import time
-from datetime import date, datetime, timedelta, timezone
+from datetime import UTC, date, datetime, timedelta
 from functools import lru_cache
 from typing import Any, TypedDict
 
 from langgraph.checkpoint.mongodb import MongoDBSaver
 from langgraph.graph import END, START, StateGraph
 
-from shared import geo
 from shared.agent_protocol import city_ctx
 from shared.config import get_client, get_db, settings
 from track3_research.consensus import run_consensus
@@ -89,8 +88,8 @@ def dispatch_research(state: PlanState) -> dict:
     db = get_db()
     trip = load_trip(state["trip_id"])
     city = city_ctx(trip["destination"]["name"], trip["destination"].get("country"))
-    db.trips.update_one({"_id": trip["_id"], "status": "ready_for_research"}, {"$set": {"status": "researching", "research_started_at": datetime.now(timezone.utc)}})
-    now = datetime.now(timezone.utc)
+    db.trips.update_one({"_id": trip["_id"], "status": "ready_for_research"}, {"$set": {"status": "researching", "research_started_at": datetime.now(UTC)}})
+    now = datetime.now(UTC)
     specs: list[tuple[str, str, dict]] = []
     for th in OPINION_THEMES:
         specs.append(("opinions", th.replace(" ", "_"), job_params(trip, theme=th, source_types=["reddit", "forum", "blog", "review", "video", "news"])))

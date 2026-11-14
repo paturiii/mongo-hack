@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import logging
 import secrets
-from datetime import date, datetime, timedelta, timezone
+from datetime import UTC, date, datetime, timedelta
 from urllib.parse import urlencode
 
 from pydantic import BaseModel, Field
@@ -252,7 +252,7 @@ def build_bookings(link_ids: list[str], start: date, previous: list[dict] | None
 def write_board(trip: dict, board: dict, *, plan_status: bool, reason: str) -> dict:
     """boards vN + archive v(N-1) in board_versions + trips.board_id/status — atomically."""
     client, db = get_client(), get_db()
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
     result: dict = {}
 
     def txn(session):

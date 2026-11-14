@@ -7,13 +7,13 @@ from __future__ import annotations
 import subprocess
 import sys
 from collections import Counter
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from shared.config import get_db  # noqa: E402
+from shared.config import get_db
 
 TRIP = "trip_workertest"
 KINDS = ["opinions", "places", "stay", "transit", "getting_there", "tickets", "nightlife", "restaurants", "link_resolve"]
@@ -22,7 +22,7 @@ KINDS = ["opinions", "places", "stay", "transit", "getting_there", "tickets", "n
 def main() -> int:
     db = get_db()
     db.research_jobs.delete_many({"trip_id": TRIP})
-    t0 = datetime.now(timezone.utc)
+    t0 = datetime.now(UTC)
     db.research_jobs.insert_many([
         {"_id": f"job_wt_{i:03d}", "trip_id": TRIP, "kind": KINDS[i % len(KINDS)], "params": {"city": "Lisbon"},
          "status": "queued", "attempts": 0, "created_at": t0 + timedelta(milliseconds=i)}

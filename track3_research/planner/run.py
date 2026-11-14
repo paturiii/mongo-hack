@@ -25,7 +25,7 @@ def _plan(trip_id: str, inline: bool) -> None:
     try:
         out = run_planner(trip_id, inline_workers=inline)
         log.info("planned %s → %s timings=%s", trip_id, out.get("result"), out.get("timings"))
-    except Exception:  # noqa: BLE001
+    except Exception:
         log.exception("planner failed for %s", trip_id)
 
 
@@ -33,7 +33,7 @@ def _refine(rid: str) -> None:
     try:
         out = run_refine(rid)
         log.info("refined %s → %s", rid, out.get("result"))
-    except Exception:  # noqa: BLE001
+    except Exception:
         log.exception("refine failed for %s", rid)
 
 

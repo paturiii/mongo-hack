@@ -186,7 +186,7 @@ def open_on(hours: str | None, day: date, category: str | None = None) -> bool:
         matched_any_rule = True
         days, rest = _expand_days(m.group(1)), m.group(2).strip().lower()
         if wd in days:
-            state = not (rest.startswith("off") or rest.startswith("closed"))
+            state = not rest.startswith(("off", "closed"))
     if state is None:
         if not matched_any_rule:
             return not (category == "museum" and wd == 0)

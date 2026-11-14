@@ -11,8 +11,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from shared import geo  # noqa: E402
-from shared.config import get_db  # noqa: E402
+from shared import geo
+from shared.config import get_db
 
 
 def check(name: str, ok: bool, detail: str = "") -> bool:

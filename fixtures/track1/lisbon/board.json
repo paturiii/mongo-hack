@@ -1,0 +1,511 @@
+{
+  "_id": "b_lisbon",
+  "trip_id": "trip_lisbon",
+  "user_id": "user_lisbon_fixture",
+  "version": 1,
+  "share_slug": "lisbon-fixture-demo",
+  "title": "A few days in Lisbon",
+  "summary": "A synthetic itinerary for disruption testing. No real bookings or live travel claims.",
+  "days": [
+    {
+      "date": "2026-03-12",
+      "theme": "Arrival and food",
+      "area_geo": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -9.15,
+              38.7
+            ],
+            [
+              -9.13,
+              38.7
+            ],
+            [
+              -9.13,
+              38.72
+            ],
+            [
+              -9.15,
+              38.72
+            ],
+            [
+              -9.15,
+              38.7
+            ]
+          ]
+        ]
+      },
+      "slots": [
+        {
+          "slot_id": "slot_0_0",
+          "time": "13:00",
+          "item": {
+            "place_id": "place_baixa",
+            "name": "Baixa walking tour",
+            "why": "Illustrative fixture itinerary",
+            "event_id": null,
+            "timed_ticket": false,
+            "link_ids": [],
+            "source_url": "https://www.visitlisboa.com/",
+            "source_type": "fixture",
+            "fetched_at": "2026-03-10T12:00:00Z",
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.visitlisboa.com/"
+              }
+            ]
+          }
+        },
+        {
+          "slot_id": "slot_0_1",
+          "time": "14:00",
+          "item": {
+            "place_id": "place_museum",
+            "name": "Lisbon Story Centre",
+            "why": "Illustrative fixture itinerary",
+            "event_id": null,
+            "timed_ticket": true,
+            "link_ids": [],
+            "source_url": "https://www.lisboastorycentre.pt/",
+            "source_type": "fixture",
+            "fetched_at": "2026-03-10T12:00:00Z",
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.lisboastorycentre.pt/"
+              }
+            ]
+          }
+        },
+        {
+          "slot_id": "slot_0_2",
+          "time": "15:00",
+          "item": {
+            "place_id": "place_belem",
+            "name": "Bel\u00e9m waterfront",
+            "why": "Illustrative fixture itinerary",
+            "event_id": null,
+            "timed_ticket": false,
+            "link_ids": [],
+            "source_url": "https://www.visitlisboa.com/",
+            "source_type": "fixture",
+            "fetched_at": "2026-03-10T12:00:00Z",
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.visitlisboa.com/"
+              }
+            ]
+          }
+        },
+        {
+          "slot_id": "slot_0_3",
+          "time": "16:00",
+          "item": {
+            "place_id": "place_market",
+            "name": "Time Out Market Lisboa",
+            "why": "Illustrative fixture itinerary",
+            "event_id": "fixture_event",
+            "timed_ticket": false,
+            "link_ids": [],
+            "source_url": "https://www.timeoutmarket.com/lisboa/",
+            "source_type": "fixture",
+            "fetched_at": "2026-03-10T12:00:00Z",
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.timeoutmarket.com/lisboa/"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-03-13",
+      "theme": "City discoveries",
+      "area_geo": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -9.15,
+              38.7
+            ],
+            [
+              -9.13,
+              38.7
+            ],
+            [
+              -9.13,
+              38.72
+            ],
+            [
+              -9.15,
+              38.72
+            ],
+            [
+              -9.15,
+              38.7
+            ]
+          ]
+        ]
+      },
+      "slots": [
+        {
+          "slot_id": "slot_1_0",
+          "time": "13:00",
+          "item": {
+            "place_id": "place_baixa",
+            "name": "Baixa walking tour",
+            "why": "Illustrative fixture itinerary",
+            "event_id": null,
+            "timed_ticket": false,
+            "link_ids": [],
+            "source_url": "https://www.visitlisboa.com/",
+            "source_type": "fixture",
+            "fetched_at": "2026-03-10T12:00:00Z",
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.visitlisboa.com/"
+              }
+            ]
+          }
+        },
+        {
+          "slot_id": "slot_1_1",
+          "time": "14:00",
+          "item": {
+            "place_id": "place_museum",
+            "name": "Lisbon Story Centre",
+            "why": "Illustrative fixture itinerary",
+            "event_id": null,
+            "timed_ticket": true,
+            "link_ids": [],
+            "source_url": "https://www.lisboastorycentre.pt/",
+            "source_type": "fixture",
+            "fetched_at": "2026-03-10T12:00:00Z",
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.lisboastorycentre.pt/"
+              }
+            ]
+          }
+        },
+        {
+          "slot_id": "slot_1_2",
+          "time": "15:00",
+          "item": {
+            "place_id": "place_belem",
+            "name": "Bel\u00e9m waterfront",
+            "why": "Illustrative fixture itinerary",
+            "event_id": null,
+            "timed_ticket": false,
+            "link_ids": [],
+            "source_url": "https://www.visitlisboa.com/",
+            "source_type": "fixture",
+            "fetched_at": "2026-03-10T12:00:00Z",
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.visitlisboa.com/"
+              }
+            ]
+          }
+        },
+        {
+          "slot_id": "slot_1_3",
+          "time": "16:00",
+          "item": {
+            "place_id": "place_market",
+            "name": "Time Out Market Lisboa",
+            "why": "Illustrative fixture itinerary",
+            "event_id": "fixture_event",
+            "timed_ticket": false,
+            "link_ids": [],
+            "source_url": "https://www.timeoutmarket.com/lisboa/",
+            "source_type": "fixture",
+            "fetched_at": "2026-03-10T12:00:00Z",
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.timeoutmarket.com/lisboa/"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-03-14",
+      "theme": "Baixa and museums",
+      "area_geo": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -9.15,
+              38.7
+            ],
+            [
+              -9.13,
+              38.7
+            ],
+            [
+              -9.13,
+              38.72
+            ],
+            [
+              -9.15,
+              38.72
+            ],
+            [
+              -9.15,
+              38.7
+            ]
+          ]
+        ]
+      },
+      "slots": [
+        {
+          "slot_id": "slot_2_0",
+          "time": "13:00",
+          "item": {
+            "place_id": "place_baixa",
+            "name": "Baixa walking tour",
+            "why": "Illustrative fixture itinerary",
+            "event_id": null,
+            "timed_ticket": false,
+            "link_ids": [],
+            "source_url": "https://www.visitlisboa.com/",
+            "source_type": "fixture",
+            "fetched_at": "2026-03-10T12:00:00Z",
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.visitlisboa.com/"
+              }
+            ]
+          }
+        },
+        {
+          "slot_id": "slot_2_1",
+          "time": "14:00",
+          "item": {
+            "place_id": "place_museum",
+            "name": "Lisbon Story Centre",
+            "why": "Illustrative fixture itinerary",
+            "event_id": null,
+            "timed_ticket": true,
+            "link_ids": [
+              "link_museum"
+            ],
+            "source_url": "https://www.lisboastorycentre.pt/",
+            "source_type": "fixture",
+            "fetched_at": "2026-03-10T12:00:00Z",
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.lisboastorycentre.pt/"
+              }
+            ]
+          }
+        },
+        {
+          "slot_id": "slot_2_2",
+          "time": "15:00",
+          "item": {
+            "place_id": "place_belem",
+            "name": "Bel\u00e9m waterfront",
+            "why": "Illustrative fixture itinerary",
+            "event_id": null,
+            "timed_ticket": false,
+            "link_ids": [],
+            "source_url": "https://www.visitlisboa.com/",
+            "source_type": "fixture",
+            "fetched_at": "2026-03-10T12:00:00Z",
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.visitlisboa.com/"
+              }
+            ]
+          }
+        },
+        {
+          "slot_id": "slot_2_3",
+          "time": "16:00",
+          "item": {
+            "place_id": "place_market",
+            "name": "Time Out Market Lisboa",
+            "why": "Illustrative fixture itinerary",
+            "event_id": "fixture_event",
+            "timed_ticket": false,
+            "link_ids": [],
+            "source_url": "https://www.timeoutmarket.com/lisboa/",
+            "source_type": "fixture",
+            "fetched_at": "2026-03-10T12:00:00Z",
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.timeoutmarket.com/lisboa/"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "theme": "Waterfront",
+      "area_geo": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -9.15,
+              38.7
+            ],
+            [
+              -9.13,
+              38.7
+            ],
+            [
+              -9.13,
+              38.72
+            ],
+            [
+              -9.15,
+              38.72
+            ],
+            [
+              -9.15,
+              38.7
+            ]
+          ]
+        ]
+      },
+      "slots": [
+        {
+          "slot_id": "slot_3_0",
+          "time": "13:00",
+          "item": {
+            "place_id": "place_baixa",
+            "name": "Baixa walking tour",
+            "why": "Illustrative fixture itinerary",
+            "event_id": null,
+            "timed_ticket": false,
+            "link_ids": [],
+            "source_url": "https://www.visitlisboa.com/",
+            "source_type": "fixture",
+            "fetched_at": "2026-03-10T12:00:00Z",
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.visitlisboa.com/"
+              }
+            ]
+          }
+        },
+        {
+          "slot_id": "slot_3_1",
+          "time": "14:00",
+          "item": {
+            "place_id": "place_museum",
+            "name": "Lisbon Story Centre",
+            "why": "Illustrative fixture itinerary",
+            "event_id": null,
+            "timed_ticket": true,
+            "link_ids": [],
+            "source_url": "https://www.lisboastorycentre.pt/",
+            "source_type": "fixture",
+            "fetched_at": "2026-03-10T12:00:00Z",
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.lisboastorycentre.pt/"
+              }
+            ]
+          }
+        },
+        {
+          "slot_id": "slot_3_2",
+          "time": "15:00",
+          "item": {
+            "place_id": "place_belem",
+            "name": "Bel\u00e9m waterfront",
+            "why": "Illustrative fixture itinerary",
+            "event_id": null,
+            "timed_ticket": false,
+            "link_ids": [],
+            "source_url": "https://www.visitlisboa.com/",
+            "source_type": "fixture",
+            "fetched_at": "2026-03-10T12:00:00Z",
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.visitlisboa.com/"
+              }
+            ]
+          }
+        },
+        {
+          "slot_id": "slot_3_3",
+          "time": "16:00",
+          "item": {
+            "place_id": "place_market",
+            "name": "Time Out Market Lisboa",
+            "why": "Illustrative fixture itinerary",
+            "event_id": "fixture_event",
+            "timed_ticket": false,
+            "link_ids": [],
+            "source_url": "https://www.timeoutmarket.com/lisboa/",
+            "source_type": "fixture",
+            "fetched_at": "2026-03-10T12:00:00Z",
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.timeoutmarket.com/lisboa/"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bookings": [
+    {
+      "link_id": "link_museum",
+      "kind": "monument_ticket",
+      "label": "Lisbon Story Centre tickets",
+      "url": "https://www.lisboastorycentre.pt/",
+      "status": "todo"
+    }
+  ],
+  "checklist_progress": {
+    "booked": 0,
+    "total": 1
+  },
+  "fixture": true
+}

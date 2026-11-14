@@ -9,12 +9,12 @@ import logging
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from shared.config import get_db  # noqa: E402
+from shared.config import get_db
 
 CITIES = {"lisbon": ("Lisbon", "Portugal"), "tokyo": ("Tokyo", "Japan"), "mexico-city": ("Mexico City", "Mexico")}
 THEMES = ["food", "nightlife", "hidden gems", "things to skip", "neighborhoods", "museums", "viewpoints", "day trips", "markets", "coffee and bakeries"]
@@ -38,7 +38,7 @@ def seed(slug: str, themes: list[str], places: bool) -> dict:
                 logging.warning("places %s/%s failed: %s", slug, g, exc)
 
     db = get_db()
-    fresh_after = datetime.now(timezone.utc) - timedelta(days=14)
+    fresh_after = datetime.now(UTC) - timedelta(days=14)
 
     def one(theme: str) -> int:
         have = db.opinions.count_documents({"city": name, "themes": theme, "fetched_at": {"$gt": fresh_after}, "summary": {"$not": {"$regex": "^\\[FIXTURE"}}})

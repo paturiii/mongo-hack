@@ -1,0 +1,1727 @@
+[
+ {
+  "_id": "pl_lis_00",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx00",
+  "fixture": true,
+  "name": "Mosteiro dos Jerónimos",
+  "city": "Lisbon",
+  "category": "sight",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.2068,
+    38.6979
+   ]
+  },
+  "neighborhood": "Belém",
+  "address": "Belém, Lisboa",
+  "price_level": 2,
+  "hours": {},
+  "rating": 4.3,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.66,
+   "mentions": 2,
+   "by_source": {
+    "news": 1,
+    "forum": 1
+   },
+   "tags": [
+    "book ahead",
+    "go early"
+   ],
+   "opinion_ids": [
+    "op_lis_001",
+    "op_lis_002"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_01",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx01",
+  "fixture": true,
+  "name": "Torre de Belém",
+  "city": "Lisbon",
+  "category": "sight",
+  "indoor": false,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.216,
+    38.6916
+   ]
+  },
+  "neighborhood": "Belém",
+  "address": "Belém, Lisboa",
+  "price_level": 2,
+  "hours": {},
+  "rating": 4.1,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": -0.65,
+   "mentions": 2,
+   "by_source": {
+    "forum": 1,
+    "reddit": 1
+   },
+   "tags": [
+    "photo spot",
+    "long queue"
+   ],
+   "opinion_ids": [
+    "op_lis_003",
+    "op_lis_004"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_02",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx02",
+  "fixture": true,
+  "name": "Pastéis de Belém",
+  "city": "Lisbon",
+  "category": "food",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.2033,
+    38.6975
+   ]
+  },
+  "neighborhood": "Belém",
+  "address": "Belém, Lisboa",
+  "price_level": 1,
+  "hours": {},
+  "rating": 4.5,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.47,
+   "mentions": 2,
+   "by_source": {
+    "blog": 1,
+    "news": 1
+   },
+   "tags": [
+    "pastel de nata",
+    "takeaway faster"
+   ],
+   "opinion_ids": [
+    "op_lis_005",
+    "op_lis_006"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_03",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx03",
+  "fixture": true,
+  "name": "MAAT",
+  "city": "Lisbon",
+  "category": "museum",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1946,
+    38.696
+   ]
+  },
+  "neighborhood": "Belém",
+  "address": "Belém, Lisboa",
+  "price_level": 2,
+  "hours": {
+   "mon": "09:00-18:00"
+  },
+  "rating": 4.1,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.72,
+   "mentions": 2,
+   "by_source": {
+    "review": 1,
+    "reddit": 1
+   },
+   "tags": [
+    "architecture",
+    "sunset"
+   ],
+   "opinion_ids": [
+    "op_lis_007",
+    "op_lis_008"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_04",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx04",
+  "fixture": true,
+  "name": "Padrão dos Descobrimentos",
+  "city": "Lisbon",
+  "category": "sight",
+  "indoor": false,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.2056,
+    38.6936
+   ]
+  },
+  "neighborhood": "Belém",
+  "address": "Belém, Lisboa",
+  "price_level": 1,
+  "hours": {},
+  "rating": 4.4,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.58,
+   "mentions": 2,
+   "by_source": {
+    "review": 1,
+    "forum": 1
+   },
+   "tags": [
+    "viewpoint"
+   ],
+   "opinion_ids": [
+    "op_lis_009",
+    "op_lis_010"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_05",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx05",
+  "fixture": true,
+  "name": "Castelo de São Jorge",
+  "city": "Lisbon",
+  "category": "sight",
+  "indoor": false,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1335,
+    38.7139
+   ]
+  },
+  "neighborhood": "Alfama",
+  "address": "Alfama, Lisboa",
+  "price_level": 2,
+  "hours": {},
+  "rating": 4.3,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.6,
+   "mentions": 2,
+   "by_source": {
+    "reddit": 1,
+    "forum": 1
+   },
+   "tags": [
+    "views",
+    "go early"
+   ],
+   "opinion_ids": [
+    "op_lis_011",
+    "op_lis_012"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_06",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx06",
+  "fixture": true,
+  "name": "Miradouro de Santa Luzia",
+  "city": "Lisbon",
+  "category": "sight",
+  "indoor": false,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1301,
+    38.7118
+   ]
+  },
+  "neighborhood": "Alfama",
+  "address": "Alfama, Lisboa",
+  "price_level": 1,
+  "hours": {},
+  "rating": 4.0,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.73,
+   "mentions": 2,
+   "by_source": {
+    "blog": 1,
+    "review": 1
+   },
+   "tags": [
+    "viewpoint",
+    "free"
+   ],
+   "opinion_ids": [
+    "op_lis_013",
+    "op_lis_014"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_07",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx07",
+  "fixture": true,
+  "name": "Sé de Lisboa",
+  "city": "Lisbon",
+  "category": "sight",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1335,
+    38.7098
+   ]
+  },
+  "neighborhood": "Alfama",
+  "address": "Alfama, Lisboa",
+  "price_level": 1,
+  "hours": {},
+  "rating": 4.4,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.64,
+   "mentions": 2,
+   "by_source": {
+    "review": 1,
+    "reddit": 1
+   },
+   "tags": [
+    "cathedral"
+   ],
+   "opinion_ids": [
+    "op_lis_015",
+    "op_lis_016"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_08",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx08",
+  "fixture": true,
+  "name": "Tasca do Chico",
+  "city": "Lisbon",
+  "category": "bar",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.145,
+    38.7123
+   ]
+  },
+  "neighborhood": "Bairro Alto",
+  "address": "Bairro Alto, Lisboa",
+  "price_level": 1,
+  "hours": {},
+  "rating": 4.0,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.54,
+   "mentions": 2,
+   "by_source": {
+    "forum": 1,
+    "video": 1
+   },
+   "tags": [
+    "fado vadio",
+    "authentic",
+    "arrive early"
+   ],
+   "opinion_ids": [
+    "op_lis_017",
+    "op_lis_018"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_09",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx09",
+  "fixture": true,
+  "name": "Clube de Fado",
+  "city": "Lisbon",
+  "category": "bar",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1316,
+    38.7101
+   ]
+  },
+  "neighborhood": "Alfama",
+  "address": "Alfama, Lisboa",
+  "price_level": 3,
+  "hours": {},
+  "rating": 4.3,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.77,
+   "mentions": 2,
+   "by_source": {
+    "news": 1,
+    "reddit": 1
+   },
+   "tags": [
+    "fado",
+    "dinner show"
+   ],
+   "opinion_ids": [
+    "op_lis_019",
+    "op_lis_020"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_10",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx10",
+  "fixture": true,
+  "name": "Mesa de Frades",
+  "city": "Lisbon",
+  "category": "bar",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1265,
+    38.7128
+   ]
+  },
+  "neighborhood": "Alfama",
+  "address": "Alfama, Lisboa",
+  "price_level": 3,
+  "hours": {},
+  "rating": 4.1,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.74,
+   "mentions": 2,
+   "by_source": {
+    "video": 1,
+    "news": 1
+   },
+   "tags": [
+    "fado",
+    "intimate",
+    "book ahead"
+   ],
+   "opinion_ids": [
+    "op_lis_021",
+    "op_lis_022"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_11",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx11",
+  "fixture": true,
+  "name": "Feira da Ladra",
+  "city": "Lisbon",
+  "category": "activity",
+  "indoor": false,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.126,
+    38.7146
+   ]
+  },
+  "neighborhood": "Alfama",
+  "address": "Alfama, Lisboa",
+  "price_level": 1,
+  "hours": {},
+  "rating": 4.1,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.49,
+   "mentions": 2,
+   "by_source": {
+    "video": 1,
+    "reddit": 1
+   },
+   "tags": [
+    "flea market",
+    "tue/sat only"
+   ],
+   "opinion_ids": [
+    "op_lis_023",
+    "op_lis_024"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_12",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx12",
+  "fixture": true,
+  "name": "Panteão Nacional",
+  "city": "Lisbon",
+  "category": "sight",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1247,
+    38.7149
+   ]
+  },
+  "neighborhood": "Alfama",
+  "address": "Alfama, Lisboa",
+  "price_level": 1,
+  "hours": {},
+  "rating": 4.3,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.7,
+   "mentions": 2,
+   "by_source": {
+    "forum": 1,
+    "reddit": 1
+   },
+   "tags": [
+    "rooftop views"
+   ],
+   "opinion_ids": [
+    "op_lis_025",
+    "op_lis_026"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_13",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx13",
+  "fixture": true,
+  "name": "Time Out Market",
+  "city": "Lisbon",
+  "category": "food",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1459,
+    38.7071
+   ]
+  },
+  "neighborhood": "Cais do Sodré",
+  "address": "Cais do Sodré, Lisboa",
+  "price_level": 2,
+  "hours": {},
+  "rating": 4.7,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.8,
+   "mentions": 2,
+   "by_source": {
+    "reddit": 2
+   },
+   "tags": [
+    "touristy",
+    "variety"
+   ],
+   "opinion_ids": [
+    "op_lis_027",
+    "op_lis_028"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_14",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx14",
+  "fixture": true,
+  "name": "Pink Street",
+  "city": "Lisbon",
+  "category": "bar",
+  "indoor": false,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1443,
+    38.7072
+   ]
+  },
+  "neighborhood": "Cais do Sodré",
+  "address": "Cais do Sodré, Lisboa",
+  "price_level": 2,
+  "hours": {},
+  "rating": 4.1,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": -0.5,
+   "mentions": 2,
+   "by_source": {
+    "reddit": 1,
+    "forum": 1
+   },
+   "tags": [
+    "nightlife",
+    "crowded"
+   ],
+   "opinion_ids": [
+    "op_lis_029",
+    "op_lis_030"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_15",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx15",
+  "fixture": true,
+  "name": "Musicbox",
+  "city": "Lisbon",
+  "category": "club",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1437,
+    38.7069
+   ]
+  },
+  "neighborhood": "Cais do Sodré",
+  "address": "Cais do Sodré, Lisboa",
+  "price_level": 2,
+  "hours": {},
+  "rating": 4.2,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.54,
+   "mentions": 2,
+   "by_source": {
+    "video": 1,
+    "reddit": 1
+   },
+   "tags": [
+    "live music",
+    "late"
+   ],
+   "opinion_ids": [
+    "op_lis_031",
+    "op_lis_032"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_16",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx16",
+  "fixture": true,
+  "name": "Lux Frágil",
+  "city": "Lisbon",
+  "category": "club",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.121,
+    38.714
+   ]
+  },
+  "neighborhood": "Santa Apolónia",
+  "address": "Santa Apolónia, Lisboa",
+  "price_level": 3,
+  "hours": {},
+  "rating": 4.5,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.57,
+   "mentions": 2,
+   "by_source": {
+    "reddit": 1,
+    "forum": 1
+   },
+   "tags": [
+    "techno",
+    "door policy",
+    "arrive before 2am"
+   ],
+   "opinion_ids": [
+    "op_lis_033",
+    "op_lis_034"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_17",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx17",
+  "fixture": true,
+  "name": "Park Bar",
+  "city": "Lisbon",
+  "category": "bar",
+  "indoor": false,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.147,
+    38.7106
+   ]
+  },
+  "neighborhood": "Bairro Alto",
+  "address": "Bairro Alto, Lisboa",
+  "price_level": 2,
+  "hours": {},
+  "rating": 4.8,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.59,
+   "mentions": 2,
+   "by_source": {
+    "reddit": 1,
+    "forum": 1
+   },
+   "tags": [
+    "rooftop",
+    "sunset"
+   ],
+   "opinion_ids": [
+    "op_lis_035",
+    "op_lis_036"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_18",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx18",
+  "fixture": true,
+  "name": "Pavilhão Chinês",
+  "city": "Lisbon",
+  "category": "bar",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.148,
+    38.7155
+   ]
+  },
+  "neighborhood": "Príncipe Real",
+  "address": "Príncipe Real, Lisboa",
+  "price_level": 2,
+  "hours": {},
+  "rating": 4.5,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.8,
+   "mentions": 2,
+   "by_source": {
+    "forum": 1,
+    "review": 1
+   },
+   "tags": [
+    "quirky",
+    "cocktails"
+   ],
+   "opinion_ids": [
+    "op_lis_037",
+    "op_lis_038"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_19",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx19",
+  "fixture": true,
+  "name": "Cervejaria Ramiro",
+  "city": "Lisbon",
+  "category": "food",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1356,
+    38.7206
+   ]
+  },
+  "neighborhood": "Intendente",
+  "address": "Intendente, Lisboa",
+  "price_level": 3,
+  "hours": {},
+  "rating": 4.3,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.8,
+   "mentions": 2,
+   "by_source": {
+    "reddit": 1,
+    "video": 1
+   },
+   "tags": [
+    "seafood",
+    "queue",
+    "prego for dessert"
+   ],
+   "opinion_ids": [
+    "op_lis_039",
+    "op_lis_040"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_20",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx20",
+  "fixture": true,
+  "name": "Taberna da Rua das Flores",
+  "city": "Lisbon",
+  "category": "food",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.143,
+    38.7104
+   ]
+  },
+  "neighborhood": "Chiado",
+  "address": "Chiado, Lisboa",
+  "price_level": 2,
+  "hours": {},
+  "rating": 4.8,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.64,
+   "mentions": 2,
+   "by_source": {
+    "blog": 1,
+    "reddit": 1
+   },
+   "tags": [
+    "no reservations",
+    "local favorite"
+   ],
+   "opinion_ids": [
+    "op_lis_041",
+    "op_lis_042"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_21",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx21",
+  "fixture": true,
+  "name": "A Cevicheria",
+  "city": "Lisbon",
+  "category": "food",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1491,
+    38.7163
+   ]
+  },
+  "neighborhood": "Príncipe Real",
+  "address": "Príncipe Real, Lisboa",
+  "price_level": 3,
+  "hours": {},
+  "rating": 4.0,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.8,
+   "mentions": 2,
+   "by_source": {
+    "news": 1,
+    "video": 1
+   },
+   "tags": [
+    "ceviche",
+    "queue"
+   ],
+   "opinion_ids": [
+    "op_lis_043",
+    "op_lis_044"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_22",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx22",
+  "fixture": true,
+  "name": "Manteigaria",
+  "city": "Lisbon",
+  "category": "food",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1435,
+    38.7108
+   ]
+  },
+  "neighborhood": "Chiado",
+  "address": "Chiado, Lisboa",
+  "price_level": 1,
+  "hours": {},
+  "rating": 4.7,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.88,
+   "mentions": 2,
+   "by_source": {
+    "review": 1,
+    "reddit": 1
+   },
+   "tags": [
+    "pastel de nata",
+    "better than belém"
+   ],
+   "opinion_ids": [
+    "op_lis_045",
+    "op_lis_046"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_23",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx23",
+  "fixture": true,
+  "name": "O Trevo",
+  "city": "Lisbon",
+  "category": "food",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1428,
+    38.7104
+   ]
+  },
+  "neighborhood": "Chiado",
+  "address": "Chiado, Lisboa",
+  "price_level": 1,
+  "hours": {},
+  "rating": 4.2,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.65,
+   "mentions": 2,
+   "by_source": {
+    "reddit": 1,
+    "review": 1
+   },
+   "tags": [
+    "bifana",
+    "cheap eats"
+   ],
+   "opinion_ids": [
+    "op_lis_047",
+    "op_lis_048"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_24",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx24",
+  "fixture": true,
+  "name": "Zé da Mouraria",
+  "city": "Lisbon",
+  "category": "food",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1349,
+    38.7167
+   ]
+  },
+  "neighborhood": "Mouraria",
+  "address": "Mouraria, Lisboa",
+  "price_level": 2,
+  "hours": {},
+  "rating": 4.1,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.79,
+   "mentions": 2,
+   "by_source": {
+    "forum": 1,
+    "blog": 1
+   },
+   "tags": [
+    "huge portions",
+    "lunch only"
+   ],
+   "opinion_ids": [
+    "op_lis_049",
+    "op_lis_050"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_25",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx25",
+  "fixture": true,
+  "name": "Livraria Bertrand",
+  "city": "Lisbon",
+  "category": "activity",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.142,
+    38.7108
+   ]
+  },
+  "neighborhood": "Chiado",
+  "address": "Chiado, Lisboa",
+  "price_level": 1,
+  "hours": {},
+  "rating": 4.1,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.55,
+   "mentions": 2,
+   "by_source": {
+    "video": 1,
+    "review": 1
+   },
+   "tags": [
+    "oldest bookshop"
+   ],
+   "opinion_ids": [
+    "op_lis_051",
+    "op_lis_052"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_26",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx26",
+  "fixture": true,
+  "name": "Elevador de Santa Justa",
+  "city": "Lisbon",
+  "category": "sight",
+  "indoor": false,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1394,
+    38.7121
+   ]
+  },
+  "neighborhood": "Baixa",
+  "address": "Baixa, Lisboa",
+  "price_level": 2,
+  "hours": {},
+  "rating": 4.2,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": -0.01,
+   "mentions": 2,
+   "by_source": {
+    "reddit": 1,
+    "news": 1
+   },
+   "tags": [
+    "tourist trap",
+    "walk up instead"
+   ],
+   "opinion_ids": [
+    "op_lis_053",
+    "op_lis_054"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_27",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx27",
+  "fixture": true,
+  "name": "Praça do Comércio",
+  "city": "Lisbon",
+  "category": "sight",
+  "indoor": false,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1366,
+    38.7076
+   ]
+  },
+  "neighborhood": "Baixa",
+  "address": "Baixa, Lisboa",
+  "price_level": 1,
+  "hours": {},
+  "rating": 4.7,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.69,
+   "mentions": 2,
+   "by_source": {
+    "review": 1,
+    "forum": 1
+   },
+   "tags": [
+    "free",
+    "riverfront"
+   ],
+   "opinion_ids": [
+    "op_lis_055",
+    "op_lis_056"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_28",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx28",
+  "fixture": true,
+  "name": "Rua Augusta Arch",
+  "city": "Lisbon",
+  "category": "sight",
+  "indoor": false,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1369,
+    38.7085
+   ]
+  },
+  "neighborhood": "Baixa",
+  "address": "Baixa, Lisboa",
+  "price_level": 1,
+  "hours": {},
+  "rating": 4.1,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.59,
+   "mentions": 2,
+   "by_source": {
+    "reddit": 1,
+    "news": 1
+   },
+   "tags": [
+    "viewpoint"
+   ],
+   "opinion_ids": [
+    "op_lis_057",
+    "op_lis_058"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_29",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx29",
+  "fixture": true,
+  "name": "LX Factory",
+  "city": "Lisbon",
+  "category": "activity",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1784,
+    38.7034
+   ]
+  },
+  "neighborhood": "Alcântara",
+  "address": "Alcântara, Lisboa",
+  "price_level": 2,
+  "hours": {},
+  "rating": 4.5,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.85,
+   "mentions": 2,
+   "by_source": {
+    "reddit": 1,
+    "forum": 1
+   },
+   "tags": [
+    "sunday market",
+    "street art"
+   ],
+   "opinion_ids": [
+    "op_lis_059",
+    "op_lis_060"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_30",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx30",
+  "fixture": true,
+  "name": "Museu Calouste Gulbenkian",
+  "city": "Lisbon",
+  "category": "museum",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1541,
+    38.7372
+   ]
+  },
+  "neighborhood": "Avenidas Novas",
+  "address": "Avenidas Novas, Lisboa",
+  "price_level": 2,
+  "hours": {
+   "mon": "09:00-18:00"
+  },
+  "rating": 4.5,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.65,
+   "mentions": 2,
+   "by_source": {
+    "reddit": 1,
+    "forum": 1
+   },
+   "tags": [
+    "hidden gem",
+    "gardens"
+   ],
+   "opinion_ids": [
+    "op_lis_061",
+    "op_lis_062"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_31",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx31",
+  "fixture": true,
+  "name": "Museu Nacional do Azulejo",
+  "city": "Lisbon",
+  "category": "museum",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1136,
+    38.7247
+   ]
+  },
+  "neighborhood": "Xabregas",
+  "address": "Xabregas, Lisboa",
+  "price_level": 1,
+  "hours": {
+   "mon": "09:00-18:00"
+  },
+  "rating": 4.3,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.73,
+   "mentions": 2,
+   "by_source": {
+    "review": 1,
+    "reddit": 1
+   },
+   "tags": [
+    "tiles",
+    "underrated"
+   ],
+   "opinion_ids": [
+    "op_lis_063",
+    "op_lis_064"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_32",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx32",
+  "fixture": true,
+  "name": "Oceanário de Lisboa",
+  "city": "Lisbon",
+  "category": "museum",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.0937,
+    38.7635
+   ]
+  },
+  "neighborhood": "Parque das Nações",
+  "address": "Parque das Nações, Lisboa",
+  "price_level": 3,
+  "hours": {
+   "mon": "09:00-18:00"
+  },
+  "rating": 4.4,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.66,
+   "mentions": 2,
+   "by_source": {
+    "forum": 1,
+    "reddit": 1
+   },
+   "tags": [
+    "kids",
+    "book ahead"
+   ],
+   "opinion_ids": [
+    "op_lis_065",
+    "op_lis_066"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_33",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx33",
+  "fixture": true,
+  "name": "Miradouro da Senhora do Monte",
+  "city": "Lisbon",
+  "category": "sight",
+  "indoor": false,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1328,
+    38.7192
+   ]
+  },
+  "neighborhood": "Graça",
+  "address": "Graça, Lisboa",
+  "price_level": 1,
+  "hours": {},
+  "rating": 4.1,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.62,
+   "mentions": 2,
+   "by_source": {
+    "forum": 1,
+    "blog": 1
+   },
+   "tags": [
+    "best sunset",
+    "free"
+   ],
+   "opinion_ids": [
+    "op_lis_067",
+    "op_lis_068"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_34",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx34",
+  "fixture": true,
+  "name": "Tram 28 (Martim Moniz stop)",
+  "city": "Lisbon",
+  "category": "transit_hub",
+  "indoor": false,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1358,
+    38.7158
+   ]
+  },
+  "neighborhood": "Mouraria",
+  "address": "Mouraria, Lisboa",
+  "price_level": 1,
+  "hours": {},
+  "rating": 4.0,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": -0.67,
+   "mentions": 2,
+   "by_source": {
+    "forum": 1,
+    "reddit": 1
+   },
+   "tags": [
+    "pickpockets",
+    "board at start"
+   ],
+   "opinion_ids": [
+    "op_lis_069",
+    "op_lis_070"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_35",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx35",
+  "fixture": true,
+  "name": "Palácio Nacional da Pena",
+  "city": "Lisbon",
+  "category": "sight",
+  "indoor": false,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.3904,
+    38.7876
+   ]
+  },
+  "neighborhood": "Sintra",
+  "address": "Sintra, Lisboa",
+  "price_level": 3,
+  "hours": {},
+  "rating": 4.2,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.64,
+   "mentions": 2,
+   "by_source": {
+    "forum": 2
+   },
+   "tags": [
+    "timed entry",
+    "book ahead",
+    "go early"
+   ],
+   "opinion_ids": [
+    "op_lis_071",
+    "op_lis_072"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_36",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx36",
+  "fixture": true,
+  "name": "Quinta da Regaleira",
+  "city": "Lisbon",
+  "category": "sight",
+  "indoor": false,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.396,
+    38.7963
+   ]
+  },
+  "neighborhood": "Sintra",
+  "address": "Sintra, Lisboa",
+  "price_level": 2,
+  "hours": {},
+  "rating": 4.5,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.68,
+   "mentions": 2,
+   "by_source": {
+    "forum": 2
+   },
+   "tags": [
+    "initiation well",
+    "go early"
+   ],
+   "opinion_ids": [
+    "op_lis_073",
+    "op_lis_074"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_37",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx37",
+  "fixture": true,
+  "name": "Praia de Carcavelos",
+  "city": "Lisbon",
+  "category": "beach",
+  "indoor": false,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.3368,
+    38.6779
+   ]
+  },
+  "neighborhood": "Carcavelos",
+  "address": "Carcavelos, Lisboa",
+  "price_level": 1,
+  "hours": {},
+  "rating": 4.3,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.66,
+   "mentions": 2,
+   "by_source": {
+    "video": 1,
+    "news": 1
+   },
+   "tags": [
+    "surf",
+    "train from Cais do Sodré"
+   ],
+   "opinion_ids": [
+    "op_lis_075",
+    "op_lis_076"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_38",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx38",
+  "fixture": true,
+  "name": "Memmo Alfama",
+  "city": "Lisbon",
+  "category": "stay",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.131,
+    38.711
+   ]
+  },
+  "neighborhood": "Alfama",
+  "address": "Alfama, Lisboa",
+  "price_level": 3,
+  "hours": {},
+  "rating": 4.3,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.78,
+   "mentions": 2,
+   "by_source": {
+    "video": 1,
+    "news": 1
+   },
+   "tags": [
+    "rooftop pool",
+    "quiet"
+   ],
+   "opinion_ids": [
+    "op_lis_077",
+    "op_lis_078"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ },
+ {
+  "_id": "pl_lis_39",
+  "trip_id": null,
+  "source": "search",
+  "source_id": "fx39",
+  "fixture": true,
+  "name": "The Lumiares",
+  "city": "Lisbon",
+  "category": "stay",
+  "indoor": true,
+  "geo": {
+   "type": "Point",
+   "coordinates": [
+    -9.1452,
+    38.7128
+   ]
+  },
+  "neighborhood": "Bairro Alto",
+  "address": "Bairro Alto, Lisboa",
+  "price_level": 3,
+  "hours": {},
+  "rating": 4.5,
+  "business_status": "OPERATIONAL",
+  "consensus": {
+   "score": 0.66,
+   "mentions": 2,
+   "by_source": {
+    "forum": 1,
+    "blog": 1
+   },
+   "tags": [
+    "nightlife on doorstep",
+    "noisy weekends"
+   ],
+   "opinion_ids": [
+    "op_lis_079",
+    "op_lis_080"
+   ]
+  },
+  "updated_at": {
+   "$date": "2026-11-14T12:00:00Z"
+  }
+ }
+]

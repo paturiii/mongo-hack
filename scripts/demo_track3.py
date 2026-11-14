@@ -10,13 +10,13 @@ import json
 import logging
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from shared.config import get_db  # noqa: E402
+from shared.config import get_db
 
 FIX = ROOT / "fixtures" / "lisbon"
 
@@ -67,7 +67,7 @@ def main() -> None:
         print(f"\nplanner done in {time.time() - t0:.0f}s timings={out.get('timings')} gaps={out.get('gaps')}")
         show(db.boards.find_one({"trip_id": trip["_id"]}))
     for rr in json.loads((FIX / "track3_refine_requests.json").read_text()):
-        rr["created_at"] = datetime.now(timezone.utc)
+        rr["created_at"] = datetime.now(UTC)
         db.refine_requests.replace_one({"_id": rr["_id"]}, rr, upsert=True)
         db.planner_checkpoints.delete_many({"thread_id": f"refine:{rr['_id']}"})
         db.planner_checkpoint_writes.delete_many({"thread_id": f"refine:{rr['_id']}"})

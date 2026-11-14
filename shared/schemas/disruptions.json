@@ -1,0 +1,163 @@
+{
+  "$jsonSchema": {
+    "additionalProperties": true,
+    "properties": {
+      "_id": {
+        "bsonType": "string"
+      },
+      "trip_id": {
+        "bsonType": "string"
+      },
+      "kind": {
+        "enum": [
+          "flight_delay",
+          "flight_cancel",
+          "weather",
+          "strike",
+          "closure",
+          "event_cancel",
+          "dead_link",
+          "price_spike"
+        ],
+        "bsonType": "string"
+      },
+      "severity": {
+        "maximum": 5,
+        "minimum": 1,
+        "bsonType": [
+          "int",
+          "long"
+        ]
+      },
+      "detected_at": {
+        "bsonType": "date"
+      },
+      "evidence": {
+        "items": {
+          "properties": {
+            "source_url": {
+              "maxLength": 2083,
+              "minLength": 1,
+              "bsonType": "string"
+            },
+            "source_type": {
+              "bsonType": "string"
+            },
+            "summary": {
+              "bsonType": "string"
+            },
+            "fetched_at": {
+              "bsonType": "date"
+            }
+          },
+          "required": [
+            "source_url",
+            "source_type",
+            "summary",
+            "fetched_at"
+          ],
+          "bsonType": "object"
+        },
+        "minItems": 1,
+        "bsonType": "array"
+      },
+      "affected": {
+        "additionalProperties": {
+          "items": {
+            "bsonType": "string"
+          },
+          "bsonType": "array"
+        },
+        "bsonType": "object"
+      },
+      "options": {
+        "items": {
+          "properties": {
+            "id": {
+              "bsonType": "string"
+            },
+            "label": {
+              "bsonType": "string"
+            },
+            "actions": {
+              "items": {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "link",
+                      "replan",
+                      "notice"
+                    ],
+                    "bsonType": "string"
+                  },
+                  "url": {
+                    "anyOf": [
+                      {
+                        "maxLength": 2083,
+                        "minLength": 1,
+                        "bsonType": "string"
+                      },
+                      {
+                        "bsonType": "null"
+                      }
+                    ]
+                  },
+                  "instruction": {
+                    "anyOf": [
+                      {
+                        "bsonType": "string"
+                      },
+                      {
+                        "bsonType": "null"
+                      }
+                    ]
+                  },
+                  "constraints": {
+                    "additionalProperties": true,
+                    "bsonType": "object"
+                  }
+                },
+                "required": [
+                  "type"
+                ],
+                "bsonType": "object"
+              },
+              "minItems": 1,
+              "bsonType": "array"
+            }
+          },
+          "required": [
+            "id",
+            "label",
+            "actions"
+          ],
+          "bsonType": "object"
+        },
+        "maxItems": 3,
+        "minItems": 2,
+        "bsonType": "array"
+      },
+      "status": {
+        "enum": [
+          "open",
+          "notified",
+          "resolved",
+          "dismissed"
+        ],
+        "bsonType": "string"
+      }
+    },
+    "required": [
+      "_id",
+      "trip_id",
+      "kind",
+      "severity",
+      "detected_at",
+      "evidence",
+      "affected",
+      "options",
+      "status"
+    ],
+    "bsonType": "object"
+  }
+}

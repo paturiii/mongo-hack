@@ -1,0 +1,102 @@
+[
+  {
+    "_id": "place_baixa",
+    "name": "Baixa walking tour",
+    "category": "activity",
+    "indoor": false,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        -9.139,
+        38.71
+      ]
+    },
+    "source_url": "https://www.visitlisboa.com/",
+    "source": "osm",
+    "source_id": "place_baixa",
+    "city": "Lisbon",
+    "business_status": "OPERATIONAL",
+    "consensus": {
+      "score": 0.8,
+      "tags": [
+        "fixture"
+      ]
+    },
+    "fixture": true
+  },
+  {
+    "_id": "place_museum",
+    "name": "Lisbon Story Centre",
+    "category": "museum",
+    "indoor": true,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        -9.137,
+        38.707
+      ]
+    },
+    "source_url": "https://www.lisboastorycentre.pt/",
+    "source": "osm",
+    "source_id": "place_museum",
+    "city": "Lisbon",
+    "business_status": "OPERATIONAL",
+    "consensus": {
+      "score": 0.8,
+      "tags": [
+        "fixture"
+      ]
+    },
+    "fixture": true
+  },
+  {
+    "_id": "place_belem",
+    "name": "Bel\u00e9m waterfront",
+    "category": "activity",
+    "indoor": false,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        -9.216,
+        38.693
+      ]
+    },
+    "source_url": "https://www.visitlisboa.com/",
+    "source": "osm",
+    "source_id": "place_belem",
+    "city": "Lisbon",
+    "business_status": "OPERATIONAL",
+    "consensus": {
+      "score": 0.8,
+      "tags": [
+        "fixture"
+      ]
+    },
+    "fixture": true
+  },
+  {
+    "_id": "place_market",
+    "name": "Time Out Market Lisboa",
+    "category": "food",
+    "indoor": true,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        -9.146,
+        38.707
+      ]
+    },
+    "source_url": "https://www.timeoutmarket.com/lisboa/",
+    "source": "osm",
+    "source_id": "place_market",
+    "city": "Lisbon",
+    "business_status": "OPERATIONAL",
+    "consensus": {
+      "score": 0.8,
+      "tags": [
+        "fixture"
+      ]
+    },
+    "fixture": true
+  }
+]

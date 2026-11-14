@@ -1,0 +1,14 @@
+{
+  "bsonType": "object",
+  "required": ["email", "password_hash", "created_at"],
+  "properties": {
+    "email": {"bsonType": "string", "pattern": "^[^@\\s]+@[^@\\s]+$"},
+    "name": {"bsonType": "string"},
+    "plan": {"enum": ["free", "pro"]},
+    "password_hash": {"bsonType": "string"},
+    "api_key_hashes": {"bsonType": "array", "items": {"bsonType": "string"}},
+    "connected_clients": {"bsonType": "array", "items": {"bsonType": "string"}},
+    "notify": {"bsonType": "object"},
+    "created_at": {"bsonType": "date"}
+  }
+}

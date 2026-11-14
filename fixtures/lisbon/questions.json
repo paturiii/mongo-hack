@@ -1,0 +1,53 @@
+{
+ "_id": "q_fixture_lisbon_1",
+ "session_id": "ses_fixture_lisbon",
+ "batch": 1,
+ "status": "answered",
+ "items": [
+  {
+   "id": "budget_band",
+   "prompt": "What's your budget?",
+   "type": "single",
+   "why": "Changes stays and restaurants",
+   "required": true,
+   "options": [
+    {
+     "id": "budget",
+     "label": "Budget"
+    },
+    {
+     "id": "mid",
+     "label": "Mid-range"
+    },
+    {
+     "id": "splurge",
+     "label": "Splurge"
+    }
+   ]
+  },
+  {
+   "id": "pace",
+   "prompt": "What pace do you want?",
+   "type": "single",
+   "why": "Changes how many items per day",
+   "required": true,
+   "options": [
+    {
+     "id": "relaxed",
+     "label": "Relaxed — 2–3 things a day"
+    },
+    {
+     "id": "packed",
+     "label": "Packed — see everything"
+    }
+   ]
+  }
+ ],
+ "answers": {
+  "budget_band": "mid",
+  "pace": "relaxed"
+ },
+ "answered_at": {
+  "$date": "2026-11-14T12:00:00Z"
+ }
+}

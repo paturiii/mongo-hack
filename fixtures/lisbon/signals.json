@@ -1,0 +1,32 @@
+[
+ {
+  "ts": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "meta": {
+   "watch_id": "w_fx_flight",
+   "kind": "flight",
+   "provider": "simulator"
+  },
+  "payload": {
+   "status": "delayed",
+   "delay_min": 180
+  },
+  "hash": "fx-flight-delay-180"
+ },
+ {
+  "ts": {
+   "$date": "2026-11-14T12:00:00Z"
+  },
+  "meta": {
+   "watch_id": "w_fx_weather_2",
+   "kind": "weather",
+   "provider": "open-meteo"
+  },
+  "payload": {
+   "rain_prob": 0.85,
+   "wind_kmh": 40
+  },
+  "hash": "fx-weather-d3"
+ }
+]

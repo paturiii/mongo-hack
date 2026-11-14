@@ -8,7 +8,7 @@ from __future__ import annotations
 import copy
 import logging
 import time
-from datetime import date, datetime, timezone
+from datetime import UTC, datetime
 from functools import lru_cache
 from typing import Literal, TypedDict
 
@@ -20,8 +20,20 @@ from shared.agent_protocol import city_ctx
 from shared.config import get_db
 from shared.llm import structured
 from track3_research.planner import board as B
-from track3_research.planner.clustering import DAY_RADIUS_M, MEAL_RADIUS_M, PER_DAY, _near, is_duplicate
-from track3_research.planner.graph import as_date, assemble_board, checkpointer, gather_facts, load_trip
+from track3_research.planner.clustering import (
+    DAY_RADIUS_M,
+    MEAL_RADIUS_M,
+    PER_DAY,
+    _near,
+    is_duplicate,
+)
+from track3_research.planner.graph import (
+    as_date,
+    assemble_board,
+    checkpointer,
+    gather_facts,
+    load_trip,
+)
 from track3_research.planner.retrieval import retrieve
 from track3_research.planner.schedule import schedule_day
 
@@ -62,7 +74,7 @@ def _board_outline(board: dict) -> str:
 def claim(state: RefineState) -> dict:
     db = get_db()
     rr = db.refine_requests.find_one_and_update({"_id": state["refine_id"], "status": {"$in": ["queued", "claimed"]}},
-                                                {"$set": {"status": "claimed", "claimed_at": datetime.now(timezone.utc), "claimed_by": "track3-refine"}})
+                                                {"$set": {"status": "claimed", "claimed_at": datetime.now(UTC), "claimed_by": "track3-refine"}})
     if not rr:
         raise RuntimeError(f"refine {state['refine_id']} not claimable")
     return {"trip_id": rr["trip_id"], "timings": {}}
@@ -107,12 +119,13 @@ def re_research(state: RefineState) -> dict:
     if s.get("needs_research") or need_beach:
         from track3_research.agents import agent_for
         from track3_research.consensus import run_consensus
-        from track3_research.workers.run import claim as claim_job, finish
+        from track3_research.workers.run import claim as claim_job
+        from track3_research.workers.run import finish
 
         theme = {"beach": "nature", "nightlife": "nightlife", "food": "food"}.get(s.get("category_key") or "", "sights")
         jid = f"job_{trip['_id']}_places_refine_{theme}"
         db.research_jobs.update_one({"_id": jid}, {"$setOnInsert": {"trip_id": trip["_id"], "kind": "places", "params": {"city": city["name"], "theme": theme},
-                                                                    "status": "queued", "attempts": 0, "created_at": datetime.now(timezone.utc)}}, upsert=True)
+                                                                    "status": "queued", "attempts": 0, "created_at": datetime.now(UTC)}}, upsert=True)
         job = claim_job(db, "refine-inline", trip["_id"])
         if job:
             res = agent_for(job["kind"])(job).run()
@@ -277,7 +290,7 @@ def replan(state: RefineState) -> dict:
                                                                                          "source": rr["source"], "changed": changed})
     res = B.write_board(trip, assembled, plan_status=False, reason=f"refine:{rr['source']}:{state['refine_id']}")
     db.refine_requests.update_one({"_id": state["refine_id"], "status": "claimed"},
-                                  {"$set": {"status": "done", "result_board_version": res["version"], "changed": changed, "finished_at": datetime.now(timezone.utc)}})
+                                  {"$set": {"status": "done", "result_board_version": res["version"], "changed": changed, "finished_at": datetime.now(UTC)}})
     log.info("refine %s → board v%d, changed %s", state["refine_id"], res["version"], changed)
     return {"changed": changed, "result": res, "timings": {**(state.get("timings") or {}), "replan": round(time.time() - t0, 1)}}
 

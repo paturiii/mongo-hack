@@ -11,7 +11,7 @@ import re
 import unicodedata
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Any
 
 from shared import geo
@@ -24,7 +24,7 @@ QUOTE_MAX_WORDS = 20
 
 
 def now() -> datetime:
-    return datetime.now(timezone.utc)
+    return datetime.now(UTC)
 
 
 def slugify(s: str) -> str:

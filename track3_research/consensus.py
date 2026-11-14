@@ -11,7 +11,7 @@ from __future__ import annotations
 import argparse
 import re
 from collections import Counter, defaultdict
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from pymongo import UpdateOne
 
@@ -171,7 +171,7 @@ def build_chips(city_key: str, extra_match: dict) -> int:
         cons_ = [o for o in ops_list if o["stance"] == "con"]
         pros_ = [o for o in ops_list if o["stance"] == "pro"]
         trap_cons = [o for o in cons_ if any(canon_tag(t) in ("tourist trap", "pricey") or "rip" in t.lower() for t in o.get("tags", []))
-                     or re.search(r"tourist(y| trap)|rip[- ]?off|overpriced|for tourists", o.get("summary") or "", re.I)]
+                     or re.search(r"tourist(y| trap)|rip[- ]?off|overpriced|for tourists", o.get("summary") or "", re.IGNORECASE)]
         tourist_trap = any(canon_tag(t) == "tourist trap" for o in cons_ for t in o.get("tags", [])) or (bool(trap_cons) and len(cons_) >= len(pros_))
         ops.append(UpdateOne({"_id": pid}, {"$set": {
             "consensus.tags": [t for t, _ in counts.most_common(10)], "consensus.chips": chips,
@@ -207,7 +207,7 @@ def run_consensus(city_name: str, geocode_limit: int = 30, embed: bool = True) -
                                      "$or": [{"embedded_at": {"$exists": False}}, {"$expr": {"$lt": ["$embedded_at", "$consensus.updated_at"]}}]},
                                 city["name"], limit=600)
     return {"merged_stubs": merged, "places_scored": chips, "geocoded": geocoded, "embedded": embedded,
-            "at": datetime.now(timezone.utc).isoformat()}
+            "at": datetime.now(UTC).isoformat()}
 
 
 def main() -> None:

@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import logging
 import re
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from typing import Literal
 from urllib.parse import urlparse
 
@@ -12,7 +12,7 @@ from pydantic import BaseModel, Field
 from shared.agent_protocol import Hit, link_place, norm_name, now, stable_id, trim_quote
 from shared.config import get_db
 from shared.embed import embed
-from shared.llm import structured  # noqa: F401  (re-exported for agents)
+from shared.llm import structured
 
 log = logging.getLogger("wander.agents")
 
@@ -71,7 +71,7 @@ def parse_date(s: str | None) -> datetime | None:
     for fmt in ("%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%d", "%a, %d %b %Y %H:%M:%S %Z", "%a, %d %b %Y %H:%M:%S %z"):
         try:
             d = datetime.strptime(s[:31], fmt)
-            return d if d.tzinfo else d.replace(tzinfo=timezone.utc)
+            return d if d.tzinfo else d.replace(tzinfo=UTC)
         except ValueError:
             continue
     return None

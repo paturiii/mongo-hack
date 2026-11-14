@@ -1,0 +1,1193 @@
+{
+ "_id": "b_fixture_lisbon",
+ "trip_id": "trip_fixture_lisbon",
+ "user_id": "usr_fixture_ana",
+ "version": 1,
+ "share_slug": "lisbon-mar-fx01",
+ "title": "Lisbon · Mar 12–17 · food & nightlife",
+ "summary": "5 days clustered by neighborhood: Belém, Alfama, a Sintra day trip, fado and one big club night.",
+ "checklist_progress": {
+  "booked": 1,
+  "total": 11
+ },
+ "days": [
+  {
+   "date": "2027-03-12",
+   "theme": "Arrival · Baixa & Chiado",
+   "area_geo": null,
+   "weather_hint": null,
+   "slots": [
+    {
+     "slot_id": "d1s1",
+     "time": "16:00",
+     "item": {
+      "place_id": "pl_lis_27",
+      "name": "Praça do Comércio",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.1366,
+        38.7076
+       ]
+      },
+      "category": "sight",
+      "why": "Travelers on Google reviews say Praça do Comércio: riverfront.",
+      "opinion_chips": [
+       {
+        "text": "riverfront — worth knowing before Praça do Comércio",
+        "source_type": "review",
+        "url": "https://maps.google.com/?cid=fixture55"
+       },
+       {
+        "text": "riverfront — worth knowing before Praça do Comércio",
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture56"
+       }
+      ],
+      "link_ids": [
+       "lk_transfer"
+      ],
+      "est_cost": {
+       "amount": 10,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "review",
+        "url": "https://maps.google.com/?cid=fixture55",
+        "source_name": "Google reviews"
+       },
+       {
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture56",
+        "source_name": "Rick Steves forum"
+       }
+      ]
+     }
+    },
+    {
+     "slot_id": "d1s2",
+     "time": "17:30",
+     "item": {
+      "place_id": "pl_lis_22",
+      "name": "Manteigaria",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.1435,
+        38.7108
+       ]
+      },
+      "category": "food",
+      "why": "Travelers on Google reviews say Manteigaria: pastel de nata.",
+      "opinion_chips": [
+       {
+        "text": "pastel de nata — worth knowing before Manteigaria",
+        "source_type": "review",
+        "url": "https://maps.google.com/?cid=fixture45"
+       },
+       {
+        "text": "better than belém — worth knowing before Manteigaria",
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture46/"
+       }
+      ],
+      "link_ids": [
+       "lk_manteigaria"
+      ],
+      "est_cost": {
+       "amount": 10,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "review",
+        "url": "https://maps.google.com/?cid=fixture45",
+        "source_name": "Google reviews"
+       },
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture46/",
+        "source_name": "r/travel"
+       }
+      ]
+     }
+    },
+    {
+     "slot_id": "d1s3",
+     "time": "20:00",
+     "item": {
+      "place_id": "pl_lis_20",
+      "name": "Taberna da Rua das Flores",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.143,
+        38.7104
+       ]
+      },
+      "category": "food",
+      "why": "Travelers on travel blog say Taberna da Rua das Flores: no reservations.",
+      "opinion_chips": [
+       {
+        "text": "no reservations — worth knowing before Taberna da Rua das Flores",
+        "source_type": "blog",
+        "url": "https://example-travel-blog.com/lisbon-fixture41"
+       },
+       {
+        "text": "local favorite — worth knowing before Taberna da Rua das Flores",
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/lisbon/comments/fixture42/"
+       }
+      ],
+      "link_ids": [],
+      "est_cost": {
+       "amount": 20,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "blog",
+        "url": "https://example-travel-blog.com/lisbon-fixture41",
+        "source_name": "travel blog"
+       },
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/lisbon/comments/fixture42/",
+        "source_name": "r/lisbon"
+       }
+      ]
+     }
+    },
+    {
+     "slot_id": "d1s4",
+     "time": "22:30",
+     "item": {
+      "place_id": "pl_lis_08",
+      "name": "Tasca do Chico",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.145,
+        38.7123
+       ]
+      },
+      "category": "bar",
+      "why": "Travelers on Rick Steves forum say Tasca do Chico: authentic.",
+      "opinion_chips": [
+       {
+        "text": "authentic — worth knowing before Tasca do Chico",
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture17"
+       },
+       {
+        "text": "fado vadio — worth knowing before Tasca do Chico",
+        "source_type": "video",
+        "url": "https://www.youtube.com/watch?v=fixture18"
+       }
+      ],
+      "link_ids": [],
+      "est_cost": {
+       "amount": 10,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture17",
+        "source_name": "Rick Steves forum"
+       },
+       {
+        "source_type": "video",
+        "url": "https://www.youtube.com/watch?v=fixture18",
+        "source_name": "YouTube"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "date": "2027-03-13",
+   "theme": "Belém",
+   "area_geo": null,
+   "weather_hint": null,
+   "slots": [
+    {
+     "slot_id": "d2s1",
+     "time": "09:30",
+     "item": {
+      "place_id": "pl_lis_00",
+      "name": "Mosteiro dos Jerónimos",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.2068,
+        38.6979
+       ]
+      },
+      "category": "sight",
+      "why": "Travelers on local news say Mosteiro dos Jerónimos: go early.",
+      "opinion_chips": [
+       {
+        "text": "go early — worth knowing before Mosteiro dos Jerónimos",
+        "source_type": "news",
+        "url": "https://example-news.pt/fixture1"
+       },
+       {
+        "text": "book ahead — worth knowing before Mosteiro dos Jerónimos",
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture2.html"
+       }
+      ],
+      "link_ids": [
+       "lk_jeronimos"
+      ],
+      "est_cost": {
+       "amount": 20,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "news",
+        "url": "https://example-news.pt/fixture1",
+        "source_name": "local news"
+       },
+       {
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture2.html",
+        "source_name": "TripAdvisor Lisbon forum"
+       }
+      ]
+     }
+    },
+    {
+     "slot_id": "d2s2",
+     "time": "11:30",
+     "item": {
+      "place_id": "pl_lis_02",
+      "name": "Pastéis de Belém",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.2033,
+        38.6975
+       ]
+      },
+      "category": "food",
+      "why": "Travelers on travel blog say Pastéis de Belém: pastel de nata.",
+      "opinion_chips": [
+       {
+        "text": "pastel de nata — worth knowing before Pastéis de Belém",
+        "source_type": "blog",
+        "url": "https://example-travel-blog.com/lisbon-fixture5"
+       },
+       {
+        "text": "takeaway faster — worth knowing before Pastéis de Belém",
+        "source_type": "news",
+        "url": "https://example-news.pt/fixture6"
+       }
+      ],
+      "link_ids": [
+       "lk_pastéis"
+      ],
+      "est_cost": {
+       "amount": 10,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "blog",
+        "url": "https://example-travel-blog.com/lisbon-fixture5",
+        "source_name": "travel blog"
+       },
+       {
+        "source_type": "news",
+        "url": "https://example-news.pt/fixture6",
+        "source_name": "local news"
+       }
+      ]
+     }
+    },
+    {
+     "slot_id": "d2s3",
+     "time": "12:30",
+     "item": {
+      "place_id": "pl_lis_01",
+      "name": "Torre de Belém",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.216,
+        38.6916
+       ]
+      },
+      "category": "sight",
+      "why": "Travelers on Rick Steves forum say Torre de Belém: long queue.",
+      "opinion_chips": [
+       {
+        "text": "long queue — worth knowing before Torre de Belém",
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture3"
+       },
+       {
+        "text": "long queue — worth knowing before Torre de Belém",
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/lisbon/comments/fixture4/"
+       }
+      ],
+      "link_ids": [
+       "lk_belem"
+      ],
+      "est_cost": {
+       "amount": 20,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture3",
+        "source_name": "Rick Steves forum"
+       },
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/lisbon/comments/fixture4/",
+        "source_name": "r/lisbon"
+       }
+      ]
+     }
+    },
+    {
+     "slot_id": "d2s4",
+     "time": "15:00",
+     "item": {
+      "place_id": "pl_lis_03",
+      "name": "MAAT",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.1946,
+        38.696
+       ]
+      },
+      "category": "museum",
+      "why": "Travelers on Google reviews say MAAT: sunset.",
+      "opinion_chips": [
+       {
+        "text": "sunset — worth knowing before MAAT",
+        "source_type": "review",
+        "url": "https://maps.google.com/?cid=fixture7"
+       },
+       {
+        "text": "architecture — worth knowing before MAAT",
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture8/"
+       }
+      ],
+      "link_ids": [
+       "lk_maat"
+      ],
+      "est_cost": {
+       "amount": 20,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "review",
+        "url": "https://maps.google.com/?cid=fixture7",
+        "source_name": "Google reviews"
+       },
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture8/",
+        "source_name": "r/travel"
+       }
+      ]
+     }
+    },
+    {
+     "slot_id": "d2s5",
+     "time": "20:00",
+     "item": {
+      "place_id": "pl_lis_29",
+      "name": "LX Factory",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.1784,
+        38.7034
+       ]
+      },
+      "category": "activity",
+      "why": "Travelers on r/lisbon say LX Factory: street art.",
+      "opinion_chips": [
+       {
+        "text": "street art — worth knowing before LX Factory",
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/lisbon/comments/fixture59/"
+       },
+       {
+        "text": "sunday market — worth knowing before LX Factory",
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture60"
+       }
+      ],
+      "link_ids": [
+       "lk_lxfactory"
+      ],
+      "est_cost": {
+       "amount": 20,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/lisbon/comments/fixture59/",
+        "source_name": "r/lisbon"
+       },
+       {
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture60",
+        "source_name": "Rick Steves forum"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "date": "2027-03-14",
+   "theme": "Alfama & fado",
+   "area_geo": null,
+   "weather_hint": null,
+   "slots": [
+    {
+     "slot_id": "d3s1",
+     "time": "09:00",
+     "item": {
+      "place_id": "pl_lis_05",
+      "name": "Castelo de São Jorge",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.1335,
+        38.7139
+       ]
+      },
+      "category": "sight",
+      "why": "Travelers on r/travel say Castelo de São Jorge: go early.",
+      "opinion_chips": [
+       {
+        "text": "go early — worth knowing before Castelo de São Jorge",
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture11/"
+       },
+       {
+        "text": "views — worth knowing before Castelo de São Jorge",
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture12.html"
+       }
+      ],
+      "link_ids": [
+       "lk_castelo"
+      ],
+      "est_cost": {
+       "amount": 20,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture11/",
+        "source_name": "r/travel"
+       },
+       {
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture12.html",
+        "source_name": "TripAdvisor Lisbon forum"
+       }
+      ]
+     }
+    },
+    {
+     "slot_id": "d3s2",
+     "time": "11:00",
+     "item": {
+      "place_id": "pl_lis_06",
+      "name": "Miradouro de Santa Luzia",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.1301,
+        38.7118
+       ]
+      },
+      "category": "sight",
+      "why": "Travelers on travel blog say Miradouro de Santa Luzia: free.",
+      "opinion_chips": [
+       {
+        "text": "free — worth knowing before Miradouro de Santa Luzia",
+        "source_type": "blog",
+        "url": "https://example-travel-blog.com/lisbon-fixture13"
+       },
+       {
+        "text": "free — worth knowing before Miradouro de Santa Luzia",
+        "source_type": "review",
+        "url": "https://maps.google.com/?cid=fixture14"
+       }
+      ],
+      "link_ids": [],
+      "est_cost": {
+       "amount": 10,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "blog",
+        "url": "https://example-travel-blog.com/lisbon-fixture13",
+        "source_name": "travel blog"
+       },
+       {
+        "source_type": "review",
+        "url": "https://maps.google.com/?cid=fixture14",
+        "source_name": "Google reviews"
+       }
+      ]
+     }
+    },
+    {
+     "slot_id": "d3s3",
+     "time": "13:00",
+     "item": {
+      "place_id": "pl_lis_24",
+      "name": "Zé da Mouraria",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.1349,
+        38.7167
+       ]
+      },
+      "category": "food",
+      "why": "Travelers on Rick Steves forum say Zé da Mouraria: lunch only.",
+      "opinion_chips": [
+       {
+        "text": "lunch only — worth knowing before Zé da Mouraria",
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture49"
+       },
+       {
+        "text": "huge portions — worth knowing before Zé da Mouraria",
+        "source_type": "blog",
+        "url": "https://example-travel-blog.com/lisbon-fixture50"
+       }
+      ],
+      "link_ids": [],
+      "est_cost": {
+       "amount": 20,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture49",
+        "source_name": "Rick Steves forum"
+       },
+       {
+        "source_type": "blog",
+        "url": "https://example-travel-blog.com/lisbon-fixture50",
+        "source_name": "travel blog"
+       }
+      ]
+     }
+    },
+    {
+     "slot_id": "d3s4",
+     "time": "16:00",
+     "item": {
+      "place_id": "pl_lis_31",
+      "name": "Museu Nacional do Azulejo",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.1136,
+        38.7247
+       ]
+      },
+      "category": "museum",
+      "why": "Travelers on Google reviews say Museu Nacional do Azulejo: underrated.",
+      "opinion_chips": [
+       {
+        "text": "underrated — worth knowing before Museu Nacional do Azulejo",
+        "source_type": "review",
+        "url": "https://maps.google.com/?cid=fixture63"
+       },
+       {
+        "text": "tiles — worth knowing before Museu Nacional do Azulejo",
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/lisbon/comments/fixture64/"
+       }
+      ],
+      "link_ids": [
+       "lk_azulejo"
+      ],
+      "est_cost": {
+       "amount": 10,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "review",
+        "url": "https://maps.google.com/?cid=fixture63",
+        "source_name": "Google reviews"
+       },
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/lisbon/comments/fixture64/",
+        "source_name": "r/lisbon"
+       }
+      ]
+     }
+    },
+    {
+     "slot_id": "d3s5",
+     "time": "21:00",
+     "item": {
+      "place_id": "pl_lis_10",
+      "name": "Mesa de Frades",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.1265,
+        38.7128
+       ]
+      },
+      "category": "bar",
+      "why": "Travelers on YouTube say Mesa de Frades: book ahead.",
+      "opinion_chips": [
+       {
+        "text": "book ahead — worth knowing before Mesa de Frades",
+        "source_type": "video",
+        "url": "https://www.youtube.com/watch?v=fixture21"
+       },
+       {
+        "text": "intimate — worth knowing before Mesa de Frades",
+        "source_type": "news",
+        "url": "https://example-news.pt/fixture22"
+       }
+      ],
+      "link_ids": [
+       "lk_mesa_frades"
+      ],
+      "est_cost": {
+       "amount": 30,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "video",
+        "url": "https://www.youtube.com/watch?v=fixture21",
+        "source_name": "YouTube"
+       },
+       {
+        "source_type": "news",
+        "url": "https://example-news.pt/fixture22",
+        "source_name": "local news"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "date": "2027-03-15",
+   "theme": "Sintra day trip",
+   "area_geo": null,
+   "weather_hint": null,
+   "slots": [
+    {
+     "slot_id": "d4s1",
+     "time": "08:30",
+     "item": {
+      "place_id": "pl_lis_35",
+      "name": "Palácio Nacional da Pena",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.3904,
+        38.7876
+       ]
+      },
+      "category": "sight",
+      "why": "Travelers on TripAdvisor Lisbon forum say Palácio Nacional da Pena: timed entry.",
+      "opinion_chips": [
+       {
+        "text": "timed entry — worth knowing before Palácio Nacional da Pena",
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture71.html"
+       },
+       {
+        "text": "timed entry — worth knowing before Palácio Nacional da Pena",
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture72"
+       }
+      ],
+      "link_ids": [
+       "lk_sintra_train",
+       "lk_pena"
+      ],
+      "est_cost": {
+       "amount": 30,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture71.html",
+        "source_name": "TripAdvisor Lisbon forum"
+       },
+       {
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture72",
+        "source_name": "Rick Steves forum"
+       }
+      ]
+     }
+    },
+    {
+     "slot_id": "d4s2",
+     "time": "13:30",
+     "item": {
+      "place_id": "pl_lis_36",
+      "name": "Quinta da Regaleira",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.396,
+        38.7963
+       ]
+      },
+      "category": "sight",
+      "why": "Travelers on Rick Steves forum say Quinta da Regaleira: initiation well.",
+      "opinion_chips": [
+       {
+        "text": "initiation well — worth knowing before Quinta da Regaleira",
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture73"
+       },
+       {
+        "text": "go early — worth knowing before Quinta da Regaleira",
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture74.html"
+       }
+      ],
+      "link_ids": [
+       "lk_regaleira"
+      ],
+      "est_cost": {
+       "amount": 20,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture73",
+        "source_name": "Rick Steves forum"
+       },
+       {
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture74.html",
+        "source_name": "TripAdvisor Lisbon forum"
+       }
+      ]
+     }
+    },
+    {
+     "slot_id": "d4s3",
+     "time": "20:30",
+     "item": {
+      "place_id": "pl_lis_19",
+      "name": "Cervejaria Ramiro",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.1356,
+        38.7206
+       ]
+      },
+      "category": "food",
+      "why": "Travelers on r/travel say Cervejaria Ramiro: queue.",
+      "opinion_chips": [
+       {
+        "text": "queue — worth knowing before Cervejaria Ramiro",
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture39/"
+       },
+       {
+        "text": "queue — worth knowing before Cervejaria Ramiro",
+        "source_type": "video",
+        "url": "https://www.youtube.com/watch?v=fixture40"
+       }
+      ],
+      "link_ids": [
+       "lk_ramiro"
+      ],
+      "est_cost": {
+       "amount": 30,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture39/",
+        "source_name": "r/travel"
+       },
+       {
+        "source_type": "video",
+        "url": "https://www.youtube.com/watch?v=fixture40",
+        "source_name": "YouTube"
+       }
+      ]
+     }
+    },
+    {
+     "slot_id": "d4s4",
+     "time": "23:59",
+     "item": {
+      "place_id": "pl_lis_16",
+      "name": "Lux Frágil",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.121,
+        38.714
+       ]
+      },
+      "category": "club",
+      "why": "Travelers on r/travel say Lux Frágil: arrive before 2am.",
+      "opinion_chips": [
+       {
+        "text": "arrive before 2am — worth knowing before Lux Frágil",
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture33/"
+       },
+       {
+        "text": "techno — worth knowing before Lux Frágil",
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture34.html"
+       }
+      ],
+      "link_ids": [
+       "lk_lux"
+      ],
+      "est_cost": {
+       "amount": 30,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture33/",
+        "source_name": "r/travel"
+       },
+       {
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture34.html",
+        "source_name": "TripAdvisor Lisbon forum"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "date": "2027-03-16",
+   "theme": "Gulbenkian & goodbye",
+   "area_geo": null,
+   "weather_hint": null,
+   "slots": [
+    {
+     "slot_id": "d5s1",
+     "time": "10:00",
+     "item": {
+      "place_id": "pl_lis_30",
+      "name": "Museu Calouste Gulbenkian",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.1541,
+        38.7372
+       ]
+      },
+      "category": "museum",
+      "why": "Travelers on r/travel say Museu Calouste Gulbenkian: hidden gem.",
+      "opinion_chips": [
+       {
+        "text": "hidden gem — worth knowing before Museu Calouste Gulbenkian",
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture61/"
+       },
+       {
+        "text": "hidden gem — worth knowing before Museu Calouste Gulbenkian",
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture62"
+       }
+      ],
+      "link_ids": [
+       "lk_gulbenkian"
+      ],
+      "est_cost": {
+       "amount": 20,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture61/",
+        "source_name": "r/travel"
+       },
+       {
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture62",
+        "source_name": "Rick Steves forum"
+       }
+      ]
+     }
+    },
+    {
+     "slot_id": "d5s2",
+     "time": "13:00",
+     "item": {
+      "place_id": "pl_lis_21",
+      "name": "A Cevicheria",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.1491,
+        38.7163
+       ]
+      },
+      "category": "food",
+      "why": "Travelers on local news say A Cevicheria: ceviche.",
+      "opinion_chips": [
+       {
+        "text": "ceviche — worth knowing before A Cevicheria",
+        "source_type": "news",
+        "url": "https://example-news.pt/fixture43"
+       },
+       {
+        "text": "ceviche — worth knowing before A Cevicheria",
+        "source_type": "video",
+        "url": "https://www.youtube.com/watch?v=fixture44"
+       }
+      ],
+      "link_ids": [
+       "lk_cevicheria"
+      ],
+      "est_cost": {
+       "amount": 30,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "news",
+        "url": "https://example-news.pt/fixture43",
+        "source_name": "local news"
+       },
+       {
+        "source_type": "video",
+        "url": "https://www.youtube.com/watch?v=fixture44",
+        "source_name": "YouTube"
+       }
+      ]
+     }
+    },
+    {
+     "slot_id": "d5s3",
+     "time": "17:30",
+     "item": {
+      "place_id": "pl_lis_33",
+      "name": "Miradouro da Senhora do Monte",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.1328,
+        38.7192
+       ]
+      },
+      "category": "sight",
+      "why": "Travelers on TripAdvisor Lisbon forum say Miradouro da Senhora do Monte: free.",
+      "opinion_chips": [
+       {
+        "text": "free — worth knowing before Miradouro da Senhora do Monte",
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture67.html"
+       },
+       {
+        "text": "free — worth knowing before Miradouro da Senhora do Monte",
+        "source_type": "blog",
+        "url": "https://example-travel-blog.com/lisbon-fixture68"
+       }
+      ],
+      "link_ids": [],
+      "est_cost": {
+       "amount": 10,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture67.html",
+        "source_name": "TripAdvisor Lisbon forum"
+       },
+       {
+        "source_type": "blog",
+        "url": "https://example-travel-blog.com/lisbon-fixture68",
+        "source_name": "travel blog"
+       }
+      ]
+     }
+    },
+    {
+     "slot_id": "d5s4",
+     "time": "19:00",
+     "item": {
+      "place_id": "pl_lis_17",
+      "name": "Park Bar",
+      "geo": {
+       "type": "Point",
+       "coordinates": [
+        -9.147,
+        38.7106
+       ]
+      },
+      "category": "bar",
+      "why": "Travelers on r/travel say Park Bar: rooftop.",
+      "opinion_chips": [
+       {
+        "text": "rooftop — worth knowing before Park Bar",
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture35/"
+       },
+       {
+        "text": "rooftop — worth knowing before Park Bar",
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture36.html"
+       }
+      ],
+      "link_ids": [],
+      "est_cost": {
+       "amount": 20,
+       "currency": "EUR"
+      },
+      "sources": [
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture35/",
+        "source_name": "r/travel"
+       },
+       {
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture36.html",
+        "source_name": "TripAdvisor Lisbon forum"
+       }
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "bookings": [
+  {
+   "link_id": "lk_flight",
+   "kind": "flight",
+   "label": "Flights London → Lisbon (Mar 12)",
+   "url": "https://www.google.com/travel/flights?q=LHR%20to%20LIS%202027-03-12",
+   "status": "user_marked_booked",
+   "deadline_hint": null
+  },
+  {
+   "link_id": "lk_return",
+   "kind": "flight",
+   "label": "Flights Lisbon → London (Mar 17)",
+   "url": "https://www.google.com/travel/flights?q=LIS%20to%20LHR%202027-03-17",
+   "status": "todo",
+   "deadline_hint": null
+  },
+  {
+   "link_id": "lk_transfer",
+   "kind": "transfer",
+   "label": "Airport → Alfama by metro (red + green line)",
+   "url": "https://www.metrolisboa.pt/en/",
+   "status": "todo",
+   "deadline_hint": null
+  },
+  {
+   "link_id": "lk_stay_alfama",
+   "kind": "stay",
+   "label": "Stays in Alfama (Mar 12–17, 2 guests)",
+   "url": "https://www.booking.com/searchresults.html?ss=Alfama%2C+Lisbon&checkin=2027-03-12&checkout=2027-03-17&group_adults=2",
+   "status": "todo",
+   "deadline_hint": null
+  },
+  {
+   "link_id": "lk_pena",
+   "kind": "monument_ticket",
+   "label": "Pena Palace timed entry (official)",
+   "url": "https://www.parquesdesintra.pt/en/",
+   "status": "todo",
+   "deadline_hint": "timed entry — sells out, book now"
+  },
+  {
+   "link_id": "lk_lux",
+   "kind": "club_ticket",
+   "label": "Lux Frágil events (Resident Advisor)",
+   "url": "https://ra.co/clubs/2463",
+   "status": "todo",
+   "deadline_hint": "check lineup for Mar 15"
+  },
+  {
+   "link_id": "lk_mesa_frades",
+   "kind": "restaurant",
+   "label": "Mesa de Frades reservation",
+   "url": "https://www.mesadefrades.com/",
+   "status": "todo",
+   "deadline_hint": "small room — book 1 week ahead"
+  },
+  {
+   "link_id": "lk_jeronimos",
+   "kind": "monument_ticket",
+   "label": "Jerónimos Monastery tickets (official)",
+   "url": "https://www.museusemonumentos.pt/en/",
+   "status": "todo",
+   "deadline_hint": null
+  },
+  {
+   "link_id": "lk_castelo",
+   "kind": "monument_ticket",
+   "label": "Castelo de São Jorge tickets (official)",
+   "url": "https://castelodesaojorge.pt/en/",
+   "status": "todo",
+   "deadline_hint": null
+  },
+  {
+   "link_id": "lk_sintra_train",
+   "kind": "train",
+   "label": "Train Rossio → Sintra (CP)",
+   "url": "https://www.cp.pt/passageiros/en",
+   "status": "todo",
+   "deadline_hint": null
+  },
+  {
+   "link_id": "lk_gulbenkian",
+   "kind": "monument_ticket",
+   "label": "Gulbenkian Museum tickets (official)",
+   "url": "https://gulbenkian.pt/museu/en/",
+   "status": "todo",
+   "deadline_hint": null
+  }
+ ],
+ "updated_at": {
+  "$date": "2026-11-14T12:00:00Z"
+ }
+}
