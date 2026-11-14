@@ -61,11 +61,17 @@ def enqueue(db, *, at=None, force_fixture=False):
     at = at or now()
     queued = []
     for trip in db.trips.find({"status": "planned"}):
-        start = datetime.fromisoformat(trip["dates"]["start"]).replace(tzinfo=UTC)
+        start_value = trip["dates"]["start"]
+        start = (
+            start_value
+            if isinstance(start_value, datetime)
+            else datetime.fromisoformat(str(start_value))
+        )
+        start = start.replace(tzinfo=UTC) if start.tzinfo is None else start.astimezone(UTC)
         remaining = (start - at).total_seconds()
         if not (0 < remaining <= 48 * 3600 or force_fixture and trip.get("fixture")):
             continue
-        key = hashlib.sha256((trip["_id"] + trip["dates"]["start"]).encode()).hexdigest()
+        key = hashlib.sha256((trip["_id"] + start.date().isoformat()).encode()).hexdigest()
         document = {
             "_id": "digest_" + key,
             "trip_id": trip["_id"],
