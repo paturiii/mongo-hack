@@ -168,7 +168,11 @@ def build_chips(city_key: str, extra_match: dict) -> int:
             text = o["summary"] if len(o["summary"]) <= 110 else o["summary"][:107].rsplit(" ", 1)[0] + "…"
             chips.append({"text": f"{label[0].upper() + label[1:]}: {text}", "source_type": o["source_type"], "url": o["source_url"], "source_types": [o["source_type"]], "multi": False})
         blurb = " ".join(o["summary"] for o in sorted(ops_list, key=lambda o: -o["weight"])[:3])[:500]
-        tourist_trap = any(canon_tag(t) == "tourist trap" for o in ops_list if o["stance"] == "con" for t in o.get("tags", []))
+        cons_ = [o for o in ops_list if o["stance"] == "con"]
+        pros_ = [o for o in ops_list if o["stance"] == "pro"]
+        trap_cons = [o for o in cons_ if any(canon_tag(t) in ("tourist trap", "pricey") or "rip" in t.lower() for t in o.get("tags", []))
+                     or re.search(r"tourist(y| trap)|rip[- ]?off|overpriced|for tourists", o.get("summary") or "", re.I)]
+        tourist_trap = any(canon_tag(t) == "tourist trap" for o in cons_ for t in o.get("tags", [])) or (bool(trap_cons) and len(cons_) >= len(pros_))
         ops.append(UpdateOne({"_id": pid}, {"$set": {
             "consensus.tags": [t for t, _ in counts.most_common(10)], "consensus.chips": chips,
             "consensus.blurb": blurb, "consensus.tourist_trap": tourist_trap}}))

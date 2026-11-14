@@ -9,6 +9,7 @@ import logging
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -17,6 +18,7 @@ from shared.config import get_db  # noqa: E402
 
 CITIES = {"lisbon": ("Lisbon", "Portugal"), "tokyo": ("Tokyo", "Japan"), "mexico-city": ("Mexico City", "Mexico")}
 THEMES = ["food", "nightlife", "hidden gems", "things to skip", "neighborhoods", "museums", "viewpoints", "day trips", "markets", "coffee and bakeries"]
+CITY_THEMES = {"lisbon": ["fado"], "tokyo": ["izakaya and bars"], "mexico-city": ["tacos and street food"]}
 SOURCES = ["reddit", "forum", "blog", "review", "video", "news"]
 
 
@@ -35,7 +37,14 @@ def seed(slug: str, themes: list[str], places: bool) -> dict:
             except Exception as exc:  # noqa: BLE001
                 logging.warning("places %s/%s failed: %s", slug, g, exc)
 
+    db = get_db()
+    fresh_after = datetime.now(timezone.utc) - timedelta(days=14)
+
     def one(theme: str) -> int:
+        have = db.opinions.count_documents({"city": name, "themes": theme, "fetched_at": {"$gt": fresh_after}, "summary": {"$not": {"$regex": "^\\[FIXTURE"}}})
+        if have >= 15:
+            logging.info("%s/%s: %d fresh opinions already, skipping", slug, theme, have)
+            return 0
         job = {"_id": f"job_seed_{slug}_{theme.replace(' ', '_')}", "kind": "opinions",
                "params": {"city": name, "country": country, "theme": theme, "source_types": SOURCES, "ttl_days": 365}}
         try:
@@ -48,7 +57,6 @@ def seed(slug: str, themes: list[str], places: bool) -> dict:
         counts = dict(zip(themes, ex.map(one, themes)))
     cons = run_consensus(name, geocode_limit=20)
     embedded = embed_opinion_backlog(name)
-    db = get_db()
     real = {"city": name, "summary": {"$not": {"$regex": "^\\[FIXTURE"}}}
     by_type = {r["_id"]: r["n"] for r in db.opinions.aggregate([{"$match": real}, {"$group": {"_id": "$source_type", "n": {"$sum": 1}}}])}
     return {"city": name, "per_theme": counts, "opinions": sum(by_type.values()), "by_source_type": by_type, "consensus": cons,
@@ -58,9 +66,10 @@ def seed(slug: str, themes: list[str], places: bool) -> dict:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--city", required=True, choices=list(CITIES))
-    ap.add_argument("--themes", default=",".join(THEMES))
+    ap.add_argument("--themes", default=None, help="comma list; default: 10 core themes + city extras")
     ap.add_argument("--no-places", action="store_true")
     a = ap.parse_args()
+    a.themes = a.themes or ",".join(THEMES + CITY_THEMES.get(a.city, []))
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(levelname)s %(message)s")
     for noisy in ("httpx", "httpx2", "openai"):
         logging.getLogger(noisy).setLevel(logging.WARNING)

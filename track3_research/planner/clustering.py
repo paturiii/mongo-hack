@@ -59,7 +59,7 @@ def cluster_days(dates: list[date], anchor: dict, pools: dict[str, list[dict]], 
     if day_trip_ok and len(dates) >= 3:
         far = [p for p in pools.get("sights", []) if p.get("day_trip") or geo.haversine_m(p["geo"], anchor) > DAY_TRIP_MIN_M]
         if far:
-            hero = far[0]
+            hero = next((p for p in far if p.get("must_see")), far[0])
             idx = min(len(dates) - 2, max(1, len(dates) // 2))
             dp = plans[idx]
             dp.update(kind="day_trip", center=hero["geo"], day_trip=hero.get("day_trip") or {"destination": hero.get("neighborhood") or hero["name"]})

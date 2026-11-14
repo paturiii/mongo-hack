@@ -1,0 +1,16 @@
+[
+  {
+    "query": "lisbon must-see sights reddit",
+    "results": [
+      {"url": "https://www.reddit.com/r/lisbon/comments/recorded1", "title": "Jerónimos Monastery — worth the queue?", "content": "Go at opening time, the cloister is the highlight.", "published_date": "2026-05-02", "score": 0.9},
+      {"url": "https://www.reddit.com/r/travel/comments/recorded2", "title": "Miradouro de Santa Luzia — best viewpoint in Alfama", "content": "Sunset here beats the crowded ones.", "published_date": "2026-04-11", "score": 0.8}
+    ]
+  },
+  {
+    "query": "lisbon castle tips",
+    "results": [
+      {"url": "https://www.tripadvisor.com/ShowTopic-recorded3", "title": "São Jorge Castle — tickets and timing", "content": "Buy online, lines get long after 11.", "published_date": "2026-03-20", "score": 0.7},
+      {"url": "https://example-blog.com/recorded4", "title": "Totally Made Up Place — hidden gem", "content": "Not a real place; should stay unlinked.", "published_date": "2026-01-05", "score": 0.4}
+    ]
+  }
+]
