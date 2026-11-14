@@ -5,6 +5,7 @@ const GATEWAY = process.env.GATEWAY_URL || process.env.API_BASE_URL || 'http://l
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  devIndicators: false, // hide the Next.js "N" badge in dev (demo-clean)
   async rewrites() {
     return [
       {source: '/api/:path*', destination: `${GATEWAY}/api/:path*`},
