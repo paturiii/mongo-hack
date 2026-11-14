@@ -1,0 +1,173 @@
+WANDER - TEAM INSTRUCTIONS (read fully before writing any code)
+================================================================
+
+Source of truth: MASTERPLAN.md. If this file and the plan disagree, the plan wins.
+Three tracks, fully independent. Tracks talk ONLY through MongoDB collections (MASTERPLAN §6).
+
+  Track 1 - Disruption Management    tickets D-01..D-11    folder track1_disruption/
+  Track 2 - Baseline App + Memory    tickets APP-01..APP-13 folder track2_app/ + web/ shell
+  Track 3 - Research + Planning      tickets R-01..R-15    folder track3_research/
+
+----------------------------------------------------------------
+STEP 0 - BEFORE THE EVENT CLOCK (everyone, ~20 min)
+----------------------------------------------------------------
+[ ] Check in at the event BEFORE 11 AM (ElevenLabs coupon requires it).
+[ ] ElevenLabs: join Discord -> #coupon-codes -> "Start Redemption" -> pick this
+    event -> use your Cerebral Valley registration email -> get coupon -> apply
+    to Creator plan. Create API key.
+[ ] Voyage AI: sign up -> Organization > API Keys -> create key (SAVE IT, shown once)
+    -> add payment method (unlocks Tier 1 limits, not charged within 200M tokens).
+[ ] LangSmith: redeem $50 credits via the LangChain form (hackathon name as event).
+    Add a card to see credits (not charged). Must be done within 10 days.
+[ ] LLM provider key for the backend (default: Anthropic).
+[ ] MongoDB Atlas: get invited to the shared project. Create YOUR OWN database
+    user (readWrite on db "wander"). Never share passwords. Add your IP.
+
+----------------------------------------------------------------
+STEP 1 - LOCAL SETUP (everyone)
+----------------------------------------------------------------
+1. git clone https://github.com/paturiii/mongo-hack && cd mongo-hack
+2. cp .env.example .env      (.env is gitignored - NEVER commit it)
+3. Fill the REQUIRED block in .env:
+     MONGODB_URI, MONGODB_DB=wander
+     LLM_PROVIDER, LLM_API_KEY, LLM_MODEL_FAST, LLM_MODEL_SMART
+     VOYAGE_API_KEY
+     JWT_SECRET and TOKEN_ENCRYPTION_KEY  (openssl rand -hex 32, each)
+     WANDER_MODE=fixtures
+   The app REFUSES TO START without a reachable MONGODB_URI. No local fallback.
+4. python -m venv .venv && source .venv/bin/activate   (Python 3.12+)
+5. Node 20+ for web/ (React 19 + Astryx).
+6. python scripts/check_env.py   -> must be all green before you start a ticket.
+   (Track 2 ships this script in APP-01 by H2. Until then: ping the cluster
+    manually with mongosh "$MONGODB_URI".)
+7. python scripts/load_fixtures.py --city lisbon   (available from H1.5, APP-02)
+
+----------------------------------------------------------------
+STEP 2 - H0 KICKOFF (all 3 together, 30 min, ticket I-01)
+----------------------------------------------------------------
+[ ] Read MASTERPLAN §1, §5, §6 together. Contracts are FROZEN after this.
+[ ] Decide and write into .env.example:
+      SEARCH_PROVIDER (tavily recommended), PLACES_PROVIDER (osm if no key),
+      FLIGHT_STATUS_PROVIDER, Astryx theme (default theme-neutral),
+      LLM models for FAST and SMART tiers.
+[ ] Confirm $rankFusion works on our Atlas tier (Track 3 checks).
+[ ] Everyone runs check_env.py green.
+[ ] Each member posts their personal goals for H0-H6 in the team chat
+    (which tickets, what "done" looks like = the ticket AC).
+
+----------------------------------------------------------------
+STEP 3 - RULES EVERYONE FOLLOWS (MASTERPLAN §5)
+----------------------------------------------------------------
+1. Never import another track's folder. Import only from shared/.
+2. Changing a schema in shared/schemas/ = PR + tell all 3 tracks first.
+3. Every agent is a LangGraph graph with MongoDBSaver. LangSmith on, tag track:N.
+4. Every LLM call uses structured output. Model names come from env only
+   (LLM_MODEL_FAST for bulk/cheap, LLM_MODEL_SMART for reasoning). No hardcoding.
+5. Every claim shown to a user has source_url + source_type + fetched_at.
+6. Max 20 words quoted per source. Store summaries, never full pages.
+7. Cache every external call (search_cache, TTL). Use shared/http.py.
+8. Link out, never book or pay, never scrape behind logins.
+9. Status updates are conditional (filter on expected status). Upsert on natural keys.
+10. Everything must work with WANDER_MODE=fixtures.
+11. UI = Astryx only. Run `npm run astryx -- component --list` before building
+    anything. Tokens only: no raw hex, no inline styles, no gradients/glass,
+    no emoji icons. Light + dark + 375px mobile checked on every screen.
+
+----------------------------------------------------------------
+STEP 4 - GIT WORKFLOW
+----------------------------------------------------------------
+- Branch per ticket: t1/D-03-monitors, t2/APP-04-intake, t3/R-03-opinion-scouts
+- Small PRs, title starts with ticket id: "R-03: opinion scouts multi-source"
+- PR description: which AC is met + how to verify (command or screenshot).
+- Main must always pass check_env.py + load_fixtures.py.
+- Never commit .env, keys, or real user data.
+
+----------------------------------------------------------------
+STEP 5 - YOUR TRACK: START HERE
+----------------------------------------------------------------
+
+=== TRACK 1 - DISRUPTION MANAGEMENT =================================
+Mission: once a board exists, watch every leg/venue/day, detect problems,
+explain impact with sources, offer one-click fixes, alert (banner/email/voice).
+
+Keys you need beyond required: FLIGHT_STATUS_API_KEY, RESEND_API_KEY,
+ELEVENLABS_API_KEY + ELEVENLABS_VOICE_ID, SEARCH_API_KEY (news). Weather = Open-Meteo (no key).
+
+You write:  watches, signals, disruptions, alerts, refine_requests(source=disruption),
+            price_snapshots, links.validation
+You read:   trips, boards, links, places
+Build solo on fixtures: trip.json (TP1351 leg), board.json, watches.json, signals.json
+
+Goals:
+  H0-2   D-01 worker framework, D-02 watchlist builder
+  H2-6   D-03 monitors, D-07 simulator (your demo depends on it - do it early)
+  H6-10  D-04 impact + severity, D-05 playbooks
+  H10-14 D-06 resolve + handoff, D-08 alerts (banner/email/ElevenLabs voice)
+  H14-18 D-09 link health + price, D-10 memory feedback, D-11 pre-trip digest
+First-hour goal: claim fixture watches exactly once across 2 processes.
+Definition of done for you: simulate_disruption.py -> banner + email + voice
+in <=30 s -> tap option -> refine_request written.
+
+=== TRACK 2 - BASELINE APP + MEMORY =================================
+Mission: the product people touch - DB foundation, accounts, intake questions,
+native app (Astryx), live board, MCP plugin, voice intake, long-term memory.
+You unblock everyone in the first 2 hours: schemas, setup_db, check_env, fixtures.
+
+Keys you need beyond required: GOOGLE_CLIENT_ID/SECRET, RESEND_API_KEY,
+ELEVENLABS_API_KEY + ELEVENLABS_AGENT_ID, PUBLIC_BASE_URL + NGROK_AUTHTOKEN.
+
+You write:  users, sessions, questions, trips (intake fields, status
+            ready_for_research), refine_requests(source=user), memories, usage
+You read:   boards, alerts, disruptions, research_jobs (progress counts)
+Build solo on fixtures: board.json, research_jobs.json, alerts/disruptions fixtures
+
+Goals:
+  H0-2   APP-01 Atlas setup + Mongo fail-fast + schemas + indexes,
+         APP-02 fixtures pack (DELIVER BY H1.5 - other tracks wait on it)
+  H2-6   APP-03 gateway + auth, APP-04 intake graph + question engine
+  H6-10  APP-05 native app shell on Astryx, APP-06 live trip board
+  H10-14 APP-07 MCP plugin, APP-08 long-term memory
+  H14-18 APP-09 voice intake, APP-10 handoff, APP-11 autocomplete, design polish
+First-hour goal: setup_db.py idempotent + app exits with clear error when
+MONGODB_URI is unset.
+Definition of done for you: Claude connector + native app, same account, same
+board; trip #2 asks fewer questions because of memory.
+
+=== TRACK 3 - RESEARCH + PLANNING ===================================
+Mission: turn a ready_for_research trip into a sourced, geographically sane,
+fully linked board door to door. Owns all research agents (Reddit, forums,
+blogs, reviews, video, news), consensus scoring, planner + refine engine.
+Heaviest track - cut R-08 restaurants/nightlife to 🟡 if behind.
+
+Keys you need beyond required: SEARCH_API_KEY, PLACES_API_KEY (or osm),
+TICKETMASTER_API_KEY.
+
+You write:  research_jobs, places, opinions, links, search_cache, boards,
+            trips (plan fields)
+You read:   trips, refine_requests, memories (read-only)
+Build solo on fixtures: trip.json (status ready_for_research), refine_requests.json
+
+Goals:
+  H0-2   R-01 job workers, R-02 search client + cache + agent protocol
+  H2-6   R-03 opinion scouts, R-04 consensus scorer, R-05 start seeding 3 cities
+  H6-10  R-06 places + stays, R-07 getting there + transit, R-09 link validator,
+         R-10 planner dispatch/await
+  H10-14 R-08 tickets/nightlife/restaurants, R-11 hybrid retrieval, R-12 clustering
+  H14-18 R-13 board composition, R-14 refine consumer, reseed cities
+First-hour goal: 50 fixture jobs processed exactly once across 2 workers.
+Definition of done for you: a real Lisbon trip -> board with every item sourced
+from >=1 source type and every bookable item a validated link.
+
+----------------------------------------------------------------
+INTEGRATION CHECKPOINTS (all 3, timeboxed - MASTERPLAN §8.4)
+----------------------------------------------------------------
+  I-01  H0   contracts frozen, check_env green on all 3 laptops
+  I-02  H8   T2 intake -> T3 live Lisbon board
+  I-03  H11  T3 board -> T1 watches -> simulated strike -> T3 refine -> T2 renders live
+  I-04  H14  plugin end-to-end in Claude + memory reduces questions on trip 2
+  I-05  H18  feature freeze, demo script passes twice from clean seed
+H18-24: bug bash, demo rehearsal, backup video, README, sponsor feedback forms
+        (ElevenLabs, LangChain, Voyage).
+
+If blocked > 20 min on another track: use fixtures, do NOT wait. Post in chat.
+GO.

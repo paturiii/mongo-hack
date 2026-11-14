@@ -40,7 +40,7 @@ Both surfaces end the same way: **"Your board is ready → wander.app/b/xyz"**.
 | Env var | Required? | Used by | Where to get it / sponsor perk |
 |---|---|---|---|
 | `MONGODB_URI`, `MONGODB_DB=wander` | **🔴 Required, app won't boot** | All tracks | Atlas → Database → Connect → Drivers. One DB user per member. |
-| `ANTHROPIC_API_KEY` | 🔴 Required | Intake graph, research extraction, planner, disruption triage, native chat | console.anthropic.com. Use `claude-sonnet-5-5` for reasoning and `claude-haiku-5-5` for bulk extraction and classification. |
+| `LLM_PROVIDER`, `LLM_API_KEY`, `LLM_MODEL_FAST`, `LLM_MODEL_SMART` (`LLM_BASE_URL` optional) | 🔴 Required | Intake graph, research extraction, planner, disruption triage, native chat | Provider-agnostic, two tiers. **FAST** (cheap, high-volume: extraction, classification, triage) defaults to `claude-haiku-5-5`. **SMART** (best reasoning: intake, planning, refine, chat) defaults to `claude-sonnet-5-5`. Any provider with structured output works. |
 | `VOYAGE_API_KEY` | 🔴 Required | Embeddings + reranker (opinions, places, memory) | **200M free tokens per participant.** Sign up with email → Organization → API Keys (shown once, save it). **Add a payment method** to unlock Tier 1 rate limits; nothing is charged within the allowance. `pip install voyageai`. Voyage team is on-site for top-ups. |
 | `SEARCH_PROVIDER` + `SEARCH_API_KEY` | 🔴 Required for live research (not for fixtures/seeded demo) | Opinion Scouts, ticket/event discovery, strike/closure news | Tavily (recommended: `include_domains`, news topic) / Exa / Brave. Pick one at H0. |
 | `LANGSMITH_API_KEY`, `LANGSMITH_TRACING=true`, `LANGSMITH_PROJECT=wander` | 🟡 Strongly recommended | Tracing for all graphs, evals | **$50 LangSmith credits + Deployments access.** Redeem via the LangChain form **within 10 days of the hackathon** (event name = this hackathon). A card is needed to display credits and is not charged. |
@@ -146,7 +146,7 @@ These rules apply to every track. If your code breaks one, it doesn't merge.
 1. **Mongo is the only integration point.** `brain`-style cross-imports are forbidden. `track1_disruption/`, `track2_app/` and `track3_research/` import only `shared/`.
 2. **Schemas first.** Every collection has a `$jsonSchema` in `shared/schemas/`, plus Pydantic models generated in `shared/models.py`. Changing a schema needs a PR touching `shared/` and a ping to all three tracks.
 3. **Every agent is a LangGraph graph** compiled with `MongoDBSaver` (`thread_id` = the entity id: `session_id`, `trip_id` or `disruption_id`). LangSmith tracing on, project `wander`, tag `track:1|2|3`.
-4. **LLM calls use structured output** (Pydantic). No regex-parsing of free text. Model constants live in `shared/config.py` (`MODEL_REASON = "claude-sonnet-5-5"`, `MODEL_FAST = "claude-haiku-5-5"`, `EMBED_MODEL`, `RERANK_MODEL` pinned at H0).
+4. **LLM calls use structured output** (Pydantic). No regex-parsing of free text. Models come only from env via `shared/config.py`: `LLM_MODEL_FAST` for high-volume extraction and classification, `LLM_MODEL_SMART` for reasoning, plus `VOYAGE_EMBED_MODEL` and `VOYAGE_RERANK_MODEL`. Never hardcode a model name.
 5. **Every claim has a source.** Any opinion, tip, price or disruption shown to a user carries `source_url` + `source_type` + `fetched_at`. No source means it isn't shown.
 6. **Quote budget:** at most 20 words verbatim per source. Store summaries, never full pages or comments.
 7. **Every external call is cached** in `search_cache` (TTL) and goes through `shared/http.py` (timeouts, retries, polite user agent `WanderBot/0.1`).
@@ -160,7 +160,7 @@ Every research agent subclasses `shared/agent_protocol.py::ResearchAgent` and fo
 ```
 PLAN     → derive 3–6 queries from job.params (city, theme, dates, profile)
 SEARCH   → search_client.search(q, include_domains=SOURCE_CLASS.domains, recency=…)  [cached]
-EXTRACT  → Claude (MODEL_FAST) structured output → Opinion | Fact items
+EXTRACT  → LLM_MODEL_FAST structured output → Opinion | Fact items
 LINK     → entity-link to places (fuzzy name + city + $geoNear ≤300 m); create stub if new
 SCORE    → source weight × recency × consensus (see below)
 PERSIST  → upsert with Voyage embedding; job.result_refs; status=done
@@ -648,35 +648,10 @@ wander/
 
 ---
 
-## 11. Environment (`.env.example`, never commit `.env`)
+## 11. Environment
 
-```
-# --- required: app refuses to start without these ---
-MONGODB_URI=            MONGODB_DB=wander
-ANTHROPIC_API_KEY=
-VOYAGE_API_KEY=
-JWT_SECRET=  OAUTH_ISSUER=  TOKEN_ENCRYPTION_KEY=
-WANDER_MODE=fixtures|seeded|live
-
-# --- live research ---
-SEARCH_PROVIDER=tavily|exa|brave   SEARCH_API_KEY=
-PLACES_PROVIDER=google|foursquare|osm   PLACES_API_KEY=
-TICKETMASTER_API_KEY=
-
-# --- disruption ---
-FLIGHT_STATUS_PROVIDER=aviationstack|aeroapi   FLIGHT_STATUS_API_KEY=
-RESEND_API_KEY=
-
-# --- voice ---
-ELEVENLABS_API_KEY=  ELEVENLABS_AGENT_ID=  ELEVENLABS_VOICE_ID=
-
-# --- auth / public ---
-GOOGLE_CLIENT_ID=  GOOGLE_CLIENT_SECRET=
-PUBLIC_BASE_URL=  NGROK_AUTHTOKEN=
-
-# --- observability ---
-LANGSMITH_API_KEY=  LANGSMITH_TRACING=true  LANGSMITH_PROJECT=wander
-```
+The full template is in **`.env.example`** at the repo root. Copy it to `.env` (gitignored) and run `scripts/check_env.py`.
+Required: `MONGODB_URI`, `MONGODB_DB`, `LLM_PROVIDER`, `LLM_API_KEY`, `LLM_MODEL_FAST`, `LLM_MODEL_SMART`, `VOYAGE_API_KEY`, `JWT_SECRET`, `TOKEN_ENCRYPTION_KEY`, `OAUTH_ISSUER`, `WANDER_MODE`. Everything else unlocks live research, disruption, voice, auth or tracing (see §1.2).
 
 ---
 

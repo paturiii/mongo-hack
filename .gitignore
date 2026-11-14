@@ -1,4 +1,41 @@
+# secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# python
 env/
 venv/
+.venv/
 __pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
 
+# node / next
+node_modules/
+.next/
+out/
+.turbo/
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# langgraph / local artifacts
+.langgraph_api/
+*.log
+media/voice/
+
+# editor / os
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
