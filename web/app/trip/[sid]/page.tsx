@@ -160,16 +160,28 @@ function TripHeader({view}: {view: SessionView}) {
 
 function ResearchProgress({p, city}: {p: Progress; city?: string}) {
   const kinds = Object.entries(p.by_kind);
+  // All research jobs done but no board yet = planner is ranking places and laying out days (phase 2).
+  const building = p.jobs_total > 0 && p.jobs_done >= p.jobs_total;
   return (
     <Card padding={5} width="100%">
       <VStack gap={4}>
         <VStack gap={1}>
-          <Heading level={3}>Researching {city ?? 'your trip'}</Heading>
+          <Heading level={3}>{building ? `Building your ${city ?? ''} plan` : `Researching ${city ?? 'your trip'}`}</Heading>
           <Text type="supporting">
-            {p.opinions > 0 ? `${p.opinions} traveler opinions so far${p.sources.length ? ` from ${p.sources.join(', ')}` : ''}` : 'Sending scouts…'}
+            {building
+              ? `Research done (${p.opinions} traveler opinions). Now ranking places and laying out your days — usually a few minutes.`
+              : p.opinions > 0
+                ? `${p.opinions} traveler opinions so far${p.sources.length ? ` from ${p.sources.join(', ')}` : ''}`
+                : 'Sending scouts…'}
           </Text>
         </VStack>
-        <ProgressBar label="Research progress" value={p.jobs_done} max={Math.max(p.jobs_total, 1)} hasValueLabel isIndeterminate={p.jobs_total === 0} />
+        <ProgressBar
+          label={building ? 'Planning' : 'Research progress'}
+          value={p.jobs_done}
+          max={Math.max(p.jobs_total, 1)}
+          hasValueLabel={!building}
+          isIndeterminate={p.jobs_total === 0 || building}
+        />
         {kinds.length > 0 && (
           <MetadataList columns="multi">
             {kinds.map(([k, v]) => (
