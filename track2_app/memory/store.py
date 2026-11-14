@@ -29,7 +29,7 @@ def _now() -> datetime:
 def _embed(text: str, query: bool = False) -> list[float] | None:
     try:
         from shared.embed import embed
-        return embed([text], query=query)[0]
+        return embed([text], query=query, wait=False)[0]
     except Exception as e:  # noqa: BLE001 - Voyage throttling must not break intake
         log.warning("embedding skipped: %s", type(e).__name__)
         return None

@@ -12,9 +12,7 @@
  },
  "days": [
   {
-   "date": {
-    "$date": "2027-03-12T00:00:00Z"
-   },
+   "date": "2027-03-12",
    "theme": "Arrival · Baixa & Chiado",
    "area_geo": null,
    "weather_hint": null,
@@ -52,7 +50,19 @@
       "est_cost": {
        "amount": 10,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "review",
+        "url": "https://maps.google.com/?cid=fixture55",
+        "source_name": "Google reviews"
+       },
+       {
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture56",
+        "source_name": "Rick Steves forum"
+       }
+      ]
      }
     },
     {
@@ -88,7 +98,19 @@
       "est_cost": {
        "amount": 10,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "review",
+        "url": "https://maps.google.com/?cid=fixture45",
+        "source_name": "Google reviews"
+       },
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture46/",
+        "source_name": "r/travel"
+       }
+      ]
      }
     },
     {
@@ -122,7 +144,19 @@
       "est_cost": {
        "amount": 20,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "blog",
+        "url": "https://example-travel-blog.com/lisbon-fixture41",
+        "source_name": "travel blog"
+       },
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/lisbon/comments/fixture42/",
+        "source_name": "r/lisbon"
+       }
+      ]
      }
     },
     {
@@ -156,15 +190,25 @@
       "est_cost": {
        "amount": 10,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture17",
+        "source_name": "Rick Steves forum"
+       },
+       {
+        "source_type": "video",
+        "url": "https://www.youtube.com/watch?v=fixture18",
+        "source_name": "YouTube"
+       }
+      ]
      }
     }
    ]
   },
   {
-   "date": {
-    "$date": "2027-03-13T00:00:00Z"
-   },
+   "date": "2027-03-13",
    "theme": "Belém",
    "area_geo": null,
    "weather_hint": null,
@@ -202,7 +246,19 @@
       "est_cost": {
        "amount": 20,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "news",
+        "url": "https://example-news.pt/fixture1",
+        "source_name": "local news"
+       },
+       {
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture2.html",
+        "source_name": "TripAdvisor Lisbon forum"
+       }
+      ]
      }
     },
     {
@@ -238,7 +294,19 @@
       "est_cost": {
        "amount": 10,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "blog",
+        "url": "https://example-travel-blog.com/lisbon-fixture5",
+        "source_name": "travel blog"
+       },
+       {
+        "source_type": "news",
+        "url": "https://example-news.pt/fixture6",
+        "source_name": "local news"
+       }
+      ]
      }
     },
     {
@@ -274,7 +342,19 @@
       "est_cost": {
        "amount": 20,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture3",
+        "source_name": "Rick Steves forum"
+       },
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/lisbon/comments/fixture4/",
+        "source_name": "r/lisbon"
+       }
+      ]
      }
     },
     {
@@ -310,7 +390,19 @@
       "est_cost": {
        "amount": 20,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "review",
+        "url": "https://maps.google.com/?cid=fixture7",
+        "source_name": "Google reviews"
+       },
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture8/",
+        "source_name": "r/travel"
+       }
+      ]
      }
     },
     {
@@ -346,15 +438,25 @@
       "est_cost": {
        "amount": 20,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/lisbon/comments/fixture59/",
+        "source_name": "r/lisbon"
+       },
+       {
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture60",
+        "source_name": "Rick Steves forum"
+       }
+      ]
      }
     }
    ]
   },
   {
-   "date": {
-    "$date": "2027-03-14T00:00:00Z"
-   },
+   "date": "2027-03-14",
    "theme": "Alfama & fado",
    "area_geo": null,
    "weather_hint": null,
@@ -392,7 +494,19 @@
       "est_cost": {
        "amount": 20,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture11/",
+        "source_name": "r/travel"
+       },
+       {
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture12.html",
+        "source_name": "TripAdvisor Lisbon forum"
+       }
+      ]
      }
     },
     {
@@ -426,7 +540,19 @@
       "est_cost": {
        "amount": 10,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "blog",
+        "url": "https://example-travel-blog.com/lisbon-fixture13",
+        "source_name": "travel blog"
+       },
+       {
+        "source_type": "review",
+        "url": "https://maps.google.com/?cid=fixture14",
+        "source_name": "Google reviews"
+       }
+      ]
      }
     },
     {
@@ -460,7 +586,19 @@
       "est_cost": {
        "amount": 20,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture49",
+        "source_name": "Rick Steves forum"
+       },
+       {
+        "source_type": "blog",
+        "url": "https://example-travel-blog.com/lisbon-fixture50",
+        "source_name": "travel blog"
+       }
+      ]
      }
     },
     {
@@ -496,7 +634,19 @@
       "est_cost": {
        "amount": 10,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "review",
+        "url": "https://maps.google.com/?cid=fixture63",
+        "source_name": "Google reviews"
+       },
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/lisbon/comments/fixture64/",
+        "source_name": "r/lisbon"
+       }
+      ]
      }
     },
     {
@@ -532,15 +682,25 @@
       "est_cost": {
        "amount": 30,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "video",
+        "url": "https://www.youtube.com/watch?v=fixture21",
+        "source_name": "YouTube"
+       },
+       {
+        "source_type": "news",
+        "url": "https://example-news.pt/fixture22",
+        "source_name": "local news"
+       }
+      ]
      }
     }
    ]
   },
   {
-   "date": {
-    "$date": "2027-03-15T00:00:00Z"
-   },
+   "date": "2027-03-15",
    "theme": "Sintra day trip",
    "area_geo": null,
    "weather_hint": null,
@@ -579,7 +739,19 @@
       "est_cost": {
        "amount": 30,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture71.html",
+        "source_name": "TripAdvisor Lisbon forum"
+       },
+       {
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture72",
+        "source_name": "Rick Steves forum"
+       }
+      ]
      }
     },
     {
@@ -615,7 +787,19 @@
       "est_cost": {
        "amount": 20,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture73",
+        "source_name": "Rick Steves forum"
+       },
+       {
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture74.html",
+        "source_name": "TripAdvisor Lisbon forum"
+       }
+      ]
      }
     },
     {
@@ -651,7 +835,19 @@
       "est_cost": {
        "amount": 30,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture39/",
+        "source_name": "r/travel"
+       },
+       {
+        "source_type": "video",
+        "url": "https://www.youtube.com/watch?v=fixture40",
+        "source_name": "YouTube"
+       }
+      ]
      }
     },
     {
@@ -687,15 +883,25 @@
       "est_cost": {
        "amount": 30,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture33/",
+        "source_name": "r/travel"
+       },
+       {
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture34.html",
+        "source_name": "TripAdvisor Lisbon forum"
+       }
+      ]
      }
     }
    ]
   },
   {
-   "date": {
-    "$date": "2027-03-16T00:00:00Z"
-   },
+   "date": "2027-03-16",
    "theme": "Gulbenkian & goodbye",
    "area_geo": null,
    "weather_hint": null,
@@ -733,7 +939,19 @@
       "est_cost": {
        "amount": 20,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture61/",
+        "source_name": "r/travel"
+       },
+       {
+        "source_type": "forum",
+        "url": "https://community.ricksteves.com/travel-forum/fixture62",
+        "source_name": "Rick Steves forum"
+       }
+      ]
      }
     },
     {
@@ -769,7 +987,19 @@
       "est_cost": {
        "amount": 30,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "news",
+        "url": "https://example-news.pt/fixture43",
+        "source_name": "local news"
+       },
+       {
+        "source_type": "video",
+        "url": "https://www.youtube.com/watch?v=fixture44",
+        "source_name": "YouTube"
+       }
+      ]
      }
     },
     {
@@ -803,7 +1033,19 @@
       "est_cost": {
        "amount": 10,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture67.html",
+        "source_name": "TripAdvisor Lisbon forum"
+       },
+       {
+        "source_type": "blog",
+        "url": "https://example-travel-blog.com/lisbon-fixture68",
+        "source_name": "travel blog"
+       }
+      ]
      }
     },
     {
@@ -837,7 +1079,19 @@
       "est_cost": {
        "amount": 20,
        "currency": "EUR"
-      }
+      },
+      "sources": [
+       {
+        "source_type": "reddit",
+        "url": "https://www.reddit.com/r/travel/comments/fixture35/",
+        "source_name": "r/travel"
+       },
+       {
+        "source_type": "forum",
+        "url": "https://www.tripadvisor.com/ShowTopic-fixture36.html",
+        "source_name": "TripAdvisor Lisbon forum"
+       }
+      ]
      }
     }
    ]

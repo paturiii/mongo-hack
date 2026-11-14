@@ -7,6 +7,7 @@
     "provider": "official",
     "url": "https://www.lisboastorycentre.pt/",
     "label": "Lisbon Story Centre tickets",
+    "is_official": true,
     "for_date": "2026-03-14",
     "validation": {
       "status": "ok",

@@ -58,6 +58,7 @@ def main():
             {
                 "source": "osm",
                 "source_id": place["_id"],
+                "city": "Lisbon",
                 "business_status": "OPERATIONAL",
                 "consensus": {"score": 0.8, "tags": ["fixture"]},
                 "fixture": True,
@@ -116,6 +117,7 @@ def main():
             "provider": "official",
             "url": "https://www.lisboastorycentre.pt/",
             "label": "Lisbon Story Centre tickets",
+            "is_official": True,
             "for_date": "2026-03-14",
             "validation": {"status": "ok", "ok": True},
             "price_hint": {"amount": 8, "currency": "EUR", "as_of": "2026-03-10T12:00:00Z"},
@@ -142,6 +144,7 @@ def main():
                         "source_type": "fixture",
                         "fetched_at": "2026-03-10T12:00:00Z",
                         "opinion_chips": [],
+                        "sources": [{"source_type": "fixture", "url": place["source_url"]}],
                     },
                 }
             )
@@ -179,6 +182,7 @@ def main():
                     "status": "todo",
                 }
             ],
+            "checklist_progress": {"booked": 0, "total": 1},
             "fixture": True,
         },
     )

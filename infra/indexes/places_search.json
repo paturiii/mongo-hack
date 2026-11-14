@@ -1,0 +1,18 @@
+{
+  "collection": "places",
+  "name": "places_search",
+  "type": "search",
+  "definition": {
+    "mappings": {
+      "dynamic": false,
+      "fields": {
+        "name": [{"type": "string", "analyzer": "lucene.standard"}, {"type": "autocomplete"}],
+        "search_text": {"type": "string", "analyzer": "lucene.english"},
+        "consensus": {"type": "document", "fields": {"tags": {"type": "string"}}},
+        "city": {"type": "token"},
+        "category": {"type": "token"},
+        "indoor": {"type": "boolean"}
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+pymongo>=4.10
+dnspython
+python-dotenv
+pydantic>=2
+httpx
+openai>=1.50
+voyageai
+langgraph
+langgraph-checkpoint-mongodb
+langchain-core
+langsmith

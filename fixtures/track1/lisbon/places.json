@@ -14,6 +14,7 @@
     "source_url": "https://www.visitlisboa.com/",
     "source": "osm",
     "source_id": "place_baixa",
+    "city": "Lisbon",
     "business_status": "OPERATIONAL",
     "consensus": {
       "score": 0.8,
@@ -38,6 +39,7 @@
     "source_url": "https://www.lisboastorycentre.pt/",
     "source": "osm",
     "source_id": "place_museum",
+    "city": "Lisbon",
     "business_status": "OPERATIONAL",
     "consensus": {
       "score": 0.8,
@@ -62,6 +64,7 @@
     "source_url": "https://www.visitlisboa.com/",
     "source": "osm",
     "source_id": "place_belem",
+    "city": "Lisbon",
     "business_status": "OPERATIONAL",
     "consensus": {
       "score": 0.8,
@@ -86,6 +89,7 @@
     "source_url": "https://www.timeoutmarket.com/lisboa/",
     "source": "osm",
     "source_id": "place_market",
+    "city": "Lisbon",
     "business_status": "OPERATIONAL",
     "consensus": {
       "score": 0.8,

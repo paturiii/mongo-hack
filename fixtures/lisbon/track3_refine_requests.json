@@ -1,0 +1,7 @@
+[
+  {"_id": "rr_t3_beach", "trip_id": "trip_t3_lisbon", "source": "user", "disruption_id": null, "instruction": "make day 3 a beach day",
+   "scope": {"days": [], "slot_ids": []}, "constraints": {}, "status": "queued", "result_board_version": null},
+  {"_id": "rr_t3_rain", "trip_id": "trip_t3_lisbon", "source": "disruption", "disruption_id": "dis_t3_rain",
+   "instruction": "heavy rain forecast on Mar 13: swap outdoor stops for indoor ones",
+   "scope": {"days": ["2027-03-13"], "slot_ids": []}, "constraints": {"indoor_only": true}, "status": "queued", "result_board_version": null}
+]

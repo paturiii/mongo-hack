@@ -51,7 +51,13 @@
             "source_url": "https://www.visitlisboa.com/",
             "source_type": "fixture",
             "fetched_at": "2026-03-10T12:00:00Z",
-            "opinion_chips": []
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.visitlisboa.com/"
+              }
+            ]
           }
         },
         {
@@ -67,7 +73,13 @@
             "source_url": "https://www.lisboastorycentre.pt/",
             "source_type": "fixture",
             "fetched_at": "2026-03-10T12:00:00Z",
-            "opinion_chips": []
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.lisboastorycentre.pt/"
+              }
+            ]
           }
         },
         {
@@ -83,7 +95,13 @@
             "source_url": "https://www.visitlisboa.com/",
             "source_type": "fixture",
             "fetched_at": "2026-03-10T12:00:00Z",
-            "opinion_chips": []
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.visitlisboa.com/"
+              }
+            ]
           }
         },
         {
@@ -99,7 +117,13 @@
             "source_url": "https://www.timeoutmarket.com/lisboa/",
             "source_type": "fixture",
             "fetched_at": "2026-03-10T12:00:00Z",
-            "opinion_chips": []
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.timeoutmarket.com/lisboa/"
+              }
+            ]
           }
         }
       ]
@@ -148,7 +172,13 @@
             "source_url": "https://www.visitlisboa.com/",
             "source_type": "fixture",
             "fetched_at": "2026-03-10T12:00:00Z",
-            "opinion_chips": []
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.visitlisboa.com/"
+              }
+            ]
           }
         },
         {
@@ -164,7 +194,13 @@
             "source_url": "https://www.lisboastorycentre.pt/",
             "source_type": "fixture",
             "fetched_at": "2026-03-10T12:00:00Z",
-            "opinion_chips": []
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.lisboastorycentre.pt/"
+              }
+            ]
           }
         },
         {
@@ -180,7 +216,13 @@
             "source_url": "https://www.visitlisboa.com/",
             "source_type": "fixture",
             "fetched_at": "2026-03-10T12:00:00Z",
-            "opinion_chips": []
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.visitlisboa.com/"
+              }
+            ]
           }
         },
         {
@@ -196,7 +238,13 @@
             "source_url": "https://www.timeoutmarket.com/lisboa/",
             "source_type": "fixture",
             "fetched_at": "2026-03-10T12:00:00Z",
-            "opinion_chips": []
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.timeoutmarket.com/lisboa/"
+              }
+            ]
           }
         }
       ]
@@ -245,7 +293,13 @@
             "source_url": "https://www.visitlisboa.com/",
             "source_type": "fixture",
             "fetched_at": "2026-03-10T12:00:00Z",
-            "opinion_chips": []
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.visitlisboa.com/"
+              }
+            ]
           }
         },
         {
@@ -263,7 +317,13 @@
             "source_url": "https://www.lisboastorycentre.pt/",
             "source_type": "fixture",
             "fetched_at": "2026-03-10T12:00:00Z",
-            "opinion_chips": []
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.lisboastorycentre.pt/"
+              }
+            ]
           }
         },
         {
@@ -279,7 +339,13 @@
             "source_url": "https://www.visitlisboa.com/",
             "source_type": "fixture",
             "fetched_at": "2026-03-10T12:00:00Z",
-            "opinion_chips": []
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.visitlisboa.com/"
+              }
+            ]
           }
         },
         {
@@ -295,7 +361,13 @@
             "source_url": "https://www.timeoutmarket.com/lisboa/",
             "source_type": "fixture",
             "fetched_at": "2026-03-10T12:00:00Z",
-            "opinion_chips": []
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.timeoutmarket.com/lisboa/"
+              }
+            ]
           }
         }
       ]
@@ -344,7 +416,13 @@
             "source_url": "https://www.visitlisboa.com/",
             "source_type": "fixture",
             "fetched_at": "2026-03-10T12:00:00Z",
-            "opinion_chips": []
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.visitlisboa.com/"
+              }
+            ]
           }
         },
         {
@@ -360,7 +438,13 @@
             "source_url": "https://www.lisboastorycentre.pt/",
             "source_type": "fixture",
             "fetched_at": "2026-03-10T12:00:00Z",
-            "opinion_chips": []
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.lisboastorycentre.pt/"
+              }
+            ]
           }
         },
         {
@@ -376,7 +460,13 @@
             "source_url": "https://www.visitlisboa.com/",
             "source_type": "fixture",
             "fetched_at": "2026-03-10T12:00:00Z",
-            "opinion_chips": []
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.visitlisboa.com/"
+              }
+            ]
           }
         },
         {
@@ -392,7 +482,13 @@
             "source_url": "https://www.timeoutmarket.com/lisboa/",
             "source_type": "fixture",
             "fetched_at": "2026-03-10T12:00:00Z",
-            "opinion_chips": []
+            "opinion_chips": [],
+            "sources": [
+              {
+                "source_type": "fixture",
+                "url": "https://www.timeoutmarket.com/lisboa/"
+              }
+            ]
           }
         }
       ]
@@ -407,5 +503,9 @@
       "status": "todo"
     }
   ],
+  "checklist_progress": {
+    "booked": 0,
+    "total": 1
+  },
   "fixture": true
 }

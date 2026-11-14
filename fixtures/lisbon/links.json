@@ -12,7 +12,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -35,7 +35,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -58,7 +58,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -81,7 +81,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -104,7 +104,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -127,7 +127,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -150,7 +150,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -173,7 +173,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -196,7 +196,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -219,7 +219,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -242,7 +242,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -265,7 +265,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -288,7 +288,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -311,7 +311,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -334,7 +334,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -357,7 +357,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -380,7 +380,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -403,7 +403,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -426,7 +426,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -449,7 +449,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -472,7 +472,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -495,7 +495,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -518,7 +518,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -541,7 +541,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -564,7 +564,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -587,7 +587,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -610,7 +610,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -633,7 +633,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -656,7 +656,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },
@@ -679,7 +679,7 @@
   "for_date": null,
   "party_size": 2,
   "validation": {
-   "status": 200,
+   "status": "ok",
    "checked_at": {
     "$date": "2026-11-14T12:00:00Z"
    },

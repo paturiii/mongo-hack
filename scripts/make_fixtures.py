@@ -84,7 +84,7 @@ def place_docs():
     out = []
     for i, (name, cat, lng, lat, hood, indoor, price, tags) in enumerate(PLACES):
         out.append({
-            "_id": f"pl_lis_{i:02d}", "trip_id": None, "source": "fixture", "source_id": f"fx{i:02d}",
+            "_id": f"pl_lis_{i:02d}", "trip_id": None, "source": "search", "source_id": f"fx{i:02d}", "fixture": True,
             "name": name, "city": CITY, "category": cat, "indoor": indoor,
             "geo": {"type": "Point", "coordinates": [lng, lat]}, "neighborhood": hood,
             "address": f"{hood}, Lisboa", "price_level": price,
@@ -161,7 +161,7 @@ def link_docs():
     return [{
         "_id": lid, "trip_id": TRIP, "item_ref": ref or lid, "kind": kind, "provider": prov, "url": url, "label": label,
         "is_official": off, "price_hint": None, "for_date": None, "party_size": 2,
-        "validation": {"status": 200, "checked_at": d(NOW), "ok": True}, "created_at": d(NOW),
+        "validation": {"status": "ok", "checked_at": d(NOW), "ok": True}, "created_at": d(NOW),
     } for lid, kind, prov, url, label, off, ref in LINKS]
 
 
@@ -186,9 +186,10 @@ def board_doc(places, opinions):
                 "item": {"place_id": p["_id"], "name": p["name"], "geo": p["geo"], "category": p["category"],
                          "why": ops[0]["summary"].replace("[FIXTURE] ", "") if ops else "",
                          "opinion_chips": [{"text": o["quote"], "source_type": o["source_type"], "url": o["source_url"]} for o in ops],
-                         "link_ids": link_ids, "est_cost": {"amount": 10 * p["price_level"], "currency": "EUR"}},
+                         "link_ids": link_ids, "est_cost": {"amount": 10 * p["price_level"], "currency": "EUR"},
+                         "sources": [{"source_type": o["source_type"], "url": o["source_url"], "source_name": o["source_name"]} for o in ops]},
             })
-        days.append({"date": d((START + timedelta(days=i)).strftime("%Y-%m-%dT00:00:00Z")), "theme": theme,
+        days.append({"date": (START + timedelta(days=i)).strftime("%Y-%m-%d"), "theme": theme,
                      "area_geo": None, "weather_hint": None, "slots": day_slots})
     links = {l[0]: l for l in LINKS}
     order = ["lk_flight", "lk_return", "lk_transfer", "lk_stay_alfama", "lk_pena", "lk_lux", "lk_mesa_frades",

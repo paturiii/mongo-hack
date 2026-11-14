@@ -25,6 +25,8 @@ FILE_TO_COLL = {
     "places": "places", "opinions": "opinions", "links": "links", "board": "boards", "memories": "memories",
     "refine_requests": "refine_requests", "watches": "watches", "signals": "signals", "disruptions": "disruptions",
     "alerts": "alerts",
+    # Track 3 planner fixture trip + refines (trip_t3_lisbon)
+    "track3_trip": "trips", "track3_refine_requests": "refine_requests",
 }
 EMBED_TEXT = {
     "places": lambda p: f"{p['name']} · {p['category']} · {p.get('neighborhood', '')} · {', '.join(p.get('consensus', {}).get('tags', []))}",
@@ -48,6 +50,8 @@ def load(db, city="lisbon"):
             old = db[collection].find_one({"_id": doc["_id"]})
             if old and not old.get("fixture"):
                 raise RuntimeError("Refusing to overwrite non-fixture document in " + collection)
+            if collection == "links":
+                doc.setdefault("created_at", now())
             doc["fixture"] = True
             doc["updated_at"] = now()
             db[collection].replace_one({"_id": doc["_id"]}, doc, upsert=True)

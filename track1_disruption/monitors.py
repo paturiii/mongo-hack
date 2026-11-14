@@ -7,7 +7,7 @@ from pydantic import BaseModel, ConfigDict
 
 from shared.config import ROOT
 from shared.http import CachedHTTP, now
-from shared.search_client import search
+from shared.search_client import news_search as search
 from shared.structured import structured
 
 
