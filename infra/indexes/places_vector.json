@@ -1,0 +1,13 @@
+{
+  "collection": "places",
+  "name": "places_vector",
+  "type": "vectorSearch",
+  "definition": {
+    "fields": [
+      {"type": "vector", "path": "embedding", "numDimensions": 1024, "similarity": "cosine"},
+      {"type": "filter", "path": "city"},
+      {"type": "filter", "path": "category"},
+      {"type": "filter", "path": "indoor"}
+    ]
+  }
+}

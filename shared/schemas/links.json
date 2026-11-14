@@ -1,0 +1,22 @@
+{
+  "bsonType": "object",
+  "required": ["_id", "kind", "provider", "url", "label", "is_official", "created_at"],
+  "properties": {
+    "_id": {"bsonType": "string"},
+    "trip_id": {"bsonType": ["string", "null"]},
+    "item_ref": {"bsonType": ["string", "null"]},
+    "kind": {"enum": ["flight", "train", "bus", "transfer", "stay", "monument_ticket", "club_ticket", "restaurant", "tour", "rebook", "transit_pass"]},
+    "provider": {"bsonType": "string"},
+    "url": {"bsonType": "string", "pattern": "^https?://"},
+    "label": {"bsonType": "string"},
+    "is_official": {"bsonType": "bool"},
+    "price_hint": {"bsonType": ["object", "null"]},
+    "for_date": {"bsonType": ["string", "null"]},
+    "party_size": {"bsonType": ["int", "null"]},
+    "validation": {
+      "bsonType": ["object", "null"],
+      "properties": {"status": {"bsonType": "string"}, "checked_at": {"bsonType": "date"}, "ok": {"bsonType": "bool"}}
+    },
+    "created_at": {"bsonType": "date"}
+  }
+}

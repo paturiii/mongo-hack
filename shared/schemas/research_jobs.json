@@ -1,0 +1,17 @@
+{
+  "bsonType": "object",
+  "required": ["_id", "kind", "params", "status", "attempts", "created_at"],
+  "properties": {
+    "_id": {"bsonType": "string", "pattern": "^job_"},
+    "trip_id": {"bsonType": ["string", "null"]},
+    "kind": {"enum": ["opinions", "places", "stay", "transit", "getting_there", "tickets", "nightlife", "restaurants", "link_resolve"]},
+    "params": {"bsonType": "object", "required": ["city"], "properties": {"city": {"bsonType": "string"}}},
+    "status": {"enum": ["queued", "claimed", "done", "failed"]},
+    "attempts": {"bsonType": "int", "minimum": 0},
+    "claimed_by": {"bsonType": ["string", "null"]},
+    "claimed_at": {"bsonType": ["date", "null"]},
+    "result_refs": {"bsonType": ["array", "null"]},
+    "error": {"bsonType": ["string", "null"]},
+    "created_at": {"bsonType": "date"}
+  }
+}

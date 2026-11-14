@@ -1,0 +1,29 @@
+{
+  "bsonType": "object",
+  "required": ["_id", "source", "source_id", "city", "name", "category"],
+  "properties": {
+    "_id": {"bsonType": "string"},
+    "source": {"enum": ["google", "osm", "foursquare", "search"]},
+    "source_id": {"bsonType": "string"},
+    "city": {"bsonType": "string"},
+    "name": {"bsonType": "string", "minLength": 1},
+    "category": {"enum": ["sight", "food", "bar", "club", "museum", "stay", "activity", "transit_hub", "beach", "indoor", "neighborhood"]},
+    "indoor": {"bsonType": "bool"},
+    "geo": {
+      "bsonType": "object",
+      "required": ["type", "coordinates"],
+      "properties": {"type": {"enum": ["Point"]}, "coordinates": {"bsonType": "array", "minItems": 2, "maxItems": 2}}
+    },
+    "consensus": {
+      "bsonType": "object",
+      "properties": {
+        "score": {"bsonType": ["double", "int"]},
+        "mentions": {"bsonType": "int"},
+        "by_source": {"bsonType": "object"},
+        "tags": {"bsonType": "array"},
+        "opinion_ids": {"bsonType": "array"}
+      }
+    },
+    "embedding": {"bsonType": "array"}
+  }
+}
